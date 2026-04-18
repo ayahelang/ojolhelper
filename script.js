@@ -1,4 +1,5 @@
 const pools = {
+
     cikeas: [
         ["11:00 - 13:00", "Kota Wisata Cibubur", 8],
         ["13:00 - 15:00", "Mitra Keluarga Cibubur", 7],
@@ -17,12 +18,37 @@ const pools = {
     ],
 
     cimanggis: [
-        ["11:00 - 13:00", "Margo City", 8],
+        ["11:00 - 13:00", "Margo City Depok", 8],
         ["13:00 - 15:00", "Harjamukti", 6],
-        ["15:00 - 18:00", "Trans Studio Mall", 4],
+        ["15:00 - 18:00", "Trans Studio Mall Cibubur", 4],
         ["18:00 - 20:00", "Cibubur Junction", 3],
         ["20:00 - 21:00", "Kembali Pool Cimanggis", 8]
+    ],
+
+    ciputat: [
+        ["11:00 - 13:00", "Pasar Ciputat", 4],
+        ["13:00 - 15:00", "UIN Syarif Hidayatullah Jakarta", 3],
+        ["15:00 - 18:00", "Bintaro Xchange Mall", 8],
+        ["18:00 - 20:00", "Stasiun Jurangmangu", 5],
+        ["20:00 - 21:00", "Kembali Pool Ciputat", 6]
+    ],
+
+    kalibata: [
+        ["11:00 - 13:00", "Kalibata City", 2],
+        ["13:00 - 15:00", "Stasiun Duren Kalibata", 2],
+        ["15:00 - 18:00", "Kokas Mall Jakarta", 7],
+        ["18:00 - 20:00", "Tebet Eco Park", 4],
+        ["20:00 - 21:00", "Kembali Pool Kalibata", 5]
+    ],
+
+    cinangka: [
+        ["11:00 - 13:00", "Pasar Cinangka", 3],
+        ["13:00 - 15:00", "The Park Sawangan", 6],
+        ["15:00 - 18:00", "RS Permata Depok", 5],
+        ["18:00 - 20:00", "Parung Bingung Depok", 4],
+        ["20:00 - 21:00", "Kembali Pool Cinangka", 5]
     ]
+
 };
 
 function rupiah(x) {
@@ -40,14 +66,19 @@ function generatePlan() {
     let data = pools[pool];
 
     if (pool === "custom") {
+        let nama = custom.trim();
+        if (nama === "") {
+            nama = "Lokasi Custom";
+        }
+        /* Area universal yang benar-benar eksis di Google Maps */
         data = [
-            ["11:00 - 13:00", "Pusat Komersial Terdekat", 6],
-            ["13:00 - 16:00", "Mall / Rumah Sakit", 8],
-            ["16:00 - 19:00", "Area Komuter", 10],
-            ["19:00 - 21:00", "Kembali ke " + custom, 8]
+            ["11:00 - 13:00", "Pasar Modern BSD City", 7],
+            ["13:00 - 15:00", "RS Hermina", 6],
+            ["15:00 - 18:00", "Stasiun Terdekat", 8],
+            ["18:00 - 20:00", "Mall Terdekat", 7],
+            ["20:00 - 21:00", "Kembali ke " + nama, 8]
         ];
     }
-
     let total = 0;
     let html = "";
 
@@ -77,6 +108,17 @@ Buka Google Maps
 
     let liter = total / kmpl;
     let biaya = liter * fuel;
+
+    /* verifikasi link maps */
+    html = html.replaceAll(
+        "https://maps.google.com/?q=Stasiun Terdekat",
+        "https://maps.google.com/?q=Stasiun+KRL"
+    );
+
+    html = html.replaceAll(
+        "https://maps.google.com/?q=Mall Terdekat",
+        "https://maps.google.com/?q=Shopping+Mall"
+    );
 
     document.getElementById("timeline").innerHTML = html;
     document.getElementById("kmTotal").innerText = total + " km";
