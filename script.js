@@ -530,3 +530,76 @@ document
         clearTimeout(popupTimer);
 
     });
+
+
+/* =========================================
+LIVE MAP SYSTEM
+========================================= */
+
+let map = L.map("map").setView(
+    [-6.200000, 106.816666],
+    12
+);
+
+L.tileLayer(
+    "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+    {
+        attribution:
+            "&copy; OpenStreetMap Contributors"
+    }
+).addTo(map);
+
+let userMarker = null;
+let accuracyCircle = null;
+
+function initLiveGPS() {
+    if (!navigator.geolocation) {
+        alert("Browser tidak mendukung GPS");
+        return;
+    }
+    navigator.geolocation.watchPosition(
+        function (pos) {
+            const lat = pos.coords.latitude;
+            const lon = pos.coords.longitude;
+            const accuracy = pos.coords.accuracy;
+            /* center map */
+            map.setView([lat, lon], 15);
+            /* hapus marker lama */
+            if (userMarker) {
+                map.removeLayer(userMarker);
+            }
+            if (accuracyCircle) {
+                map.removeLayer(accuracyCircle);
+            }
+            /* marker user */
+            userMarker = L.marker([lat, lon])
+                .addTo(map)
+                .bindPopup(`
+                    <b>Lokasi Driver</b>
+                    <br>
+                    ${lat.toFixed(6)},
+                    ${lon.toFixed(6)}
+                    <br>
+                    Akurasi:
+                    ${Math.round(accuracy)} meter
+                `);
+            /* radius akurasi */
+            accuracyCircle = L.circle(
+                [lat, lon],
+                {
+                    radius: accuracy
+                }
+            ).addTo(map);
+        },
+        function (err) {
+            console.log(err);
+        },
+        {
+            enableHighAccuracy: true,
+            maximumAge: 0,
+            timeout: 15000
+        }
+    );
+}
+
+initLiveGPS();
