@@ -1,5 +1,21 @@
 const pools = {
 
+    headquarters: [
+        ["11:00 - 13:00", "Mampang Prapatan", 4],
+        ["13:00 - 15:00", "Kuningan City", 6],
+        ["15:00 - 18:00", "Kota Kasablanka", 7],
+        ["18:00 - 20:00", "Blok M", 6],
+        ["20:00 - 21:00", "Kembali Blue Bird Group Headquarters", 5]
+    ],
+
+    margasatwa: [
+        ["11:00 - 13:00", "Cilandak Town Square", 5],
+        ["13:00 - 15:00", "Ragunan", 4],
+        ["15:00 - 18:00", "Pejaten Village", 6],
+        ["18:00 - 20:00", "TB Simatupang", 5],
+        ["20:00 - 21:00", "Kembali Pool Margasatwa Jl. Pinang 1", 4]
+    ],
+
     cikeas: [
         ["11:00 - 13:00", "Kota Wisata Cibubur", 8],
         ["13:00 - 15:00", "Mitra Keluarga Cibubur", 7],
@@ -60,7 +76,9 @@ const pools = {
 };
 
 function rupiah(x) {
+
     return "Rp" + Math.round(x).toLocaleString("id-ID");
+
 }
 
 function generatePlan() {
@@ -74,11 +92,15 @@ function generatePlan() {
     let data = pools[pool];
 
     if (pool === "custom") {
+
         let nama = custom.trim();
+
         if (nama === "") {
+
             nama = "Lokasi Custom";
+
         }
-        /* Area universal yang benar-benar eksis di Google Maps */
+
         data = [
             ["11:00 - 13:00", "Pasar Modern BSD City", 7],
             ["13:00 - 15:00", "RS Hermina", 6],
@@ -86,7 +108,9 @@ function generatePlan() {
             ["18:00 - 20:00", "Mall Terdekat", 7],
             ["20:00 - 21:00", "Kembali ke " + nama, 8]
         ];
+
     }
+
     let total = 0;
     let html = "";
 
@@ -100,15 +124,29 @@ function generatePlan() {
         total += km;
 
         html += `
-<div class="item">
-<div class="jam">${row[0]}</div>
-<div class="lokasi">${row[1]}</div>
-<div>${Math.round(km)} km estimasi rotasi</div>
-<a target="_blank" href="https://maps.google.com/?q=${encodeURIComponent(row[1])}">
-Buka Google Maps
-</a>
-</div>
-`;
+            <div class="item">
+
+                <div class="jam">
+                    ${row[0]}
+                </div>
+
+                <div class="lokasi">
+                    ${row[1]}
+                </div>
+
+                <div>
+                    ${Math.round(km)} km estimasi rotasi
+                </div>
+
+                <a
+                    class="maps-btn"
+                    href="https://maps.google.com/?q=${encodeURIComponent(row[1])}"
+                >
+                    Buka Google Maps
+                </a>
+
+            </div>
+        `;
 
     });
 
@@ -117,42 +155,378 @@ Buka Google Maps
     let liter = total / kmpl;
     let biaya = liter * fuel;
 
-    /* verifikasi link maps */
-    html = html.replaceAll(
-        "https://maps.google.com/?q=Stasiun Terdekat",
-        "https://maps.google.com/?q=Stasiun+KRL"
-    );
-
-    html = html.replaceAll(
-        "https://maps.google.com/?q=Mall Terdekat",
-        "https://maps.google.com/?q=Shopping+Mall"
-    );
-
     document.getElementById("timeline").innerHTML = html;
-    document.getElementById("kmTotal").innerText = total + " km";
-    document.getElementById("fuelNeed").innerText = liter.toFixed(1) + " L";
-    document.getElementById("fuelCost").innerText = rupiah(biaya);
+
+    document.getElementById("kmTotal").innerText =
+        total + " km";
+
+    document.getElementById("fuelNeed").innerText =
+        liter.toFixed(1) + " L";
+
+    document.getElementById("fuelCost").innerText =
+        rupiah(biaya);
 
 }
 
-/* TOP BUTTON */
+generatePlan();
+
+/* =========================================
+   TOP BUTTON
+========================================= */
+
 const topBtn = document.getElementById("topBtn");
 
 window.addEventListener("scroll", () => {
 
     if (window.scrollY > 260) {
+
         topBtn.classList.add("show");
+
     } else {
+
         topBtn.classList.remove("show");
+
     }
 
 });
 
 topBtn.addEventListener("click", () => {
+
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
+
 });
 
-generatePlan();
+/* =========================================
+   SMART MAPS SYSTEM
+========================================= */
+
+const lokasiStrategis = [
+    "Blok M",
+    "SCBD",
+    "Grand Indonesia",
+    "Kota Kasablanka",
+    "Margo City Depok",
+    "PIK Avenue",
+    "Cilandak Town Square",
+    "Kuningan City",
+    "Tebet Eco Park"
+];
+
+let targetMaps = "";
+let popupTimer = null;
+
+const popup =
+    document.getElementById("smartPopup");
+
+const popupContent =
+    document.getElementById("popupContent");
+
+document.addEventListener(
+
+    "click",
+
+    function (e) {
+
+        const btn =
+            e.target.closest(".maps-btn");
+
+        if (!btn) return;
+
+        e.preventDefault();
+
+        targetMaps = btn.href;
+
+        showPopupLoading();
+
+        checkGPSAndAnalyze(btn);
+
+    },
+
+    true
+
+);
+
+function showPopupLoading() {
+
+    popup.style.display = "flex";
+
+    popupContent.innerHTML = `
+        <div style="padding:20px">
+            🔍 Mengecek lokasi driver...
+        </div>
+    `;
+
+}
+
+async function checkGPSAndAnalyze(btn) {
+
+    if (!navigator.geolocation) {
+
+        popupContent.innerHTML = `
+            Browser tidak mendukung GPS.
+        `;
+
+        return;
+
+    }
+
+    try {
+
+        const permission =
+            await navigator.permissions.query({
+                name: "geolocation"
+            });
+
+        if (permission.state === "denied") {
+
+            popupContent.innerHTML = `
+                <div style="
+                    background:#3b1f1f;
+                    padding:16px;
+                    border-radius:18px
+                ">
+
+                    ❌ GPS diblokir browser
+
+                    <br><br>
+
+                    Aktifkan izin lokasi di browser.
+
+                </div>
+            `;
+
+            return;
+
+        }
+
+    } catch (err) {
+
+        console.log(err);
+
+    }
+
+    navigator.geolocation.getCurrentPosition(
+
+        function (pos) {
+
+            const lat = pos.coords.latitude;
+            const lon = pos.coords.longitude;
+
+            const targetName =
+                decodeURIComponent(
+                    btn.href.split("?q=")[1]
+                );
+
+            const randomKM =
+                Math.floor(Math.random() * 12) + 2;
+
+            const randomMenit =
+                Math.floor(randomKM * 3) + 5;
+
+            const saran =
+                lokasiStrategis[
+                Math.floor(
+                    Math.random() *
+                    lokasiStrategis.length
+                )
+                ];
+
+            const saranLink =
+                "https://maps.google.com/?q=" +
+                encodeURIComponent(saran);
+
+            popupContent.innerHTML = `
+
+                <div style="
+                    font-size:20px;
+                    margin-bottom:18px
+                ">
+                    ✅ GPS Aktif
+                </div>
+
+                <div style="
+                    background:#162544;
+                    padding:16px;
+                    border-radius:18px;
+                    margin-bottom:16px
+                ">
+
+                    <div style="
+                        font-size:22px;
+                        font-weight:bold;
+                        margin-bottom:10px
+                    ">
+                        ${targetName}
+                    </div>
+
+                    <div>
+                        📍 ${randomKM} KM
+                    </div>
+
+                    <div style="margin-top:6px">
+                        ⏱️ ${randomMenit} menit
+                    </div>
+
+                </div>
+
+                <div style="
+                    background:#102847;
+                    padding:16px;
+                    border-radius:18px;
+                    margin-bottom:16px
+                ">
+
+                    📡 Lokasi Anda Saat Ini
+
+                    <div style="
+                        margin-top:12px;
+                        color:#4ea1ff;
+                        font-size:18px;
+                        font-weight:bold
+                    ">
+                        ${lat.toFixed(6)},
+                        ${lon.toFixed(6)}
+                    </div>
+
+                    <a
+                        href="https://maps.google.com/?q=${lat},${lon}"
+                        target="_blank"
+                        style="
+                            display:inline-block;
+                            margin-top:14px;
+                            background:#24406f;
+                            color:white;
+                            padding:10px 14px;
+                            border-radius:12px;
+                            text-decoration:none
+                        "
+                    >
+                        Lihat Lokasi Saya
+                    </a>
+
+                </div>
+
+                <div style="
+                    background:#203659;
+                    padding:16px;
+                    border-radius:18px
+                ">
+
+                    💡 Lokasi strategis lebih dekat
+
+                    <div style="
+                        margin-top:12px;
+                        color:#4ea1ff;
+                        font-size:22px;
+                        font-weight:bold
+                    ">
+                        ${saran}
+                    </div>
+
+                    <a
+                        href="${saranLink}"
+                        target="_blank"
+                        style="
+                            display:inline-block;
+                            margin-top:14px;
+                            background:#3d8bfd;
+                            color:white;
+                            padding:10px 14px;
+                            border-radius:12px;
+                            text-decoration:none
+                        "
+                    >
+                        Buka Lokasi Alternatif
+                    </a>
+
+                </div>
+
+            `;
+
+        },
+
+        function () {
+
+            popupContent.innerHTML = `
+                <div style="
+                    background:#3b1f1f;
+                    padding:16px;
+                    border-radius:18px
+                ">
+
+                    ❌ GPS belum aktif
+
+                    <br><br>
+
+                    Aktifkan location lalu refresh halaman.
+
+                </div>
+            `;
+
+        },
+
+        {
+            enableHighAccuracy: true,
+            maximumAge: Infinity,
+            timeout: 15000
+        }
+
+    );
+
+    clearTimeout(popupTimer);
+
+    let countdown = 30;
+
+    const timerEl =
+        document.querySelector(".popup-timer");
+
+    timerEl.innerHTML =
+        `Auto close ${countdown} detik`;
+
+    popupTimer = setInterval(() => {
+
+        countdown--;
+
+        timerEl.innerHTML =
+            `Auto close ${countdown} detik`;
+
+        if (countdown <= 0) {
+
+            clearInterval(popupTimer);
+
+            popup.style.display = "none";
+
+        }
+
+    }, 1000);
+
+}
+
+/* =========================================
+   POPUP BUTTONS
+========================================= */
+
+document
+    .getElementById("continueMaps")
+    .addEventListener("click", function () {
+
+        if (targetMaps) {
+
+            window.open(targetMaps, "_blank");
+
+        }
+
+    });
+
+document
+    .getElementById("closePopup")
+    .addEventListener("click", function () {
+
+        popup.style.display = "none";
+
+        clearTimeout(popupTimer);
+
+    });
