@@ -138,13 +138,10 @@ function generatePlan() {
                     ${Math.round(km)} km estimasi rotasi
                 </div>
 
-                <a
-                    class="maps-btn"
-                    href="https://maps.google.com/?q=${encodeURIComponent(row[1])}"
-                >
-                    Buka Google Maps
-                </a>
-
+                <a class="maps-btn" href="https://maps.google.com/?q=${encodeURIComponent(row[1])}">Buka Google Maps</a>
+                <button class="route-btn" data-target="${row[1]}">
+                    Tampilkan Route Nyata
+                </button>
             </div>
         `;
 
@@ -603,3 +600,136 @@ function initLiveGPS() {
 }
 
 initLiveGPS();
+
+
+/* =========================================
+   REAL ROUTE BUTTON
+========================================= */
+
+let routingControl = null;
+
+document.addEventListener(
+
+    "click",
+
+    async function (e) {
+
+        const btn =
+            e.target.closest(".route-btn");
+
+        if (!btn) return;
+
+        const targetName =
+            btn.dataset.target;
+
+        navigator.geolocation.getCurrentPosition(
+
+            async function (pos) {
+
+                const userLat =
+                    pos.coords.latitude;
+
+                const userLon =
+                    pos.coords.longitude;
+
+                /* geocoding target */
+
+                const geoUrl =
+                    "https://nominatim.openstreetmap.org/search?format=json&q=" +
+                    encodeURIComponent(targetName);
+
+                const geoRes =
+                    await fetch(geoUrl);
+
+                const geoData =
+                    await geoRes.json();
+
+                if (!geoData.length) {
+
+                    alert(
+                        "Lokasi tidak ditemukan"
+                    );
+
+                    return;
+
+                }
+
+                const targetLat =
+                    parseFloat(geoData[0].lat);
+
+                const targetLon =
+                    parseFloat(geoData[0].lon);
+
+                /* hapus route lama */
+
+                if (routingControl) {
+
+                    map.removeControl(
+                        routingControl
+                    );
+
+                }
+
+                /* bikin route nyata */
+
+                routingControl =
+                    L.Routing.control({
+
+                        waypoints: [
+
+                            L.latLng(
+                                userLat,
+                                userLon
+                            ),
+
+                            L.latLng(
+                                targetLat,
+                                targetLon
+                            )
+
+                        ],
+
+                        routeWhileDragging: false,
+
+                        addWaypoints: false,
+
+                        draggableWaypoints: false,
+
+                        show: false,
+
+                        lineOptions: {
+
+                            styles: [
+                                {
+                                    color: "#3d8bfd",
+                                    weight: 7,
+                                    opacity: .85
+                                }
+                            ]
+
+                        }
+
+                    }).addTo(map);
+
+                map.fitBounds([
+                    [userLat, userLon],
+                    [targetLat, targetLon]
+                ]);
+
+            },
+
+            function (err) {
+
+                console.log(err);
+
+            },
+
+            {
+                enableHighAccuracy: true
+            }
+
+        );
+
+    }
+
+);
