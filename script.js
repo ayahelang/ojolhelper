@@ -419,7 +419,7 @@ async function checkGPSAndAnalyze(btn) {
         }
     );
 
-    clearTimeout(popupTimer);
+    clearInterval(popupTimer);
 
     let countdown = 30;
 
@@ -455,7 +455,7 @@ document
     .getElementById("closePopup")
     .addEventListener("click", function () {
         popup.style.display = "none";
-        clearTimeout(popupTimer);
+        clearInterval(popupTimer);
     });
 
 
@@ -543,6 +543,9 @@ document.addEventListener(
         e.preventDefault();
         const targetName =
             btn.dataset.target;
+        targetMaps =
+            "https://maps.google.com/?q=" +
+            encodeURIComponent(targetName);
         /* tampil popup loading */
         popup.style.display = "flex";
         startPopupCountdown();
@@ -747,7 +750,7 @@ document.addEventListener(
             - GPS laptop kurang akurat
         </div>
     `;
-                clearTimeout(popupTimer);
+                clearInterval(popupTimer);
             },
             {
                 enableHighAccuracy: true,
