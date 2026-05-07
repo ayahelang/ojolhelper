@@ -75,30 +75,42 @@ const pools = {
 
 };
 
+/* =========================================
+   POPUP COUNTDOWN
+========================================= */
+function startPopupCountdown() {
+    clearInterval(popupTimer);
+    let countdown = 30;
+    const timerEl =
+        document.querySelector(".popup-timer");
+    timerEl.innerHTML =
+        `Auto close ${countdown} detik`;
+    popupTimer = setInterval(() => {
+        countdown--;
+        timerEl.innerHTML =
+            `Auto close ${countdown} detik`;
+        if (countdown <= 0) {
+            clearInterval(popupTimer);
+            popup.style.display = "none";
+        }
+    }, 1000);
+}
+
 function rupiah(x) {
-
     return "Rp" + Math.round(x).toLocaleString("id-ID");
-
 }
 
 function generatePlan() {
-
     let pool = document.getElementById("pool").value;
     let custom = document.getElementById("customPool").value;
     let kmpl = parseFloat(document.getElementById("kmpl").value);
     let fuel = parseFloat(document.getElementById("fuel").value);
     let mode = document.getElementById("mode").value;
-
     let data = pools[pool];
-
     if (pool === "custom") {
-
         let nama = custom.trim();
-
         if (nama === "") {
-
             nama = "Lokasi Custom";
-
         }
 
         data = [
@@ -108,21 +120,16 @@ function generatePlan() {
             ["18:00 - 20:00", "Mall Terdekat", 7],
             ["20:00 - 21:00", "Kembali ke " + nama, 8]
         ];
-
     }
 
     let total = 0;
     let html = "";
 
     data.forEach(row => {
-
         let km = row[2];
-
         if (mode === "hemat") km *= 0.8;
         if (mode === "agresif") km *= 1.25;
-
         total += km;
-
         html += `
             <div class="item">
 
@@ -144,11 +151,9 @@ function generatePlan() {
                 </button>
             </div>
         `;
-
     });
 
     total = Math.round(total * 1.25);
-
     let liter = total / kmpl;
     let biaya = liter * fuel;
 
@@ -162,7 +167,6 @@ function generatePlan() {
 
     document.getElementById("fuelCost").innerText =
         rupiah(biaya);
-
 }
 
 generatePlan();
@@ -170,36 +174,25 @@ generatePlan();
 /* =========================================
    TOP BUTTON
 ========================================= */
-
 const topBtn = document.getElementById("topBtn");
-
 window.addEventListener("scroll", () => {
-
     if (window.scrollY > 260) {
-
         topBtn.classList.add("show");
-
     } else {
-
         topBtn.classList.remove("show");
-
     }
-
 });
 
 topBtn.addEventListener("click", () => {
-
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
-
 });
 
 /* =========================================
    SMART MAPS SYSTEM
 ========================================= */
-
 const lokasiStrategis = [
     "Blok M",
     "SCBD",
@@ -226,103 +219,71 @@ document.addEventListener(
     "click",
 
     function (e) {
-
         const btn =
             e.target.closest(".maps-btn");
-
         if (!btn) return;
-
         e.preventDefault();
-
         targetMaps = btn.href;
-
         showPopupLoading();
-
         checkGPSAndAnalyze(btn);
-
     },
-
     true
-
 );
 
 function showPopupLoading() {
-
     popup.style.display = "flex";
-
     popupContent.innerHTML = `
         <div style="padding:20px">
             🔍 Mengecek lokasi driver...
         </div>
     `;
-
 }
 
 async function checkGPSAndAnalyze(btn) {
-
     if (!navigator.geolocation) {
-
         popupContent.innerHTML = `
             Browser tidak mendukung GPS.
         `;
-
         return;
-
     }
 
     try {
-
         const permission =
             await navigator.permissions.query({
                 name: "geolocation"
             });
-
         if (permission.state === "denied") {
-
             popupContent.innerHTML = `
                 <div style="
                     background:#3b1f1f;
                     padding:16px;
                     border-radius:18px
                 ">
-
                     ❌ GPS diblokir browser
-
                     <br><br>
-
                     Aktifkan izin lokasi di browser.
-
                 </div>
             `;
-
             return;
-
         }
 
     } catch (err) {
-
         console.log(err);
-
     }
 
     navigator.geolocation.getCurrentPosition(
 
         function (pos) {
-
             const lat = pos.coords.latitude;
             const lon = pos.coords.longitude;
-
             const targetName =
                 decodeURIComponent(
                     btn.href.split("?q=")[1]
                 );
-
             const randomKM =
                 Math.floor(Math.random() * 12) + 2;
-
             const randomMenit =
                 Math.floor(randomKM * 3) + 5;
-
             const saran =
                 lokasiStrategis[
                 Math.floor(
@@ -334,7 +295,6 @@ async function checkGPSAndAnalyze(btn) {
             const saranLink =
                 "https://maps.google.com/?q=" +
                 encodeURIComponent(saran);
-
             popupContent.innerHTML = `
 
                 <div style="
@@ -403,7 +363,6 @@ async function checkGPSAndAnalyze(btn) {
                     >
                         Lihat Lokasi Saya
                     </a>
-
                 </div>
 
                 <div style="
@@ -411,9 +370,7 @@ async function checkGPSAndAnalyze(btn) {
                     padding:16px;
                     border-radius:18px
                 ">
-
                     💡 Lokasi strategis lebih dekat
-
                     <div style="
                         margin-top:12px;
                         color:#4ea1ff;
@@ -422,7 +379,6 @@ async function checkGPSAndAnalyze(btn) {
                     ">
                         ${saran}
                     </div>
-
                     <a
                         href="${saranLink}"
                         target="_blank"
@@ -438,31 +394,22 @@ async function checkGPSAndAnalyze(btn) {
                     >
                         Buka Lokasi Alternatif
                     </a>
-
                 </div>
-
             `;
-
         },
 
         function () {
-
             popupContent.innerHTML = `
                 <div style="
                     background:#3b1f1f;
                     padding:16px;
                     border-radius:18px
                 ">
-
                     ❌ GPS belum aktif
-
                     <br><br>
-
                     Aktifkan location lalu refresh halaman.
-
                 </div>
             `;
-
         },
 
         {
@@ -470,7 +417,6 @@ async function checkGPSAndAnalyze(btn) {
             maximumAge: Infinity,
             timeout: 15000
         }
-
     );
 
     clearTimeout(popupTimer);
@@ -484,55 +430,38 @@ async function checkGPSAndAnalyze(btn) {
         `Auto close ${countdown} detik`;
 
     popupTimer = setInterval(() => {
-
         countdown--;
-
         timerEl.innerHTML =
             `Auto close ${countdown} detik`;
-
         if (countdown <= 0) {
-
             clearInterval(popupTimer);
-
             popup.style.display = "none";
-
         }
-
     }, 1000);
-
 }
 
 /* =========================================
    POPUP BUTTONS
 ========================================= */
-
 document
     .getElementById("continueMaps")
     .addEventListener("click", function () {
-
         if (targetMaps) {
-
             window.open(targetMaps, "_blank");
-
         }
-
     });
 
 document
     .getElementById("closePopup")
     .addEventListener("click", function () {
-
         popup.style.display = "none";
-
         clearTimeout(popupTimer);
-
     });
 
 
 /* =========================================
 LIVE MAP SYSTEM
 ========================================= */
-
 let map = L.map("map").setView(
     [-6.200000, 106.816666],
     12
@@ -601,52 +530,37 @@ function initLiveGPS() {
 
 initLiveGPS();
 
-
 /* =========================================
    REAL ROUTE BUTTON PRO
 ========================================= */
-
 let routingControl = null;
-
 document.addEventListener(
-
     "click",
-
     async function (e) {
-
         const btn =
             e.target.closest(".route-btn");
-
         if (!btn) return;
-
         e.preventDefault();
-
         const targetName =
             btn.dataset.target;
-
         /* tampil popup loading */
-
         popup.style.display = "flex";
-
+        startPopupCountdown();
         popupContent.innerHTML = `
-
             <div style="
                 font-size:22px;
                 margin-bottom:20px
             ">
                 🚖 Menyiapkan Route
             </div>
-
             <div style="
                 background:#162544;
                 padding:18px;
                 border-radius:18px
             ">
-
                 <div id="routeLoadingText">
                     📡 Membaca GPS driver...
                 </div>
-
                 <div style="
                     margin-top:16px;
                     width:100%;
@@ -655,7 +569,6 @@ document.addEventListener(
                     border-radius:999px;
                     overflow:hidden
                 ">
-
                     <div id="routeLoadingBar"
                         style="
                         width:15%;
@@ -664,11 +577,8 @@ document.addEventListener(
                         transition:.4s;
                     ">
                     </div>
-
                 </div>
-
             </div>
-
         `;
 
         const loadingText =
@@ -682,40 +592,28 @@ document.addEventListener(
             );
 
         navigator.geolocation.getCurrentPosition(
-
             async function (pos) {
-
                 loadingText.innerHTML =
                     "🗺️ Mencari lokasi tujuan...";
-
                 loadingBar.style.width = "45%";
-
                 const userLat =
                     pos.coords.latitude;
-
                 const userLon =
                     pos.coords.longitude;
 
                 /* geocoding */
-
                 const geoUrl =
                     "https://nominatim.openstreetmap.org/search?format=json&q=" +
                     encodeURIComponent(targetName);
-
                 const geoRes =
                     await fetch(geoUrl);
-
                 const geoData =
                     await geoRes.json();
-
                 if (!geoData.length) {
-
                     popupContent.innerHTML = `
                         ❌ Lokasi tidak ditemukan
                     `;
-
                     return;
-
                 }
 
                 loadingText.innerHTML =
@@ -730,46 +628,31 @@ document.addEventListener(
                     parseFloat(geoData[0].lon);
 
                 /* hapus route lama */
-
                 if (routingControl) {
-
                     map.removeControl(
                         routingControl
                     );
-
                 }
 
                 /* route */
-
                 routingControl =
                     L.Routing.control({
-
                         waypoints: [
-
                             L.latLng(
                                 userLat,
                                 userLon
                             ),
-
                             L.latLng(
                                 targetLat,
                                 targetLon
                             )
-
                         ],
-
                         routeWhileDragging: false,
-
                         draggableWaypoints: false,
-
                         addWaypoints: false,
-
                         show: false,
-
                         fitSelectedRoutes: true,
-
                         lineOptions: {
-
                             styles: [
                                 {
                                     color: "#3d8bfd",
@@ -777,32 +660,23 @@ document.addEventListener(
                                     opacity: .9
                                 }
                             ]
-
                         }
 
                     }).addTo(map);
 
                 /* route selesai */
-
                 routingControl.on(
-
                     "routesfound",
-
                     function (e) {
-
                         loadingBar.style.width =
                             "100%";
-
                         const route =
                             e.routes[0];
-
                         const km =
                             (
                                 route.summary.totalDistance / 1000
                             ).toFixed(1);
-
                         const avgSpeed = 40;
-
                         const menit =
                             Math.ceil(
                                 (
@@ -810,9 +684,7 @@ document.addEventListener(
                                     avgSpeed
                                 ) * 60
                             );
-
                         popupContent.innerHTML = `
-
                             <div style="
                                 font-size:24px;
                                 margin-bottom:18px
@@ -826,7 +698,6 @@ document.addEventListener(
                                 border-radius:18px;
                                 margin-bottom:16px
                             ">
-
                                 <div style="
                                     font-size:22px;
                                     font-weight:bold;
@@ -834,54 +705,39 @@ document.addEventListener(
                                 ">
                                     ${targetName}
                                 </div>
-
                                 <div>
                                     📍 ${km} KM
                                 </div>
-
                                 <div style="
                                     margin-top:8px
                                 ">
                                     ⏱️ ${menit} menit
                                 </div>
-
                             </div>
-
                             <div style="
                                 background:#102847;
                                 padding:16px;
                                 border-radius:18px
                             ">
-
                                 🚖 Route mengikuti
                                 jalan mobil nyata
 
                             </div>
-
                         `;
-
                     }
-
                 );
-
             },
 
             function (err) {
-
                 console.log(err);
-
                 popupContent.innerHTML = `
-
         <div style="
             background:#3b1f1f;
             padding:18px;
             border-radius:18px
         ">
-
             ❌ GPS gagal dibaca
-
             <br><br>
-
             Kemungkinan karena:
             <br>
             - masih memakai file://
@@ -889,23 +745,15 @@ document.addEventListener(
             - izin browser belum stabil
             <br>
             - GPS laptop kurang akurat
-
         </div>
-
     `;
-
                 clearTimeout(popupTimer);
-
             },
-
             {
                 enableHighAccuracy: true,
                 maximumAge: 0,
                 timeout: 15000
             }
-
         );
-
     }
-
 );
