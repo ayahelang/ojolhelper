@@ -293,3 +293,12 @@ footer a:hover {
     overflow: hidden;
     margin-top: 12px;
 }
+
+.popup-buttons {
+    position: relative;
+    z-index: 9999999;
+}
+
+.popup-buttons button {
+    pointer-events: auto;
+}

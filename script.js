@@ -872,17 +872,29 @@ document.addEventListener(
 
                 popupContent.innerHTML = `
 
-                    <div style="
-                        background:#3b1f1f;
-                        padding:18px;
-                        border-radius:18px
-                    ">
+        <div style="
+            background:#3b1f1f;
+            padding:18px;
+            border-radius:18px
+        ">
 
-                        ❌ GPS gagal dibaca
+            ❌ GPS gagal dibaca
 
-                    </div>
+            <br><br>
 
-                `;
+            Kemungkinan karena:
+            <br>
+            - masih memakai file://
+            <br>
+            - izin browser belum stabil
+            <br>
+            - GPS laptop kurang akurat
+
+        </div>
+
+    `;
+
+                clearTimeout(popupTimer);
 
             },
 
