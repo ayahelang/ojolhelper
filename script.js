@@ -603,7 +603,7 @@ initLiveGPS();
 
 
 /* =========================================
-   REAL ROUTE BUTTON
+   REAL ROUTE BUTTON PRO
 ========================================= */
 
 let routingControl = null;
@@ -619,12 +619,76 @@ document.addEventListener(
 
         if (!btn) return;
 
+        e.preventDefault();
+
         const targetName =
             btn.dataset.target;
+
+        /* tampil popup loading */
+
+        popup.style.display = "flex";
+
+        popupContent.innerHTML = `
+
+            <div style="
+                font-size:22px;
+                margin-bottom:20px
+            ">
+                🚖 Menyiapkan Route
+            </div>
+
+            <div style="
+                background:#162544;
+                padding:18px;
+                border-radius:18px
+            ">
+
+                <div id="routeLoadingText">
+                    📡 Membaca GPS driver...
+                </div>
+
+                <div style="
+                    margin-top:16px;
+                    width:100%;
+                    height:10px;
+                    background:#0d1728;
+                    border-radius:999px;
+                    overflow:hidden
+                ">
+
+                    <div id="routeLoadingBar"
+                        style="
+                        width:15%;
+                        height:100%;
+                        background:#3d8bfd;
+                        transition:.4s;
+                    ">
+                    </div>
+
+                </div>
+
+            </div>
+
+        `;
+
+        const loadingText =
+            document.getElementById(
+                "routeLoadingText"
+            );
+
+        const loadingBar =
+            document.getElementById(
+                "routeLoadingBar"
+            );
 
         navigator.geolocation.getCurrentPosition(
 
             async function (pos) {
+
+                loadingText.innerHTML =
+                    "🗺️ Mencari lokasi tujuan...";
+
+                loadingBar.style.width = "45%";
 
                 const userLat =
                     pos.coords.latitude;
@@ -632,7 +696,7 @@ document.addEventListener(
                 const userLon =
                     pos.coords.longitude;
 
-                /* geocoding target */
+                /* geocoding */
 
                 const geoUrl =
                     "https://nominatim.openstreetmap.org/search?format=json&q=" +
@@ -646,13 +710,18 @@ document.addEventListener(
 
                 if (!geoData.length) {
 
-                    alert(
-                        "Lokasi tidak ditemukan"
-                    );
+                    popupContent.innerHTML = `
+                        ❌ Lokasi tidak ditemukan
+                    `;
 
                     return;
 
                 }
+
+                loadingText.innerHTML =
+                    "🚦 Menghitung route jalan nyata...";
+
+                loadingBar.style.width = "75%";
 
                 const targetLat =
                     parseFloat(geoData[0].lat);
@@ -670,7 +739,7 @@ document.addEventListener(
 
                 }
 
-                /* bikin route nyata */
+                /* route */
 
                 routingControl =
                     L.Routing.control({
@@ -691,11 +760,13 @@ document.addEventListener(
 
                         routeWhileDragging: false,
 
-                        addWaypoints: false,
-
                         draggableWaypoints: false,
 
+                        addWaypoints: false,
+
                         show: false,
+
+                        fitSelectedRoutes: true,
 
                         lineOptions: {
 
@@ -703,7 +774,7 @@ document.addEventListener(
                                 {
                                     color: "#3d8bfd",
                                     weight: 7,
-                                    opacity: .85
+                                    opacity: .9
                                 }
                             ]
 
@@ -711,10 +782,87 @@ document.addEventListener(
 
                     }).addTo(map);
 
-                map.fitBounds([
-                    [userLat, userLon],
-                    [targetLat, targetLon]
-                ]);
+                /* route selesai */
+
+                routingControl.on(
+
+                    "routesfound",
+
+                    function (e) {
+
+                        loadingBar.style.width =
+                            "100%";
+
+                        const route =
+                            e.routes[0];
+
+                        const km =
+                            (
+                                route.summary.totalDistance / 1000
+                            ).toFixed(1);
+
+                        const avgSpeed = 40;
+
+                        const menit =
+                            Math.ceil(
+                                (
+                                    parseFloat(km) /
+                                    avgSpeed
+                                ) * 60
+                            );
+
+                        popupContent.innerHTML = `
+
+                            <div style="
+                                font-size:24px;
+                                margin-bottom:18px
+                            ">
+                                ✅ Route Siap
+                            </div>
+
+                            <div style="
+                                background:#162544;
+                                padding:18px;
+                                border-radius:18px;
+                                margin-bottom:16px
+                            ">
+
+                                <div style="
+                                    font-size:22px;
+                                    font-weight:bold;
+                                    margin-bottom:12px
+                                ">
+                                    ${targetName}
+                                </div>
+
+                                <div>
+                                    📍 ${km} KM
+                                </div>
+
+                                <div style="
+                                    margin-top:8px
+                                ">
+                                    ⏱️ ${menit} menit
+                                </div>
+
+                            </div>
+
+                            <div style="
+                                background:#102847;
+                                padding:16px;
+                                border-radius:18px
+                            ">
+
+                                🚖 Route mengikuti
+                                jalan mobil nyata
+
+                            </div>
+
+                        `;
+
+                    }
+
+                );
 
             },
 
@@ -722,10 +870,26 @@ document.addEventListener(
 
                 console.log(err);
 
+                popupContent.innerHTML = `
+
+                    <div style="
+                        background:#3b1f1f;
+                        padding:18px;
+                        border-radius:18px
+                    ">
+
+                        ❌ GPS gagal dibaca
+
+                    </div>
+
+                `;
+
             },
 
             {
-                enableHighAccuracy: true
+                enableHighAccuracy: true,
+                maximumAge: 0,
+                timeout: 15000
             }
 
         );
