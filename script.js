@@ -446,9 +446,15 @@ async function checkGPSAndAnalyze(btn) {
 document
     .getElementById("continueMaps")
     .addEventListener("click", function () {
-        if (targetMaps) {
-            window.open(targetMaps, "_blank");
-        }
+
+        popup.style.display = "none";
+
+        document
+            .getElementById("map")
+            .scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
     });
 
 document
@@ -548,7 +554,6 @@ document.addEventListener(
             encodeURIComponent(targetName);
         /* tampil popup loading */
         popup.style.display = "flex";
-        startPopupCountdown();
         popupContent.innerHTML = `
             <div style="
                 font-size:22px;
@@ -727,6 +732,7 @@ document.addEventListener(
 
                             </div>
                         `;
+                        startPopupCountdown();
                     }
                 );
             },
@@ -751,6 +757,7 @@ document.addEventListener(
         </div>
     `;
                 // clearInterval(popupTimer);
+                startPopupCountdown();
             },
             {
                 enableHighAccuracy: true,
