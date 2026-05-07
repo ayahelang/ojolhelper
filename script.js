@@ -750,7 +750,7 @@ document.addEventListener(
             - GPS laptop kurang akurat
         </div>
     `;
-                clearInterval(popupTimer);
+                // clearInterval(popupTimer);
             },
             {
                 enableHighAccuracy: true,
