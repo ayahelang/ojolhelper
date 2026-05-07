@@ -25,6 +25,14 @@ const pools = {
         ["20:00 - 21:00", "Kembali Pool Cimanggis", 8]
     ],
 
+    siliwangi: [
+        ["11:00 - 13:00", "Margo City Depok", 5],
+        ["13:00 - 15:00", "ITC Depok", 3],
+        ["15:00 - 18:00", "Stasiun Depok Baru", 4],
+        ["18:00 - 20:00", "D'Mall Depok", 3],
+        ["20:00 - 21:00", "Kembali Pool Siliwangi Depok", 5]
+    ],
+
     ciputat: [
         ["11:00 - 13:00", "Pasar Ciputat", 4],
         ["13:00 - 15:00", "UIN Syarif Hidayatullah Jakarta", 3],
