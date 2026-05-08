@@ -302,3 +302,21 @@ footer a:hover {
 .popup-buttons button {
     pointer-events: auto;
 }
+
+.car-marker {
+    background: none;
+    border: none;
+}
+
+#carIconRotate {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    transition:
+        transform .35s linear;
+    filter:
+        drop-shadow(0 6px 10px rgba(0, 0, 0, .45));
+    will-change: transform;
+    user-select: none;
+    pointer-events: none;
+}

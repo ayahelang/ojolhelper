@@ -126,7 +126,15 @@ function generatePlan() {
     let html = "";
 
     data.forEach(row => {
-        let km = row[2];
+        const savedKM =
+            localStorage.getItem(
+                "route_" + row[1]
+            );
+
+        let km =
+            savedKM
+                ? parseFloat(savedKM)
+                : row[2];
         if (mode === "hemat") km *= 0.8;
         if (mode === "agresif") km *= 1.25;
         total += km;
@@ -419,25 +427,25 @@ async function checkGPSAndAnalyze(btn) {
         }
     );
 
-    clearInterval(popupTimer);
+    // clearInterval(popupTimer);
 
-    let countdown = 30;
+    // let countdown = 30;
 
-    const timerEl =
-        document.querySelector(".popup-timer");
+    // const timerEl =
+    //     document.querySelector(".popup-timer");
 
-    timerEl.innerHTML =
-        `Auto close ${countdown} detik`;
+    // timerEl.innerHTML =
+    //     `Auto close ${countdown} detik`;
 
-    popupTimer = setInterval(() => {
-        countdown--;
-        timerEl.innerHTML =
-            `Auto close ${countdown} detik`;
-        if (countdown <= 0) {
-            clearInterval(popupTimer);
-            popup.style.display = "none";
-        }
-    }, 1000);
+    // popupTimer = setInterval(() => {
+    //     countdown--;
+    //     timerEl.innerHTML =
+    //         `Auto close ${countdown} detik`;
+    //     if (countdown <= 0) {
+    //         clearInterval(popupTimer);
+    //         popup.style.display = "none";
+    //     }
+    // }, 1000);
 }
 
 /* =========================================
@@ -468,10 +476,9 @@ document
 /* =========================================
 LIVE MAP SYSTEM
 ========================================= */
-let map = L.map("map").setView(
-    [-6.200000, 106.816666],
-    12
-);
+let map = L.map("map", {
+    preferCanvas: true
+}).setView([-6.200000, 106.816666], 13);
 
 L.tileLayer(
     "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
@@ -482,6 +489,25 @@ L.tileLayer(
 ).addTo(map);
 
 let userMarker = null;
+let lastHeading = 0;
+
+const carIcon = L.divIcon({
+
+    className: "car-marker",
+
+    html: `
+        <img
+            src="assets/car-top.png"
+            id="carIconRotate"
+        >
+    `,
+
+    iconSize: [52, 52],
+
+    iconAnchor: [26, 26]
+
+});
+
 let accuracyCircle = null;
 
 function initLiveGPS() {
@@ -494,8 +520,20 @@ function initLiveGPS() {
             const lat = pos.coords.latitude;
             const lon = pos.coords.longitude;
             const accuracy = pos.coords.accuracy;
-            /* center map */
-            map.setView([lat, lon], 15);
+            const heading =
+                pos.coords.heading;
+
+            if (
+                heading !== null &&
+                !isNaN(heading)
+            ) {
+                lastHeading = heading;
+            }
+            /* center map sekali */
+            if (!window.mapInitialized) {
+                map.setView([lat, lon], 15);
+                window.mapInitialized = true;
+            }
             /* hapus marker lama */
             if (userMarker) {
                 map.removeLayer(userMarker);
@@ -504,17 +542,42 @@ function initLiveGPS() {
                 map.removeLayer(accuracyCircle);
             }
             /* marker user */
-            userMarker = L.marker([lat, lon])
+
+            userMarker = L.marker(
+                [lat, lon],
+                {
+                    icon: carIcon
+                }
+            )
                 .addTo(map)
                 .bindPopup(`
-                    <b>Lokasi Driver</b>
-                    <br>
-                    ${lat.toFixed(6)},
-                    ${lon.toFixed(6)}
-                    <br>
-                    Akurasi:
-                    ${Math.round(accuracy)} meter
-                `);
+                <b>Lokasi Driver</b>
+                <br>
+                ${lat.toFixed(6)},
+                ${lon.toFixed(6)}
+                <br>
+                Akurasi:
+                ${Math.round(accuracy)} meter
+            `);
+
+            /* rotasi icon mobil */
+
+            setTimeout(() => {
+
+                const car =
+                    document.getElementById(
+                        "carIconRotate"
+                    );
+
+                if (car) {
+
+                    car.style.transform =
+                        `rotate(${lastHeading}deg)`;
+
+                }
+
+            }, 50);
+
             /* radius akurasi */
             accuracyCircle = L.circle(
                 [lat, lon],
@@ -684,6 +747,11 @@ document.addEventListener(
                             (
                                 route.summary.totalDistance / 1000
                             ).toFixed(1);
+
+                        localStorage.setItem(
+                            "route_" + targetName,
+                            km
+                        );
                         const avgSpeed = 40;
                         const menit =
                             Math.ceil(
