@@ -142,20 +142,16 @@ button:hover {
 }
 
 @media(max-width:600px) {
-
     .brand h1 {
         font-size: 24px;
     }
-
     .card,
     .box {
         padding: 16px;
     }
-
     .item .lokasi {
         font-size: 16px;
     }
-
 }
 
 /* FOOTER */
@@ -279,7 +275,6 @@ footer a:hover {
         opacity: 0;
         transform: translateY(20px) scale(.95);
     }
-
     to {
         opacity: 1;
         transform: none;
@@ -319,4 +314,56 @@ footer a:hover {
     will-change: transform;
     user-select: none;
     pointer-events: none;
+}
+
+/* =========================================
+MODE SELECTOR
+========================================= */
+.mode-selector {
+    display: grid;
+    grid-template-columns:
+        repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.mode-card {
+    background: #132445;
+    border:
+        2px solid transparent;
+    border-radius: 24px;
+    padding: 22px;
+    cursor: pointer;
+    transition: .25s;
+    text-align: center;
+}
+
+.mode-card:hover {
+    transform: translateY(-4px);
+}
+
+.mode-card.active {
+    border-color: #4ea1ff;
+    background: #19345f;
+    box-shadow:
+        0 10px 25px rgba(78,
+            161,
+            255,
+            .25);
+}
+
+.mode-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.mode-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.mode-desc {
+    color: #9cb8e4;
+    font-size: 14px;
 }

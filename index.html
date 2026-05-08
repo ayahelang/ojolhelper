@@ -33,8 +33,34 @@
             <h2>Input Operasional</h2>
 
             <div class="grid">
+                <!-- MODE OPERASIONAL -->
+                <div class="mode-selector">
+                    <div class="mode-card active" data-mode="taxi">
+                        <div class="mode-icon">
+                            🚖
+                        </div>
+                        <div class="mode-title">
+                            Taxi Driver
+                        </div>
+                        <div class="mode-desc">
+                            Strategi operasional mobil
+                        </div>
+                    </div>
+                    <div class="mode-card" data-mode="motor">
+                        <div class="mode-icon">
+                            🏍️
+                        </div>
+                        <div class="mode-title">
+                            Ojek Online
+                        </div>
+                        <div class="mode-desc">
+                            Strategi operasional motor
+                        </div>
+                    </div>
+                </div>
+
                 <div>
-                    <label>Pilih Pool</label>
+                    <label id="poolLabel">Pilih Pool</label>
                     <select id="pool">
                         <option value="headquarters">Blue Bird Group Headquarters</option>
                         <option value="margasatwa">Blue Bird Pool Pondok Labu</option>

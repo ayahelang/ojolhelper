@@ -492,20 +492,27 @@ let userMarker = null;
 let lastHeading = 0;
 
 const carIcon = L.divIcon({
-
     className: "car-marker",
-
     html: `
         <img
             src="assets/car-top.png"
             id="carIconRotate"
         >
     `,
-
     iconSize: [52, 52],
-
     iconAnchor: [26, 26]
+});
 
+const motorIcon = L.divIcon({
+    className: "car-marker",
+    html: `
+        <img
+            src="assets/motor-top.png"
+            id="carIconRotate"
+        >
+    `,
+    iconSize: [46, 46],
+    iconAnchor: [23, 23]
 });
 
 let accuracyCircle = null;
@@ -546,7 +553,12 @@ function initLiveGPS() {
             userMarker = L.marker(
                 [lat, lon],
                 {
-                    icon: carIcon
+                    icon:
+                        operationMode === "motor"
+                            ?
+                            motorIcon
+                            :
+                            carIcon
                 }
             )
                 .addTo(map)
@@ -708,22 +720,49 @@ document.addEventListener(
                 /* route */
                 routingControl =
                     L.Routing.control({
+
+                        router: L.Routing.osrmv1({
+
+                            serviceUrl:
+
+                                operationMode === "motor"
+
+                                    ?
+
+                                    "https://router.project-osrm.org/route/v1/bike"
+
+                                    :
+
+                                    "https://router.project-osrm.org/route/v1/driving"
+
+                        }),
+
                         waypoints: [
+
                             L.latLng(
                                 userLat,
                                 userLon
                             ),
+
                             L.latLng(
                                 targetLat,
                                 targetLon
                             )
+
                         ],
+
                         routeWhileDragging: false,
+
                         draggableWaypoints: false,
+
                         addWaypoints: false,
+
                         show: false,
+
                         fitSelectedRoutes: true,
+
                         lineOptions: {
+
                             styles: [
                                 {
                                     color: "#3d8bfd",
@@ -731,6 +770,7 @@ document.addEventListener(
                                     opacity: .9
                                 }
                             ]
+
                         }
 
                     }).addTo(map);
@@ -795,7 +835,12 @@ document.addEventListener(
                                 padding:16px;
                                 border-radius:18px
                             ">
-                                🚖 Route mengikuti
+                                ${operationMode === "motor"
+                                ?
+                                "🏍️ Route mengikuti jalur motor"
+                                :
+                                "🚖 Route mengikuti jalan mobil nyata"
+                            }
                                 jalan mobil nyata
 
                             </div>
@@ -835,3 +880,63 @@ document.addEventListener(
         );
     }
 );
+
+/* =========================================
+MODE OPERASIONAL
+========================================= */
+let operationMode = "taxi";
+
+const modeCards =
+    document.querySelectorAll(
+        ".mode-card"
+    );
+
+modeCards.forEach(card => {
+    card.addEventListener(
+        "click",
+        function () {
+            modeCards.forEach(c => {
+                c.classList.remove(
+                    "active"
+                );
+
+            });
+            this.classList.add(
+                "active"
+            );
+            operationMode =
+                this.dataset.mode;
+            applyOperationMode();
+        }
+    );
+});
+
+
+function applyOperationMode() {
+    const poolLabel =
+        document.getElementById(
+            "poolLabel"
+        );
+    const customInput =
+        document.getElementById(
+            "customPool"
+        );
+    if (operationMode === "motor") {
+        poolLabel.innerHTML =
+            "Homebase / Area Awal";
+        customInput.placeholder =
+            "Contoh: Rumah Depok";
+        document.body.classList.add(
+            "motor-mode"
+        );
+    }
+    else {
+        poolLabel.innerHTML =
+            "Pilih Pool";
+        customInput.placeholder =
+            "Contoh: Pool Tajurhalang";
+        document.body.classList.remove(
+            "motor-mode"
+        );
+    }
+}
