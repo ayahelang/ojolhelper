@@ -1,15 +1,3 @@
-const motorBases = [
-    "Rumah / Homebase",
-    "Stasiun",
-    "Mall",
-    "Kampus",
-    "Pasar",
-    "Terminal",
-    "Area Nongkrong",
-    "Cafe Area",
-    "Perumahan Padat"
-];
-
 const pools = {
 
     headquarters: [
@@ -83,46 +71,8 @@ const pools = {
         ["15:00 - 18:00", "RS Permata Depok", 5],
         ["18:00 - 20:00", "Parung Bingung Depok", 4],
         ["20:00 - 21:00", "Kembali Pool Cinangka", 5]
-    ],
-    home: [
-        ["07:00 - 09:00", "Stasiun Terdekat", 3],
-        ["09:00 - 12:00", "Area Perkantoran", 5],
-        ["12:00 - 14:00", "Pusat Kuliner", 4],
-        ["14:00 - 18:00", "Mall Terdekat", 6],
-        ["18:00 - 21:00", "Area Nongkrong", 5]
-    ],
-
-    stasiun: [
-        ["06:00 - 09:00", "Drop Penumpang", 2],
-        ["09:00 - 12:00", "Area Kampus", 4],
-        ["12:00 - 15:00", "Pusat Kuliner", 3],
-        ["15:00 - 19:00", "Stasiun Utama", 5],
-        ["19:00 - 22:00", "Area Cafe", 4]
-    ],
-
-    mall: [
-        ["10:00 - 12:00", "Lobby Mall", 2],
-        ["12:00 - 15:00", "Food Court", 3],
-        ["15:00 - 18:00", "Area Kampus", 5],
-        ["18:00 - 21:00", "Pusat Nongkrong", 6],
-        ["21:00 - 22:00", "Homebase", 4]
-    ],
-
-    kampus: [
-        ["06:00 - 09:00", "Gerbang Kampus", 3],
-        ["09:00 - 13:00", "Kantin Kampus", 2],
-        ["13:00 - 17:00", "Kos Mahasiswa", 5],
-        ["17:00 - 21:00", "Cafe Mahasiswa", 4],
-        ["21:00 - 22:00", "Homebase", 3]
-    ],
-
-    pasar: [
-        ["05:00 - 08:00", "Pasar Utama", 2],
-        ["08:00 - 12:00", "Area Grosir", 3],
-        ["12:00 - 15:00", "Pusat Kuliner", 4],
-        ["15:00 - 18:00", "Perumahan", 5],
-        ["18:00 - 20:00", "Homebase", 4]
     ]
+
 };
 
 /* =========================================
@@ -542,27 +492,20 @@ let userMarker = null;
 let lastHeading = 0;
 
 const carIcon = L.divIcon({
+
     className: "car-marker",
+
     html: `
         <img
             src="assets/car-top.png"
             id="carIconRotate"
         >
     `,
-    iconSize: [52, 52],
-    iconAnchor: [26, 26]
-});
 
-const motorIcon = L.divIcon({
-    className: "car-marker",
-    html: `
-        <img
-            src="assets/motor-top.png"
-            id="carIconRotate"
-        >
-    `,
-    iconSize: [46, 46],
-    iconAnchor: [23, 23]
+    iconSize: [52, 52],
+
+    iconAnchor: [26, 26]
+
 });
 
 let accuracyCircle = null;
@@ -603,12 +546,7 @@ function initLiveGPS() {
             userMarker = L.marker(
                 [lat, lon],
                 {
-                    icon:
-                        operationMode === "motor"
-                            ?
-                            motorIcon
-                            :
-                            carIcon
+                    icon: carIcon
                 }
             )
                 .addTo(map)
@@ -770,49 +708,22 @@ document.addEventListener(
                 /* route */
                 routingControl =
                     L.Routing.control({
-
-                        router: L.Routing.osrmv1({
-
-                            serviceUrl:
-
-                                operationMode === "motor"
-
-                                    ?
-
-                                    "https://router.project-osrm.org/route/v1/bike"
-
-                                    :
-
-                                    "https://router.project-osrm.org/route/v1/driving"
-
-                        }),
-
                         waypoints: [
-
                             L.latLng(
                                 userLat,
                                 userLon
                             ),
-
                             L.latLng(
                                 targetLat,
                                 targetLon
                             )
-
                         ],
-
                         routeWhileDragging: false,
-
                         draggableWaypoints: false,
-
                         addWaypoints: false,
-
                         show: false,
-
                         fitSelectedRoutes: true,
-
                         lineOptions: {
-
                             styles: [
                                 {
                                     color: "#3d8bfd",
@@ -820,7 +731,6 @@ document.addEventListener(
                                     opacity: .9
                                 }
                             ]
-
                         }
 
                     }).addTo(map);
@@ -885,12 +795,7 @@ document.addEventListener(
                                 padding:16px;
                                 border-radius:18px
                             ">
-                                ${operationMode === "motor"
-                                ?
-                                "🏍️ Route mengikuti jalur motor"
-                                :
-                                "🚖 Route mengikuti jalan mobil nyata"
-                            }
+                                🚖 Route mengikuti
                                 jalan mobil nyata
 
                             </div>
@@ -930,134 +835,3 @@ document.addEventListener(
         );
     }
 );
-
-/* =========================================
-MODE OPERASIONAL
-========================================= */
-let operationMode = "taxi";
-
-const modeCards =
-    document.querySelectorAll(
-        ".mode-card"
-    );
-
-modeCards.forEach(card => {
-    card.addEventListener(
-        "click",
-        function () {
-            modeCards.forEach(c => {
-                c.classList.remove(
-                    "active"
-                );
-
-            });
-            this.classList.add(
-                "active"
-            );
-            operationMode =
-                this.dataset.mode;
-            applyOperationMode();
-        }
-    );
-});
-
-
-function applyOperationMode() {
-
-    const poolLabel =
-        document.getElementById(
-            "poolLabel"
-        );
-
-    const customInput =
-        document.getElementById(
-            "customPool"
-        );
-
-    const poolSelect =
-        document.getElementById(
-            "pool"
-        );
-
-    if (operationMode === "motor") {
-
-        poolLabel.innerHTML =
-            "Homebase / Area Awal";
-
-        customInput.placeholder =
-            "Contoh: Rumah Depok";
-
-        document.body.classList.add(
-            "motor-mode"
-        );
-
-        poolSelect.innerHTML = `
-            <option value="home">
-                Rumah / Lokasi Saat Ini
-            </option>
-
-            <option value="stasiun">
-                Area Stasiun
-            </option>
-
-            <option value="mall">
-                Area Mall
-            </option>
-
-            <option value="kampus">
-                Area Kampus
-            </option>
-
-            <option value="pasar">
-                Area Pasar
-            </option>
-
-            <option value="custom">
-                Custom Lokasi
-            </option>
-        `;
-
-    } else {
-
-        poolLabel.innerHTML =
-            "Pilih Pool";
-
-        customInput.placeholder =
-            "Contoh: Pool Tajurhalang";
-
-        document.body.classList.remove(
-            "motor-mode"
-        );
-
-        poolSelect.innerHTML = `
-
-            <option value="headquarters">
-                Blue Bird Group Headquarters
-            </option>
-
-            <option value="margasatwa">
-                Blue Bird Pool Pondok Labu
-            </option>
-
-            <option value="cikeas">
-                Blue Bird Pool Cikeas
-            </option>
-
-            <option value="kranggan">
-                Blue Bird Pool Kranggan
-            </option>
-
-            <option value="cimanggis">
-                Blue Bird Pool Cimanggis
-            </option>
-
-            <option value="custom">
-                Custom Lokasi
-            </option>
-
-        `;
-    }
-
-    generatePlan();
-
-}
