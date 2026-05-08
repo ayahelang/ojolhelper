@@ -17,11 +17,45 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    .btn-app {
+
+        background:
+            linear-gradient(135deg,
+                #1ec8ff,
+                #3d8bfd);
+
+        color: white;
+
+        padding: 16px 28px;
+
+        border-radius: 16px;
+
+        text-decoration: none;
+
+        font-weight: bold;
+
+        transition: .25s;
+
+        box-shadow:
+            0 10px 25px rgba(61,
+                139,
+                253,
+                .35);
+
+    }
+
+    .btn-app:hover {
+
+        transform:
+            translateY(-4px) scale(1.03);
+
+    }
+
     padding: 40px 20px;
-    background:
-        radial-gradient(circle at top,
-            #16376d,
-            #050d1b 60%);
+    background: radial-gradient(circle at top,
+        #16376d,
+        #050d1b 60%);
 }
 
 .hero-overlay {
@@ -41,9 +75,12 @@ body {
 }
 
 .hero-logo {
-    width: 130px;
-    margin-bottom: 20px;
-    animation: float 4s ease-in-out infinite;
+    width: 160px;
+    filter:
+        drop-shadow(0 0 20px rgba(78,
+                161,
+                255,
+                .35));
 }
 
 .badge {
@@ -289,5 +326,39 @@ footer {
     .section-header h2 {
         font-size: 34px;
     }
+
+}
+
+.btn-app {
+
+    background:
+        linear-gradient(135deg,
+            #1ec8ff,
+            #3d8bfd);
+
+    color: white;
+
+    padding: 16px 28px;
+
+    border-radius: 16px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition: .25s;
+
+    box-shadow:
+        0 10px 25px rgba(61,
+            139,
+            253,
+            .35);
+
+}
+
+.btn-app:hover {
+
+    transform:
+        translateY(-4px) scale(1.03);
 
 }
