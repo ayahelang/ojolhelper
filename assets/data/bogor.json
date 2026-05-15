@@ -1,0 +1,182 @@
+[
+    {
+        "id": "bogor_botanisquare",
+        "nama": "Botani Square",
+        "wilayah": "Bogor",
+        "kategori": "mall",
+        "alamat": "Jl. Raya Pajajaran No.40, Bogor Tengah",
+        "latitude": -6.6017,
+        "longitude": 106.8060
+    },
+    {
+        "id": "bogor_aeonsentul",
+        "nama": "AEON Mall Sentul City",
+        "wilayah": "Bogor",
+        "kategori": "mall",
+        "alamat": "Sentul City, Bogor",
+        "latitude": -6.5432,
+        "longitude": 106.8681
+    },
+    {
+        "id": "bogor_bellanovamall",
+        "nama": "Bellanova Country Mall",
+        "wilayah": "Bogor",
+        "kategori": "mall",
+        "alamat": "Jl. MH Thamrin, Sentul",
+        "latitude": -6.5307,
+        "longitude": 106.8574
+    },
+    {
+        "id": "bogor_lippoecoplaza",
+        "nama": "Lippo Plaza Ekalokasari",
+        "wilayah": "Bogor",
+        "kategori": "mall",
+        "alamat": "Jl. Siliwangi No.123, Bogor Timur",
+        "latitude": -6.6170,
+        "longitude": 106.8174
+    },
+    {
+        "id": "bogor_transmartyasmin",
+        "nama": "Transmart Yasmin",
+        "wilayah": "Bogor",
+        "kategori": "mall",
+        "alamat": "Jl. KH Abdullah Bin Nuh, Bogor Barat",
+        "latitude": -6.5662,
+        "longitude": 106.7748
+    },
+    {
+        "id": "bogor_jambuluwuk",
+        "nama": "Jambuluwuk Convention Hall",
+        "wilayah": "Bogor",
+        "kategori": "hotel",
+        "alamat": "Jl. Raya Pajajaran, Bogor",
+        "latitude": -6.5964,
+        "longitude": 106.8068
+    },
+    {
+        "id": "bogor_stasiunbogor",
+        "nama": "Stasiun Bogor",
+        "wilayah": "Bogor",
+        "kategori": "transportasi",
+        "alamat": "Jl. Nyi Raja Permas, Bogor Tengah",
+        "latitude": -6.5952,
+        "longitude": 106.7906
+    },
+    {
+        "id": "bogor_stasiuncilebut",
+        "nama": "Stasiun Cilebut",
+        "wilayah": "Bogor",
+        "kategori": "transportasi",
+        "alamat": "Cilebut Timur, Sukaraja",
+        "latitude": -6.5259,
+        "longitude": 106.7984
+    },
+    {
+        "id": "bogor_stasiunbojonggede",
+        "nama": "Stasiun Bojong Gede",
+        "wilayah": "Bogor",
+        "kategori": "transportasi",
+        "alamat": "Bojonggede, Bogor",
+        "latitude": -6.4935,
+        "longitude": 106.7946
+    },
+    {
+        "id": "bogor_terminalbaranangsiang",
+        "nama": "Terminal Baranangsiang",
+        "wilayah": "Bogor",
+        "kategori": "transportasi",
+        "alamat": "Jl. Raya Pajajaran, Bogor Timur",
+        "latitude": -6.6011,
+        "longitude": 106.8077
+    },
+    {
+        "id": "bogor_kebunrayabogor",
+        "nama": "Kebun Raya Bogor",
+        "wilayah": "Bogor",
+        "kategori": "wisata",
+        "alamat": "Jl. Ir. H. Juanda No.13",
+        "latitude": -6.5971,
+        "longitude": 106.7997
+    },
+    {
+        "id": "bogor_tamansafari",
+        "nama": "Taman Safari Indonesia",
+        "wilayah": "Bogor",
+        "kategori": "wisata",
+        "alamat": "Cisarua, Bogor",
+        "latitude": -6.7210,
+        "longitude": 106.9507
+    },
+    {
+        "id": "bogor_devoyage",
+        "nama": "De Voyage Bogor",
+        "wilayah": "Bogor",
+        "kategori": "wisata",
+        "alamat": "Jl. Bogor Nirwana Residence",
+        "latitude": -6.6407,
+        "longitude": 106.7833
+    },
+    {
+        "id": "bogor_thejunglel",
+        "nama": "The Jungle Waterpark",
+        "wilayah": "Bogor",
+        "kategori": "wisata",
+        "alamat": "Bogor Nirwana Residence",
+        "latitude": -6.6418,
+        "longitude": 106.7860
+    },
+    {
+        "id": "bogor_rsudkotabogor",
+        "nama": "RSUD Kota Bogor",
+        "wilayah": "Bogor",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. DR. Sumeru No.120",
+        "latitude": -6.5832,
+        "longitude": 106.7822
+    },
+    {
+        "id": "bogor_rsherminabogor",
+        "nama": "RS Hermina Bogor",
+        "wilayah": "Bogor",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. Ring Road Yasmin",
+        "latitude": -6.5581,
+        "longitude": 106.7751
+    },
+    {
+        "id": "bogor_rssiloam",
+        "nama": "Siloam Hospital Bogor",
+        "wilayah": "Bogor",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. Pajajaran Indah V",
+        "latitude": -6.5840,
+        "longitude": 106.7909
+    },
+    {
+        "id": "bogor_ipbdramaga",
+        "nama": "IPB Dramaga",
+        "wilayah": "Bogor",
+        "kategori": "kampus",
+        "alamat": "Jl. Raya Dramaga",
+        "latitude": -6.5587,
+        "longitude": 106.7256
+    },
+    {
+        "id": "bogor_sentulcity",
+        "nama": "Sentul City",
+        "wilayah": "Bogor",
+        "kategori": "business_district",
+        "alamat": "Sentul, Bogor",
+        "latitude": -6.5228,
+        "longitude": 106.8342
+    },
+    {
+        "id": "bogor_puncakcisarua",
+        "nama": "Puncak Cisarua",
+        "wilayah": "Bogor",
+        "kategori": "wisata",
+        "alamat": "Cisarua, Bogor",
+        "latitude": -6.7018,
+        "longitude": 106.9485
+    }
+]

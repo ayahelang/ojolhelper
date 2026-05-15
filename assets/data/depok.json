@@ -1,0 +1,182 @@
+[
+    {
+        "id": "depok_margocity",
+        "nama": "Margo City",
+        "wilayah": "Depok",
+        "kategori": "mall",
+        "alamat": "Jl. Margonda Raya No.358, Beji, Depok",
+        "latitude": -6.3725,
+        "longitude": 106.8335
+    },
+    {
+        "id": "depok_dmall",
+        "nama": "D'Mall Depok",
+        "wilayah": "Depok",
+        "kategori": "mall",
+        "alamat": "Jl. Margonda Raya, Pancoran Mas, Depok",
+        "latitude": -6.3903,
+        "longitude": 106.8227
+    },
+    {
+        "id": "depok_itcdepok",
+        "nama": "ITC Depok",
+        "wilayah": "Depok",
+        "kategori": "mall",
+        "alamat": "Jl. Margonda Raya No.56, Pancoran Mas, Depok",
+        "latitude": -6.3942,
+        "longitude": 106.8229
+    },
+    {
+        "id": "depok_pesonasquare",
+        "nama": "Pesona Square Mall",
+        "wilayah": "Depok",
+        "kategori": "mall",
+        "alamat": "Jl. Ir. H. Juanda No.99, Depok",
+        "latitude": -6.3859,
+        "longitude": 106.8411
+    },
+    {
+        "id": "depok_cinerebellevue",
+        "nama": "Cinere Bellevue Mall",
+        "wilayah": "Depok",
+        "kategori": "mall",
+        "alamat": "Jl. Merawan No.52, Cinere, Depok",
+        "latitude": -6.3357,
+        "longitude": 106.7862
+    },
+    {
+        "id": "depok_theparksawangan",
+        "nama": "The Park Sawangan",
+        "wilayah": "Depok",
+        "kategori": "mall",
+        "alamat": "Jl. Parung-Ciputat, Sawangan, Depok",
+        "latitude": -6.4055,
+        "longitude": 106.7744
+    },
+    {
+        "id": "depok_transstudio",
+        "nama": "Trans Studio Mall Cibubur",
+        "wilayah": "Depok",
+        "kategori": "mall",
+        "alamat": "Jl. Alternatif Cibubur No.230",
+        "latitude": -6.3759,
+        "longitude": 106.9018
+    },
+    {
+        "id": "depok_stasiundepokbaru",
+        "nama": "Stasiun Depok Baru",
+        "wilayah": "Depok",
+        "kategori": "transportasi",
+        "alamat": "Jl. Stasiun Depok Baru",
+        "latitude": -6.3915,
+        "longitude": 106.8218
+    },
+    {
+        "id": "depok_stasiunpondokcina",
+        "nama": "Stasiun Pondok Cina",
+        "wilayah": "Depok",
+        "kategori": "transportasi",
+        "alamat": "Jl. Margonda Raya, Beji",
+        "latitude": -6.3693,
+        "longitude": 106.8324
+    },
+    {
+        "id": "depok_stasiununiversitasindonesia",
+        "nama": "Stasiun Universitas Indonesia",
+        "wilayah": "Depok",
+        "kategori": "transportasi",
+        "alamat": "Kampus UI Depok",
+        "latitude": -6.3624,
+        "longitude": 106.8315
+    },
+    {
+        "id": "depok_terminaljatijajar",
+        "nama": "Terminal Jatijajar",
+        "wilayah": "Depok",
+        "kategori": "transportasi",
+        "alamat": "Jl. Raya Bogor KM.38",
+        "latitude": -6.4444,
+        "longitude": 106.8583
+    },
+    {
+        "id": "depok_ui",
+        "nama": "Universitas Indonesia",
+        "wilayah": "Depok",
+        "kategori": "kampus",
+        "alamat": "Kampus UI Depok",
+        "latitude": -6.3655,
+        "longitude": 106.8283
+    },
+    {
+        "id": "depok_gunadarma",
+        "nama": "Universitas Gunadarma",
+        "wilayah": "Depok",
+        "kategori": "kampus",
+        "alamat": "Jl. Margonda Raya No.100",
+        "latitude": -6.3938,
+        "longitude": 106.8245
+    },
+    {
+        "id": "depok_politekniknegeri",
+        "nama": "Politeknik Negeri Jakarta",
+        "wilayah": "Depok",
+        "kategori": "kampus",
+        "alamat": "Kampus UI Depok",
+        "latitude": -6.3702,
+        "longitude": 106.8249
+    },
+    {
+        "id": "depok_rsherminadepok",
+        "nama": "RS Hermina Depok",
+        "wilayah": "Depok",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. Siliwangi No.50",
+        "latitude": -6.3932,
+        "longitude": 106.8127
+    },
+    {
+        "id": "depok_rspermata",
+        "nama": "RS Permata Depok",
+        "wilayah": "Depok",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. Raya Muchtar, Sawangan",
+        "latitude": -6.4214,
+        "longitude": 106.7802
+    },
+    {
+        "id": "depok_rsmitrakeluarga",
+        "nama": "RS Mitra Keluarga Depok",
+        "wilayah": "Depok",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. Margonda Raya",
+        "latitude": -6.3761,
+        "longitude": 106.8310
+    },
+    {
+        "id": "depok_alunalundepok",
+        "nama": "Alun-Alun Depok",
+        "wilayah": "Depok",
+        "kategori": "taman",
+        "alamat": "Grand Depok City",
+        "latitude": -6.4338,
+        "longitude": 106.8222
+    },
+    {
+        "id": "depok_masjidkubahemas",
+        "nama": "Masjid Kubah Emas",
+        "wilayah": "Depok",
+        "kategori": "wisata",
+        "alamat": "Jl. Meruyung Raya, Limo",
+        "latitude": -6.3850,
+        "longitude": 106.7787
+    },
+    {
+        "id": "depok_gdc",
+        "nama": "Grand Depok City",
+        "wilayah": "Depok",
+        "kategori": "business_district",
+        "alamat": "Jl. Boulevard GDC",
+        "latitude": -6.4298,
+        "longitude": 106.8204
+    }
+]

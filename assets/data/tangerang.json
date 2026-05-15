@@ -1,0 +1,182 @@
+[
+    {
+        "id": "tangerang_bxchange",
+        "nama": "Bintaro Xchange Mall",
+        "wilayah": "Tangerang",
+        "kategori": "mall",
+        "alamat": "Jl. Boulevard Bintaro Jaya, Pondok Aren, Tangerang Selatan",
+        "latitude": -6.2862,
+        "longitude": 106.7482
+    },
+    {
+        "id": "tangerang_summareconserpong",
+        "nama": "Summarecon Mall Serpong",
+        "wilayah": "Tangerang",
+        "kategori": "mall",
+        "alamat": "Jl. Boulevard Gading Serpong, Tangerang",
+        "latitude": -6.2410,
+        "longitude": 106.6287
+    },
+    {
+        "id": "tangerang_aeonbsd",
+        "nama": "AEON Mall BSD City",
+        "wilayah": "Tangerang",
+        "kategori": "mall",
+        "alamat": "Jl. BSD Raya Utama, Pagedangan, Tangerang",
+        "latitude": -6.3023,
+        "longitude": 106.6436
+    },
+    {
+        "id": "tangerang_qbigbsd",
+        "nama": "QBig BSD City",
+        "wilayah": "Tangerang",
+        "kategori": "mall",
+        "alamat": "Jl. BSD Raya Utama, BSD City, Tangerang",
+        "latitude": -6.3011,
+        "longitude": 106.6525
+    },
+    {
+        "id": "tangerang_thebreeze",
+        "nama": "The Breeze BSD",
+        "wilayah": "Tangerang",
+        "kategori": "mall",
+        "alamat": "BSD Green Office Park, Tangerang",
+        "latitude": -6.3018,
+        "longitude": 106.6548
+    },
+    {
+        "id": "tangerang_livingworld",
+        "nama": "Living World Alam Sutera",
+        "wilayah": "Tangerang",
+        "kategori": "mall",
+        "alamat": "Jl. Alam Sutera Boulevard Kav.21, Tangerang",
+        "latitude": -6.2227,
+        "longitude": 106.6520
+    },
+    {
+        "id": "tangerang_supermallkarawaci",
+        "nama": "Supermal Karawaci",
+        "wilayah": "Tangerang",
+        "kategori": "mall",
+        "alamat": "Jl. Boulevard Diponegoro No.105, Karawaci",
+        "latitude": -6.1909,
+        "longitude": 106.6258
+    },
+    {
+        "id": "tangerang_tangcity",
+        "nama": "TangCity Mall",
+        "wilayah": "Tangerang",
+        "kategori": "mall",
+        "alamat": "Jl. Jenderal Sudirman No.1, Tangerang",
+        "latitude": -6.1786,
+        "longitude": 106.6314
+    },
+    {
+        "id": "tangerang_metroserpong",
+        "nama": "Mall @ Alam Sutera",
+        "wilayah": "Tangerang",
+        "kategori": "mall",
+        "alamat": "Jl. Jalur Sutera Barat, Alam Sutera",
+        "latitude": -6.2242,
+        "longitude": 106.6528
+    },
+    {
+        "id": "tangerang_bsdplaza",
+        "nama": "BSD Plaza",
+        "wilayah": "Tangerang",
+        "kategori": "mall",
+        "alamat": "Jl. Pahlawan Seribu, BSD City",
+        "latitude": -6.3004,
+        "longitude": 106.6652
+    },
+    {
+        "id": "tangerang_stasiunrawabuntu",
+        "nama": "Stasiun Rawa Buntu",
+        "wilayah": "Tangerang",
+        "kategori": "transportasi",
+        "alamat": "Serpong, Tangerang Selatan",
+        "latitude": -6.3158,
+        "longitude": 106.6748
+    },
+    {
+        "id": "tangerang_stasiunserpong",
+        "nama": "Stasiun Serpong",
+        "wilayah": "Tangerang",
+        "kategori": "transportasi",
+        "alamat": "Serpong, Tangerang Selatan",
+        "latitude": -6.3201,
+        "longitude": 106.6659
+    },
+    {
+        "id": "tangerang_stasiunpondokrandji",
+        "nama": "Stasiun Pondok Ranji",
+        "wilayah": "Tangerang",
+        "kategori": "transportasi",
+        "alamat": "Ciputat Timur, Tangerang Selatan",
+        "latitude": -6.2761,
+        "longitude": 106.7446
+    },
+    {
+        "id": "tangerang_stasiunjurangmangu",
+        "nama": "Stasiun Jurangmangu",
+        "wilayah": "Tangerang",
+        "kategori": "transportasi",
+        "alamat": "Pondok Aren, Tangerang Selatan",
+        "latitude": -6.2769,
+        "longitude": 106.7265
+    },
+    {
+        "id": "tangerang_terminalporis",
+        "nama": "Terminal Poris Plawad",
+        "wilayah": "Tangerang",
+        "kategori": "transportasi",
+        "alamat": "Jl. Benteng Betawi, Tangerang",
+        "latitude": -6.1677,
+        "longitude": 106.6804
+    },
+    {
+        "id": "tangerang_rsumumhermina",
+        "nama": "RS Hermina Serpong",
+        "wilayah": "Tangerang",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. Raya Serpong KM.7, Tangerang Selatan",
+        "latitude": -6.2663,
+        "longitude": 106.6712
+    },
+    {
+        "id": "tangerang_omnihospital",
+        "nama": "OMNI Hospital Alam Sutera",
+        "wilayah": "Tangerang",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. Alam Sutera Boulevard Kav.25",
+        "latitude": -6.2236,
+        "longitude": 106.6511
+    },
+    {
+        "id": "tangerang_binusbsd",
+        "nama": "BINUS BSD",
+        "wilayah": "Tangerang",
+        "kategori": "kampus",
+        "alamat": "Jl. Jalur Sutera Barat Kav.21",
+        "latitude": -6.2248,
+        "longitude": 106.6518
+    },
+    {
+        "id": "tangerang_icebsd",
+        "nama": "ICE BSD",
+        "wilayah": "Tangerang",
+        "kategori": "event_center",
+        "alamat": "BSD Grand Boulevard, Pagedangan",
+        "latitude": -6.3016,
+        "longitude": 106.6529
+    },
+    {
+        "id": "tangerang_oceanpark",
+        "nama": "Ocean Park BSD",
+        "wilayah": "Tangerang",
+        "kategori": "wisata",
+        "alamat": "BSD City, Serpong",
+        "latitude": -6.2951,
+        "longitude": 106.6682
+    }
+]

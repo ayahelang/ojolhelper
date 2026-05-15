@@ -835,3 +835,683 @@ document.addEventListener(
         );
     }
 );
+
+/* =========================================
+SMART TACTICAL RADAR V7
+========================================= */
+
+const wilayahFiles = {
+    "Depok": "assets/data/depok.json",
+    "Bogor": "assets/data/bogor.json",
+    "Jakarta Timur": "assets/data/jaktim.json",
+    "Jakarta Barat": "assets/data/jakbar.json",
+    "Jakarta Selatan": "assets/data/jaksel.json",
+    "Jakarta Utara": "assets/data/jakut.json",
+    "Jakarta Pusat": "assets/data/jakpus.json",
+    "Bekasi": "assets/data/bekasi.json",
+    "Tangerang": "assets/data/tangerang.json"
+};
+
+let smartMap = null;
+
+/* =========================================
+WAIT
+========================================= */
+
+function wait(ms) {
+    return new Promise(resolve => {
+        setTimeout(resolve, ms);
+    });
+}
+
+/* =========================================
+HAVERSINE DISTANCE
+========================================= */
+
+function deg2rad(deg) {
+    return deg * (Math.PI / 180);
+}
+
+function calculateDistance(
+    lat1,
+    lon1,
+    lat2,
+    lon2
+) {
+
+    const R = 6371;
+
+    const dLat =
+        deg2rad(lat2 - lat1);
+
+    const dLon =
+        deg2rad(lon2 - lon1);
+
+    const a =
+        Math.sin(dLat / 2) *
+        Math.sin(dLat / 2) +
+
+        Math.cos(deg2rad(lat1)) *
+        Math.cos(deg2rad(lat2)) *
+
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
+
+    const c =
+        2 * Math.atan2(
+            Math.sqrt(a),
+            Math.sqrt(1 - a)
+        );
+
+    return R * c;
+}
+
+/* =========================================
+DETECT REGION
+========================================= */
+
+function detectWilayah(lat, lon) {
+
+    if (
+        lat < -6.33 &&
+        lat > -6.50 &&
+        lon > 106.75 &&
+        lon < 106.90
+    ) {
+        return "Depok";
+    }
+
+    if (
+        lat < -6.15 &&
+        lon < 106.78
+    ) {
+        return "Jakarta Barat";
+    }
+
+    if (
+        lat < -6.20 &&
+        lon > 106.82
+    ) {
+        return "Jakarta Timur";
+    }
+
+    return "Jakarta Selatan";
+}
+
+/* =========================================
+LOAD JSON SAFE
+========================================= */
+
+async function safeFetchJSON(url) {
+
+    try {
+
+        const res =
+            await fetch(url);
+
+        if (!res.ok) {
+            throw new Error(
+                "JSON gagal dimuat"
+            );
+        }
+
+        return await res.json();
+
+    } catch (err) {
+
+        console.log(err);
+
+        return [];
+
+    }
+
+}
+
+/* =========================================
+GET NEAREST LOCATIONS
+========================================= */
+
+function getNearestLocations(
+    userLat,
+    userLon,
+    data,
+    limit = 3
+) {
+
+    const processed =
+        data.map(item => {
+
+            const distance =
+                calculateDistance(
+                    userLat,
+                    userLon,
+                    item.latitude,
+                    item.longitude
+                );
+
+            return {
+                ...item,
+                garisLurus: distance
+            };
+
+        });
+
+    processed.sort(
+        (a, b) =>
+            a.garisLurus -
+            b.garisLurus
+    );
+
+    return processed.slice(0, limit);
+
+}
+
+/* =========================================
+RENDER RECOMMENDATION
+========================================= */
+
+function renderRecommendation(
+    data,
+    userLat,
+    userLon
+) {
+
+    const container =
+        document.getElementById(
+            "smartRecommendation"
+        );
+
+    if (!container) return;
+
+    let html = `
+        <div class="smart-list">
+    `;
+
+    data.forEach(item => {
+
+        html += `
+
+            <div class="smart-card">
+
+                <div class="smart-title">
+                    ${item.nama}
+                </div>
+
+                <div class="smart-meta">
+                    📍 ${item.wilayah}
+                </div>
+
+                <div class="smart-meta">
+                    🏢 ${item.kategori}
+                </div>
+
+                <div class="smart-distance">
+                    📏 ${item.garisLurus.toFixed(1)} KM
+                </div>
+
+                <div class="smart-buttons">
+
+                    <button
+                        onclick="
+                            showSmartRoute(
+                                ${userLat},
+                                ${userLon},
+                                ${item.latitude},
+                                ${item.longitude},
+                                '${item.nama}',
+                                '${item.alamat}'
+                            )
+                        "
+                    >
+                        Lihat Route
+                    </button>
+
+                    <a
+                        target="_blank"
+                        href="https://maps.google.com/?q=${encodeURIComponent(item.nama)}"
+                    >
+                        Maps
+                    </a>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+    html += `</div>`;
+
+    container.innerHTML = html;
+
+}
+
+/* =========================================
+SMART ROUTE POPUP
+========================================= */
+
+async function showSmartRoute(
+    userLat,
+    userLon,
+    targetLat,
+    targetLon,
+    nama,
+    alamat
+) {
+
+    popup.style.display = "flex";
+
+    popupContent.innerHTML = `
+
+        <div style="
+            font-size:24px;
+            margin-bottom:18px;
+        ">
+            🚖 Smart Tactical Route
+        </div>
+
+        <div style="
+            background:#162544;
+            padding:18px;
+            border-radius:18px;
+        ">
+
+            <div id="routeLoadingText">
+                📡 Membaca GPS driver...
+            </div>
+
+            <div style="
+                margin-top:16px;
+                width:100%;
+                height:10px;
+                background:#0d1728;
+                border-radius:999px;
+                overflow:hidden;
+            ">
+
+                <div id="routeLoadingBar"
+                    style="
+                        width:15%;
+                        height:100%;
+                        background:#3d8bfd;
+                        transition:.4s;
+                    ">
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+    const loadingText =
+        document.getElementById(
+            "routeLoadingText"
+        );
+
+    const loadingBar =
+        document.getElementById(
+            "routeLoadingBar"
+        );
+
+    await wait(1000);
+
+    loadingText.innerHTML =
+        "🧭 Menentukan lokasi tujuan...";
+
+    loadingBar.style.width = "35%";
+
+    await wait(1200);
+
+    loadingText.innerHTML =
+        "🚗 Menghitung route jalan nyata...";
+
+    loadingBar.style.width = "70%";
+
+    let timeoutShown = false;
+
+    const timeoutHandler =
+        setTimeout(() => {
+
+            timeoutShown = true;
+
+            popupContent.innerHTML += `
+
+                <div style="
+                    margin-top:18px;
+                    background:#3b2d0f;
+                    padding:18px;
+                    border-radius:18px;
+                ">
+
+                    ⏳ Perhitungan route
+                    membutuhkan waktu tambahan.
+
+                    <br><br>
+
+                    Kemungkinan:
+                    <br>
+                    • koneksi lambat
+                    <br>
+                    • GPS belum stabil
+                    <br>
+                    • server route sibuk
+
+                    <div class="smart-buttons">
+
+                        <button onclick="
+                            popup.style.display='none'
+                        ">
+                            Tutup
+                        </button>
+
+                        <a
+                            target='_blank'
+                            href='https://www.google.com/maps/dir/?api=1&destination=${targetLat},${targetLon}'
+                        >
+                            Google Maps
+                        </a>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }, 5000);
+
+    await wait(1200);
+
+    popupContent.innerHTML = `
+
+        <div style="
+            font-size:24px;
+            margin-bottom:16px;
+        ">
+            📍 ${nama}
+        </div>
+
+        <div style="
+            background:#162544;
+            padding:16px;
+            border-radius:18px;
+            margin-bottom:16px;
+        ">
+            ${alamat}
+        </div>
+
+        <div
+            id="miniMap"
+            class="popup-mini-map"
+        ></div>
+
+        <div
+            id="routeInfo"
+            style="margin-top:16px;"
+        >
+            🚦 Menghitung route nyata...
+        </div>
+
+    `;
+
+    if (smartMap) {
+        smartMap.remove();
+    }
+
+    smartMap = L.map("miniMap", {
+        zoomControl: false,
+        attributionControl: false
+    }).setView(
+        [userLat, userLon],
+        13
+    );
+
+    L.tileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    ).addTo(smartMap);
+
+    L.marker([
+        userLat,
+        userLon
+    ]).addTo(smartMap);
+
+    L.marker([
+        targetLat,
+        targetLon
+    ]).addTo(smartMap);
+
+    L.Routing.control({
+
+        waypoints: [
+
+            L.latLng(
+                userLat,
+                userLon
+            ),
+
+            L.latLng(
+                targetLat,
+                targetLon
+            )
+
+        ],
+
+        routeWhileDragging: false,
+        draggableWaypoints: false,
+        addWaypoints: false,
+        show: false,
+
+        lineOptions: {
+            styles: [
+                {
+                    color: "#3d8bfd",
+                    weight: 7,
+                    opacity: .9
+                }
+            ]
+        }
+
+    })
+
+        .on(
+            "routesfound",
+
+            function (e) {
+
+                clearTimeout(
+                    timeoutHandler
+                );
+
+                const route =
+                    e.routes[0];
+
+                const km =
+                    (
+                        route.summary.totalDistance / 1000
+                    ).toFixed(1);
+
+                const menit =
+                    Math.ceil(
+                        route.summary.totalTime / 60
+                    );
+
+                document.getElementById(
+                    "routeInfo"
+                ).innerHTML = `
+
+                <div style="
+                    background:#102847;
+                    padding:16px;
+                    border-radius:18px;
+                ">
+
+                    🚗 Route Mobil Nyata
+
+                    <div style="
+                        margin-top:12px;
+                        font-size:22px;
+                        color:#4ea1ff;
+                        font-weight:bold;
+                    ">
+                        ${km} KM
+                    </div>
+
+                    <div style="
+                        margin-top:8px;
+                    ">
+                        ⏱️ ${menit} menit
+                    </div>
+
+                    <div class="smart-buttons">
+
+                        <a
+                            target="_blank"
+                            href="https://www.google.com/maps/dir/?api=1&destination=${targetLat},${targetLon}"
+                        >
+                            Buka Google Maps
+                        </a>
+
+                    </div>
+
+                </div>
+
+            `;
+
+            }
+
+        )
+
+        .addTo(smartMap);
+
+}
+
+/* =========================================
+INIT SMART RADAR
+========================================= */
+
+async function initSmartRadar() {
+
+    if (!navigator.geolocation) {
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+
+        async function (pos) {
+
+            const userLat =
+                pos.coords.latitude;
+
+            const userLon =
+                pos.coords.longitude;
+
+            const wilayah =
+                detectWilayah(
+                    userLat,
+                    userLon
+                );
+
+            const container =
+                document.getElementById(
+                    "smartRecommendation"
+                );
+
+            if (!container) return;
+
+            container.innerHTML = `
+
+                <div class="loading-status">
+                    📡 Membaca GPS driver...
+                </div>
+
+            `;
+
+            await wait(1000);
+
+            container.innerHTML += `
+
+                <div class="loading-status">
+                    🧭 Wilayah aktif:
+                    <br><br>
+                    ${wilayah}
+                </div>
+
+            `;
+
+            const file =
+                wilayahFiles[wilayah];
+
+            const data =
+                await safeFetchJSON(file);
+
+            if (!data.length) {
+
+                container.innerHTML = `
+
+                    <div class="loading-status">
+                        ❌ Database lokasi kosong
+                    </div>
+
+                `;
+
+                return;
+
+            }
+
+            await wait(1200);
+
+            const nearest =
+                getNearestLocations(
+                    userLat,
+                    userLon,
+                    data,
+                    3
+                );
+
+            renderRecommendation(
+                nearest,
+                userLat,
+                userLon
+            );
+
+        },
+
+        function (err) {
+
+            console.log(err);
+
+        },
+
+        {
+            enableHighAccuracy: true,
+            maximumAge: 0,
+            timeout: 15000
+        }
+
+    );
+
+}
+
+/* =========================================
+AUTO REFRESH
+========================================= */
+
+setInterval(() => {
+
+    initSmartRadar();
+
+}, 120000);
+
+/* =========================================
+START
+========================================= */
+
+window.addEventListener(
+    "load",
+    function () {
+
+        initSmartRadar();
+
+    }
+);

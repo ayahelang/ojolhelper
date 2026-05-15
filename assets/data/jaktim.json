@@ -1,0 +1,182 @@
+[
+    {
+        "id": "jaktim_cibuburjunction",
+        "nama": "Cibubur Junction",
+        "wilayah": "Jakarta Timur",
+        "kategori": "mall",
+        "alamat": "Jl. Jambore No.1, Cibubur, Jakarta Timur",
+        "latitude": -6.3728,
+        "longitude": 106.8852
+    },
+    {
+        "id": "jaktim_tsmcibubur",
+        "nama": "Trans Studio Mall Cibubur",
+        "wilayah": "Jakarta Timur",
+        "kategori": "mall",
+        "alamat": "Jl. Alternatif Cibubur No.230, Jakarta Timur",
+        "latitude": -6.3759,
+        "longitude": 106.9018
+    },
+    {
+        "id": "jaktim_lrt_harjamukti",
+        "nama": "LRT Harjamukti",
+        "wilayah": "Jakarta Timur",
+        "kategori": "transportasi",
+        "alamat": "Harjamukti, Cibubur, Jakarta Timur",
+        "latitude": -6.3946,
+        "longitude": 106.8861
+    },
+    {
+        "id": "jaktim_kotawisata",
+        "nama": "Kota Wisata Cibubur",
+        "wilayah": "Jakarta Timur",
+        "kategori": "perumahan",
+        "alamat": "Kota Wisata Cibubur, Jakarta Timur",
+        "latitude": -6.3974,
+        "longitude": 106.9505
+    },
+    {
+        "id": "jaktim_tmii",
+        "nama": "TMII",
+        "wilayah": "Jakarta Timur",
+        "kategori": "wisata",
+        "alamat": "Jl. Raya Taman Mini, Cipayung, Jakarta Timur",
+        "latitude": -6.3024,
+        "longitude": 106.8951
+    },
+    {
+        "id": "jaktim_bassura",
+        "nama": "Bassura City Mall",
+        "wilayah": "Jakarta Timur",
+        "kategori": "mall",
+        "alamat": "Jl. Basuki Rahmat No.1A, Cipinang, Jakarta Timur",
+        "latitude": -6.2259,
+        "longitude": 106.8805
+    },
+    {
+        "id": "jaktim_ciplazajatinegara",
+        "nama": "Ciplaz Jatinegara",
+        "wilayah": "Jakarta Timur",
+        "kategori": "mall",
+        "alamat": "Jl. Matraman Raya No.173, Jakarta Timur",
+        "latitude": -6.2147,
+        "longitude": 106.8701
+    },
+    {
+        "id": "jaktim_pgc",
+        "nama": "PGC Cililitan",
+        "wilayah": "Jakarta Timur",
+        "kategori": "mall",
+        "alamat": "Jl. Mayjen Sutoyo No.76, Cililitan, Jakarta Timur",
+        "latitude": -6.2614,
+        "longitude": 106.8667
+    },
+    {
+        "id": "jaktim_mallcijantung",
+        "nama": "Mall Cijantung",
+        "wilayah": "Jakarta Timur",
+        "kategori": "mall",
+        "alamat": "Jl. Pendidikan No.1, Cijantung, Jakarta Timur",
+        "latitude": -6.3063,
+        "longitude": 106.8617
+    },
+    {
+        "id": "jaktim_arionmall",
+        "nama": "Arion Mall",
+        "wilayah": "Jakarta Timur",
+        "kategori": "mall",
+        "alamat": "Jl. Pemuda Kav.3-4, Rawamangun, Jakarta Timur",
+        "latitude": -6.1966,
+        "longitude": 106.8841
+    },
+    {
+        "id": "jaktim_greenterrace",
+        "nama": "Green Terrace TMII",
+        "wilayah": "Jakarta Timur",
+        "kategori": "mall",
+        "alamat": "Jl. Raya Mabes Hankam, Jakarta Timur",
+        "latitude": -6.3077,
+        "longitude": 106.9005
+    },
+    {
+        "id": "jaktim_stasiunjatinegara",
+        "nama": "Stasiun Jatinegara",
+        "wilayah": "Jakarta Timur",
+        "kategori": "transportasi",
+        "alamat": "Jl. Bekasi Timur Raya, Jakarta Timur",
+        "latitude": -6.2149,
+        "longitude": 106.8706
+    },
+    {
+        "id": "jaktim_stasiunklender",
+        "nama": "Stasiun Klender",
+        "wilayah": "Jakarta Timur",
+        "kategori": "transportasi",
+        "alamat": "Klender, Jakarta Timur",
+        "latitude": -6.2138,
+        "longitude": 106.8990
+    },
+    {
+        "id": "jaktim_stasiuncakung",
+        "nama": "Stasiun Cakung",
+        "wilayah": "Jakarta Timur",
+        "kategori": "transportasi",
+        "alamat": "Cakung, Jakarta Timur",
+        "latitude": -6.2191,
+        "longitude": 106.9524
+    },
+    {
+        "id": "jaktim_terminalkampungrambutan",
+        "nama": "Terminal Kampung Rambutan",
+        "wilayah": "Jakarta Timur",
+        "kategori": "transportasi",
+        "alamat": "Jl. Lingkar Luar Selatan, Jakarta Timur",
+        "latitude": -6.3093,
+        "longitude": 106.8827
+    },
+    {
+        "id": "jaktim_rsudpasarrebo",
+        "nama": "RSUD Pasar Rebo",
+        "wilayah": "Jakarta Timur",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. TB Simatupang No.30, Jakarta Timur",
+        "latitude": -6.3243,
+        "longitude": 106.8574
+    },
+    {
+        "id": "jaktim_rs_persahabatan",
+        "nama": "RS Persahabatan",
+        "wilayah": "Jakarta Timur",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. Persahabatan Raya No.1, Rawamangun",
+        "latitude": -6.2018,
+        "longitude": 106.8859
+    },
+    {
+        "id": "jaktim_rs_harapanbunda",
+        "nama": "RS Harapan Bunda",
+        "wilayah": "Jakarta Timur",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. Raya Bogor KM.22, Jakarta Timur",
+        "latitude": -6.3376,
+        "longitude": 106.8650
+    },
+    {
+        "id": "jaktim_universitasindonesia_salemba",
+        "nama": "Universitas Negeri Jakarta",
+        "wilayah": "Jakarta Timur",
+        "kategori": "kampus",
+        "alamat": "Jl. Rawamangun Muka, Jakarta Timur",
+        "latitude": -6.1974,
+        "longitude": 106.8849
+    },
+    {
+        "id": "jaktim_velodrome",
+        "nama": "Jakarta International Velodrome",
+        "wilayah": "Jakarta Timur",
+        "kategori": "sport_center",
+        "alamat": "Jl. Balap Sepeda, Rawamangun",
+        "latitude": -6.1947,
+        "longitude": 106.8866
+    }
+]

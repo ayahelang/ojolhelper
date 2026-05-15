@@ -320,3 +320,41 @@ footer a:hover {
     user-select: none;
     pointer-events: none;
 }
+
+.smart-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.smart-card {
+    background: #162544;
+    border-radius: 18px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, .05);
+}
+
+.smart-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.smart-meta {
+    color: #9cb5d8;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.smart-distance {
+    font-size: 18px;
+    color: #4ea1ff;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.smart-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+}

@@ -1,0 +1,182 @@
+[
+    {
+        "id": "jakbar_pikavenue",
+        "nama": "PIK Avenue",
+        "wilayah": "Jakarta Barat",
+        "kategori": "mall",
+        "alamat": "Jl. Pantai Indah Kapuk Boulevard, Jakarta Barat",
+        "latitude": -6.1139,
+        "longitude": 106.7405
+    },
+    {
+        "id": "jakbar_centralpark",
+        "nama": "Central Park Mall",
+        "wilayah": "Jakarta Barat",
+        "kategori": "mall",
+        "alamat": "Jl. Letjen S. Parman Kav.28, Jakarta Barat",
+        "latitude": -6.1788,
+        "longitude": 106.7906
+    },
+    {
+        "id": "jakbar_tamananggrek",
+        "nama": "Mall Taman Anggrek",
+        "wilayah": "Jakarta Barat",
+        "kategori": "mall",
+        "alamat": "Jl. Letjen S. Parman Kav.21, Jakarta Barat",
+        "latitude": -6.1783,
+        "longitude": 106.7925
+    },
+    {
+        "id": "jakbar_ciputramall",
+        "nama": "Ciputra Mall Jakarta",
+        "wilayah": "Jakarta Barat",
+        "kategori": "mall",
+        "alamat": "Jl. Letjen S. Parman Kav.11, Jakarta Barat",
+        "latitude": -6.1675,
+        "longitude": 106.7892
+    },
+    {
+        "id": "jakbar_lippomallpuri",
+        "nama": "Lippo Mall Puri",
+        "wilayah": "Jakarta Barat",
+        "kategori": "mall",
+        "alamat": "Jl. Puri Indah Raya Blok U1, Jakarta Barat",
+        "latitude": -6.1876,
+        "longitude": 106.7381
+    },
+    {
+        "id": "jakbar_purimall",
+        "nama": "Puri Indah Mall",
+        "wilayah": "Jakarta Barat",
+        "kategori": "mall",
+        "alamat": "Jl. Puri Agung, Kembangan Selatan",
+        "latitude": -6.1858,
+        "longitude": 106.7398
+    },
+    {
+        "id": "jakbar_seasoncity",
+        "nama": "Season City",
+        "wilayah": "Jakarta Barat",
+        "kategori": "mall",
+        "alamat": "Jl. Prof. Dr. Latumenten No.33",
+        "latitude": -6.1536,
+        "longitude": 106.8018
+    },
+    {
+        "id": "jakbar_neosohomall",
+        "nama": "Neo Soho Mall",
+        "wilayah": "Jakarta Barat",
+        "kategori": "mall",
+        "alamat": "Jl. Letjen S. Parman Kav.28",
+        "latitude": -6.1793,
+        "longitude": 106.7902
+    },
+    {
+        "id": "jakbar_emporiumpluit",
+        "nama": "Emporium Pluit Mall",
+        "wilayah": "Jakarta Barat",
+        "kategori": "mall",
+        "alamat": "Jl. Pluit Selatan Raya",
+        "latitude": -6.1253,
+        "longitude": 106.7910
+    },
+    {
+        "id": "jakbar_baywalk",
+        "nama": "Baywalk Mall Pluit",
+        "wilayah": "Jakarta Barat",
+        "kategori": "mall",
+        "alamat": "Jl. Pluit Karang Ayu Barat",
+        "latitude": -6.1163,
+        "longitude": 106.7783
+    },
+    {
+        "id": "jakbar_stasiungrogol",
+        "nama": "Stasiun Grogol",
+        "wilayah": "Jakarta Barat",
+        "kategori": "transportasi",
+        "alamat": "Grogol, Jakarta Barat",
+        "latitude": -6.1617,
+        "longitude": 106.7909
+    },
+    {
+        "id": "jakbar_stasiunduri",
+        "nama": "Stasiun Duri",
+        "wilayah": "Jakarta Barat",
+        "kategori": "transportasi",
+        "alamat": "Jl. Duri Utara, Jakarta Barat",
+        "latitude": -6.1551,
+        "longitude": 106.8019
+    },
+    {
+        "id": "jakbar_stasiunbojongindah",
+        "nama": "Stasiun Bojong Indah",
+        "wilayah": "Jakarta Barat",
+        "kategori": "transportasi",
+        "alamat": "Rawa Buaya, Jakarta Barat",
+        "latitude": -6.1612,
+        "longitude": 106.7425
+    },
+    {
+        "id": "jakbar_terminalkalideres",
+        "nama": "Terminal Kalideres",
+        "wilayah": "Jakarta Barat",
+        "kategori": "transportasi",
+        "alamat": "Jl. Daan Mogot KM.16",
+        "latitude": -6.1375,
+        "longitude": 106.7048
+    },
+    {
+        "id": "jakbar_rsroyaltaruma",
+        "nama": "RS Royal Taruma",
+        "wilayah": "Jakarta Barat",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. Daan Mogot No.34",
+        "latitude": -6.1679,
+        "longitude": 106.7859
+    },
+    {
+        "id": "jakbar_rsciputrakalideres",
+        "nama": "RS Ciputra Hospital",
+        "wilayah": "Jakarta Barat",
+        "kategori": "rumah_sakit",
+        "alamat": "Citra Garden City",
+        "latitude": -6.1431,
+        "longitude": 106.7127
+    },
+    {
+        "id": "jakbar_trisakti",
+        "nama": "Universitas Trisakti",
+        "wilayah": "Jakarta Barat",
+        "kategori": "kampus",
+        "alamat": "Jl. Kyai Tapa No.1",
+        "latitude": -6.1685,
+        "longitude": 106.7901
+    },
+    {
+        "id": "jakbar_tarumanagara",
+        "nama": "Universitas Tarumanagara",
+        "wilayah": "Jakarta Barat",
+        "kategori": "kampus",
+        "alamat": "Jl. Letjen S. Parman No.1",
+        "latitude": -6.1688,
+        "longitude": 106.7909
+    },
+    {
+        "id": "jakbar_museummacan",
+        "nama": "Museum MACAN",
+        "wilayah": "Jakarta Barat",
+        "kategori": "wisata",
+        "alamat": "AKR Tower Level M, Kebon Jeruk",
+        "latitude": -6.1900,
+        "longitude": 106.7827
+    },
+    {
+        "id": "jakbar_pantaiindahkapuk",
+        "nama": "Pantai Indah Kapuk",
+        "wilayah": "Jakarta Barat",
+        "kategori": "business_district",
+        "alamat": "PIK, Jakarta Barat",
+        "latitude": -6.1165,
+        "longitude": 106.7415
+    }
+]
