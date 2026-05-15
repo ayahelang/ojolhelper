@@ -700,7 +700,7 @@ document.addEventListener(
 
                 const targetLon =
                     parseFloat(geoData[0].lon);
-                
+
                 window.lastTargetLat = targetLat;
                 window.lastTargetLon = targetLon;
 
@@ -1057,10 +1057,6 @@ function renderRecommendation(
     <div class="smart-meta">
         🛣️ ${item.alamat}
     </div>
-
-<div class="smart-distance">
-    🚖 Menghitung route nyata...
-</div>
 
     <div class="smart-buttons">
 
@@ -1800,11 +1796,23 @@ document.addEventListener("click", function (e) {
 let navMap = null;
 let navRouting = null;
 let navMarker = null;
+let lastRouteUpdate = 0;
+let navWatcher = null;
 
 async function openFullscreenNavigation(
     targetLat,
     targetLon
 ) {
+
+    if (navWatcher) {
+
+        navigator.geolocation.clearWatch(
+            navWatcher
+        );
+
+        navWatcher = null;
+
+    }
 
     document
         .getElementById("navFullscreen")
@@ -1814,7 +1822,7 @@ async function openFullscreenNavigation(
         navMap.remove();
         navMap = null;
     }
-
+    
     navMap = L.map("navMap", {
         zoomControl: false
     }).setView(
@@ -1908,7 +1916,8 @@ async function openFullscreenNavigation(
 
             .addTo(navMap);
 
-    navigator.geolocation.watchPosition(
+    navWatcher =
+        navigator.geolocation.watchPosition(
 
         function (pos) {
 
@@ -1930,7 +1939,7 @@ async function openFullscreenNavigation(
 
             document
                 .getElementById("navSpeed")
-                .innerText = let navMarker = null;
+                .innerText =
                 speed + " km/h";
 
             navMarker.setLatLng([lat, lon]);
@@ -1944,7 +1953,14 @@ async function openFullscreenNavigation(
                 }
             );
 
-            if (navRouting) {
+            const now = Date.now();
+
+            if (
+                navRouting &&
+                now - lastRouteUpdate > 5000
+            ) {
+
+                lastRouteUpdate = now;
 
                 navRouting.setWaypoints([
                     L.latLng(lat, lon),
@@ -1993,6 +2009,14 @@ document
                 navMap.remove();
                 navMap = null;
             }
+            if (navWatcher) {
 
+                navigator.geolocation.clearWatch(
+                    navWatcher
+                );
+
+                navWatcher = null;
+
+            }
         }
     );
