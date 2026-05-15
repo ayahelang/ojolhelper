@@ -90,24 +90,6 @@
         "longitude": 106.8097
     },
     {
-        "id": "jaksel_scbd",
-        "nama": "SCBD",
-        "wilayah": "Jakarta Selatan",
-        "kategori": "business_district",
-        "alamat": "Sudirman Central Business District, Jakarta Selatan",
-        "latitude": -6.2245,
-        "longitude": 106.8092
-    },
-    {
-        "id": "jaksel_tebetecopark",
-        "nama": "Tebet Eco Park",
-        "wilayah": "Jakarta Selatan",
-        "kategori": "taman",
-        "alamat": "Jl. Tebet Barat Raya, Tebet, Jakarta Selatan",
-        "latitude": -6.2371,
-        "longitude": 106.8487
-    },
-    {
         "id": "jaksel_pejatenvillage",
         "nama": "Pejaten Village",
         "wilayah": "Jakarta Selatan",
@@ -117,47 +99,38 @@
         "longitude": 106.8315
     },
     {
-        "id": "jaksel_ragunan",
-        "nama": "Kebun Binatang Ragunan",
+        "id": "jaksel_scbd",
+        "nama": "SCBD",
         "wilayah": "Jakarta Selatan",
-        "kategori": "wisata",
-        "alamat": "Jl. Harsono RM No.1, Pasar Minggu, Jakarta Selatan",
-        "latitude": -6.3039,
-        "longitude": 106.8205
+        "kategori": "business_district",
+        "alamat": "Sudirman Central Business District, Jakarta Selatan",
+        "latitude": -6.2245,
+        "longitude": 106.8092
     },
     {
-        "id": "jaksel_uin",
-        "nama": "UIN Syarif Hidayatullah",
-        "wilayah": "Jakarta Selatan",
-        "kategori": "kampus",
-        "alamat": "Jl. Ir. H. Juanda No.95, Ciputat",
-        "latitude": -6.3061,
-        "longitude": 106.7569
-    },
-    {
-        "id": "jaksel_stasiunmrtblokm",
+        "id": "jaksel_mrtblokm",
         "nama": "MRT Blok M",
         "wilayah": "Jakarta Selatan",
         "kategori": "transportasi",
-        "alamat": "Jl. Panglima Polim, Kebayoran Baru",
+        "alamat": "Jl. Panglima Polim, Kebayoran Baru, Jakarta Selatan",
         "latitude": -6.2445,
         "longitude": 106.7991
     },
     {
-        "id": "jaksel_stasiunmrtasean",
+        "id": "jaksel_mrtasean",
         "nama": "MRT ASEAN",
         "wilayah": "Jakarta Selatan",
         "kategori": "transportasi",
-        "alamat": "Jl. Sisingamangaraja, Jakarta Selatan",
+        "alamat": "Jl. Sisingamangaraja, Kebayoran Baru, Jakarta Selatan",
         "latitude": -6.2381,
         "longitude": 106.7995
     },
     {
-        "id": "jaksel_stasiunmrtlebakbulus",
+        "id": "jaksel_mrtlebakbulus",
         "nama": "MRT Lebak Bulus",
         "wilayah": "Jakarta Selatan",
         "kategori": "transportasi",
-        "alamat": "Jl. Lebak Bulus Raya, Jakarta Selatan",
+        "alamat": "Jl. Lebak Bulus Raya, Cilandak, Jakarta Selatan",
         "latitude": -6.2892,
         "longitude": 106.7740
     },
@@ -166,7 +139,7 @@
         "nama": "RS Pondok Indah",
         "wilayah": "Jakarta Selatan",
         "kategori": "rumah_sakit",
-        "alamat": "Jl. Metro Duta Kav.UE, Pondok Indah",
+        "alamat": "Jl. Metro Duta Kav.UE, Pondok Indah, Jakarta Selatan",
         "latitude": -6.2674,
         "longitude": 106.7840
     },
@@ -178,5 +151,86 @@
         "alamat": "Jl. Lebak Bulus I Kav.29, Jakarta Selatan",
         "latitude": -6.2885,
         "longitude": 106.7798
+    },
+    {
+        "id": "jaksel_uin",
+        "nama": "UIN Syarif Hidayatullah Jakarta",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "kampus",
+        "alamat": "Jl. Ir. H. Juanda No.95, Ciputat Timur",
+        "latitude": -6.3061,
+        "longitude": 106.7569
+    },
+    {
+        "id": "jaksel_tebetecopark",
+        "nama": "Tebet Eco Park",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "taman",
+        "alamat": "Jl. Tebet Barat Raya, Tebet, Jakarta Selatan",
+        "latitude": -6.2371,
+        "longitude": 106.8487
+    },
+    {
+        "id": "jaksel_ragunan",
+        "nama": "Kebun Binatang Ragunan",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "wisata",
+        "alamat": "Jl. Harsono RM No.1, Pasar Minggu, Jakarta Selatan",
+        "latitude": -6.3039,
+        "longitude": 106.8205
+    },
+    {
+        "id": "jaksel_fx",
+        "nama": "fX Sudirman",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "mall",
+        "alamat": "Jl. Jend. Sudirman, Senayan, Jakarta Selatan",
+        "latitude": -6.2249,
+        "longitude": 106.8038
+    },
+    {
+        "id": "jaksel_lotteavenue",
+        "nama": "Lotte Shopping Avenue",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "mall",
+        "alamat": "Jl. Prof. DR. Satrio Kav.3-5, Karet Kuningan, Jakarta Selatan",
+        "latitude": -6.2246,
+        "longitude": 106.8277
+    },
+    {
+        "id": "jaksel_gbk",
+        "nama": "Gelora Bung Karno",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "stadion",
+        "alamat": "Jl. Pintu Satu Senayan, Jakarta Selatan",
+        "latitude": -6.2186,
+        "longitude": 106.8025
+    },
+    {
+        "id": "jaksel_sman8",
+        "nama": "SMA Negeri 8 Jakarta",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "sekolah",
+        "alamat": "Jl. Taman Bukitduri, Tebet, Jakarta Selatan",
+        "latitude": -6.2267,
+        "longitude": 106.8575
+    },
+    {
+        "id": "jaksel_tarakanita",
+        "nama": "SMA Tarakanita 1",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "sekolah",
+        "alamat": "Jl. Wolter Monginsidi No.118, Kebayoran Baru, Jakarta Selatan",
+        "latitude": -6.2458,
+        "longitude": 106.8135
+    },
+    {
+        "id": "jaksel_kuningan",
+        "nama": "Kawasan Kuningan",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "business_district",
+        "alamat": "Setiabudi, Jakarta Selatan",
+        "latitude": -6.2197,
+        "longitude": 106.8326
     }
 ]

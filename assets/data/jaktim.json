@@ -18,33 +18,6 @@
         "longitude": 106.9018
     },
     {
-        "id": "jaktim_lrt_harjamukti",
-        "nama": "LRT Harjamukti",
-        "wilayah": "Jakarta Timur",
-        "kategori": "transportasi",
-        "alamat": "Harjamukti, Cibubur, Jakarta Timur",
-        "latitude": -6.3946,
-        "longitude": 106.8861
-    },
-    {
-        "id": "jaktim_kotawisata",
-        "nama": "Kota Wisata Cibubur",
-        "wilayah": "Jakarta Timur",
-        "kategori": "perumahan",
-        "alamat": "Kota Wisata Cibubur, Jakarta Timur",
-        "latitude": -6.3974,
-        "longitude": 106.9505
-    },
-    {
-        "id": "jaktim_tmii",
-        "nama": "TMII",
-        "wilayah": "Jakarta Timur",
-        "kategori": "wisata",
-        "alamat": "Jl. Raya Taman Mini, Cipayung, Jakarta Timur",
-        "latitude": -6.3024,
-        "longitude": 106.8951
-    },
-    {
         "id": "jaktim_bassura",
         "nama": "Bassura City Mall",
         "wilayah": "Jakarta Timur",
@@ -58,7 +31,7 @@
         "nama": "Ciplaz Jatinegara",
         "wilayah": "Jakarta Timur",
         "kategori": "mall",
-        "alamat": "Jl. Matraman Raya No.173, Jakarta Timur",
+        "alamat": "Jl. Matraman Raya No.173, Jatinegara, Jakarta Timur",
         "latitude": -6.2147,
         "longitude": 106.8701
     },
@@ -102,8 +75,8 @@
         "id": "jaktim_stasiunjatinegara",
         "nama": "Stasiun Jatinegara",
         "wilayah": "Jakarta Timur",
-        "kategori": "transportasi",
-        "alamat": "Jl. Bekasi Timur Raya, Jakarta Timur",
+        "kategori": "stasiun",
+        "alamat": "Jl. Bekasi Timur Raya, Jatinegara, Jakarta Timur",
         "latitude": -6.2149,
         "longitude": 106.8706
     },
@@ -111,8 +84,8 @@
         "id": "jaktim_stasiunklender",
         "nama": "Stasiun Klender",
         "wilayah": "Jakarta Timur",
-        "kategori": "transportasi",
-        "alamat": "Klender, Jakarta Timur",
+        "kategori": "stasiun",
+        "alamat": "Klender, Duren Sawit, Jakarta Timur",
         "latitude": -6.2138,
         "longitude": 106.8990
     },
@@ -120,16 +93,25 @@
         "id": "jaktim_stasiuncakung",
         "nama": "Stasiun Cakung",
         "wilayah": "Jakarta Timur",
-        "kategori": "transportasi",
+        "kategori": "stasiun",
         "alamat": "Cakung, Jakarta Timur",
         "latitude": -6.2191,
         "longitude": 106.9524
     },
     {
+        "id": "jaktim_lrtharjamukti",
+        "nama": "LRT Harjamukti",
+        "wilayah": "Jakarta Timur",
+        "kategori": "transportasi",
+        "alamat": "Harjamukti, Cibubur, Jakarta Timur",
+        "latitude": -6.3946,
+        "longitude": 106.8861
+    },
+    {
         "id": "jaktim_terminalkampungrambutan",
         "nama": "Terminal Kampung Rambutan",
         "wilayah": "Jakarta Timur",
-        "kategori": "transportasi",
+        "kategori": "terminal",
         "alamat": "Jl. Lingkar Luar Selatan, Jakarta Timur",
         "latitude": -6.3093,
         "longitude": 106.8827
@@ -139,44 +121,89 @@
         "nama": "RSUD Pasar Rebo",
         "wilayah": "Jakarta Timur",
         "kategori": "rumah_sakit",
-        "alamat": "Jl. TB Simatupang No.30, Jakarta Timur",
+        "alamat": "Jl. TB Simatupang No.30, Pasar Rebo, Jakarta Timur",
         "latitude": -6.3243,
         "longitude": 106.8574
     },
     {
-        "id": "jaktim_rs_persahabatan",
+        "id": "jaktim_rspersahabatan",
         "nama": "RS Persahabatan",
         "wilayah": "Jakarta Timur",
         "kategori": "rumah_sakit",
-        "alamat": "Jl. Persahabatan Raya No.1, Rawamangun",
+        "alamat": "Jl. Persahabatan Raya No.1, Rawamangun, Jakarta Timur",
         "latitude": -6.2018,
         "longitude": 106.8859
     },
     {
-        "id": "jaktim_rs_harapanbunda",
+        "id": "jaktim_rsharapanbunda",
         "nama": "RS Harapan Bunda",
         "wilayah": "Jakarta Timur",
         "kategori": "rumah_sakit",
-        "alamat": "Jl. Raya Bogor KM.22, Jakarta Timur",
+        "alamat": "Jl. Raya Bogor KM.22, Kramat Jati, Jakarta Timur",
         "latitude": -6.3376,
         "longitude": 106.8650
     },
     {
-        "id": "jaktim_universitasindonesia_salemba",
+        "id": "jaktim_unj",
         "nama": "Universitas Negeri Jakarta",
         "wilayah": "Jakarta Timur",
         "kategori": "kampus",
-        "alamat": "Jl. Rawamangun Muka, Jakarta Timur",
+        "alamat": "Jl. Rawamangun Muka, Rawamangun, Jakarta Timur",
         "latitude": -6.1974,
         "longitude": 106.8849
+    },
+    {
+        "id": "jaktim_tmii",
+        "nama": "Taman Mini Indonesia Indah",
+        "wilayah": "Jakarta Timur",
+        "kategori": "wisata",
+        "alamat": "Jl. Raya Taman Mini, Cipayung, Jakarta Timur",
+        "latitude": -6.3024,
+        "longitude": 106.8951
     },
     {
         "id": "jaktim_velodrome",
         "nama": "Jakarta International Velodrome",
         "wilayah": "Jakarta Timur",
-        "kategori": "sport_center",
-        "alamat": "Jl. Balap Sepeda, Rawamangun",
+        "kategori": "stadion",
+        "alamat": "Jl. Balap Sepeda, Rawamangun, Jakarta Timur",
         "latitude": -6.1947,
         "longitude": 106.8866
+    },
+    {
+        "id": "jaktim_kotawisata",
+        "nama": "Kota Wisata Cibubur",
+        "wilayah": "Jakarta Timur",
+        "kategori": "business_district",
+        "alamat": "Kota Wisata Cibubur, Jakarta Timur",
+        "latitude": -6.3974,
+        "longitude": 106.9505
+    },
+    {
+        "id": "jaktim_sman81",
+        "nama": "SMA Negeri 81 Jakarta",
+        "wilayah": "Jakarta Timur",
+        "kategori": "sekolah",
+        "alamat": "Jl. Kartika Eka Paksi, Halim Perdana Kusuma, Jakarta Timur",
+        "latitude": -6.2663,
+        "longitude": 106.8894
+    },
+    {
+        "id": "jaktim_sman21",
+        "nama": "SMA Negeri 21 Jakarta",
+        "wilayah": "Jakarta Timur",
+        "kategori": "sekolah",
+        "alamat": "Jl. Tanah Mas Raya, Kayu Putih, Jakarta Timur",
+        "latitude": -6.1807,
+        "longitude": 106.8872
+    },
+    {
+        "id": "jaktim_cawang",
+        "nama": "Cawang",
+        "wilayah": "Jakarta Timur",
+        "kategori": "business_district",
+        "alamat": "Cawang, Kramat Jati, Jakarta Timur",
+        "latitude": -6.2429,
+        "longitude": 106.8667
     }
 ]

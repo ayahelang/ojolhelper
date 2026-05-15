@@ -178,5 +178,140 @@
         "alamat": "PIK, Jakarta Barat",
         "latitude": -6.1165,
         "longitude": 106.7415
+    },
+    {
+        "id": "jakbar_stasiunkalideres",
+        "nama": "Stasiun Kalideres",
+        "wilayah": "Jakarta Barat",
+        "kategori": "stasiun",
+        "alamat": "Kalideres, Jakarta Barat",
+        "latitude": -6.1371,
+        "longitude": 106.7037
+    },
+    {
+        "id": "jakbar_stasiunrawabuaya",
+        "nama": "Stasiun Rawa Buaya",
+        "wilayah": "Jakarta Barat",
+        "kategori": "stasiun",
+        "alamat": "Rawa Buaya, Jakarta Barat",
+        "latitude": -6.1607,
+        "longitude": 106.7248
+    },
+    {
+        "id": "jakbar_stasiunpesing",
+        "nama": "Stasiun Pesing",
+        "wilayah": "Jakarta Barat",
+        "kategori": "stasiun",
+        "alamat": "Jembatan Besi, Jakarta Barat",
+        "latitude": -6.1618,
+        "longitude": 106.7808
+    },
+    {
+        "id": "jakbar_stasiuntamankota",
+        "nama": "Stasiun Taman Kota",
+        "wilayah": "Jakarta Barat",
+        "kategori": "stasiun",
+        "alamat": "Kembangan Utara, Jakarta Barat",
+        "latitude": -6.1710,
+        "longitude": 106.7373
+    },
+    {
+        "id": "jakbar_terminalgrogol",
+        "nama": "Terminal Grogol",
+        "wilayah": "Jakarta Barat",
+        "kategori": "terminal",
+        "alamat": "Jl. Kyai Tapa, Grogol",
+        "latitude": -6.1666,
+        "longitude": 106.7897
+    },
+    {
+        "id": "jakbar_greenlakecity",
+        "nama": "Green Lake City",
+        "wilayah": "Jakarta Barat",
+        "kategori": "business_district",
+        "alamat": "Duri Kosambi, Jakarta Barat",
+        "latitude": -6.1704,
+        "longitude": 106.7114
+    },
+    {
+        "id": "jakbar_citragarden",
+        "nama": "Citra Garden City",
+        "wilayah": "Jakarta Barat",
+        "kategori": "business_district",
+        "alamat": "Kalideres, Jakarta Barat",
+        "latitude": -6.1422,
+        "longitude": 106.7128
+    },
+    {
+        "id": "jakbar_tamanpalem",
+        "nama": "Taman Palem",
+        "wilayah": "Jakarta Barat",
+        "kategori": "business_district",
+        "alamat": "Cengkareng, Jakarta Barat",
+        "latitude": -6.1462,
+        "longitude": 106.7305
+    },
+    {
+        "id": "jakbar_daanmogotcity",
+        "nama": "Daan Mogot City",
+        "wilayah": "Jakarta Barat",
+        "kategori": "apartemen",
+        "alamat": "Kalideres, Jakarta Barat",
+        "latitude": -6.1542,
+        "longitude": 106.7182
+    },
+    {
+        "id": "jakbar_sman78",
+        "nama": "SMA Negeri 78 Jakarta",
+        "wilayah": "Jakarta Barat",
+        "kategori": "sekolah",
+        "alamat": "Jl. Bhakti IV No.1, Kemanggisan, Jakarta Barat",
+        "latitude": -6.1924,
+        "longitude": 106.7829
+    },
+    {
+        "id": "jakbar_penabur1",
+        "nama": "SMAK 1 PENABUR Jakarta",
+        "wilayah": "Jakarta Barat",
+        "kategori": "sekolah",
+        "alamat": "Jl. Tanjung Duren Raya No.4, Jakarta Barat",
+        "latitude": -6.1774,
+        "longitude": 106.7898
+    },
+    {
+        "id": "jakbar_ipekapuri",
+        "nama": "SMA Kristen IPEKA Puri",
+        "wilayah": "Jakarta Barat",
+        "kategori": "sekolah",
+        "alamat": "Jl. Puri Indah Raya, Jakarta Barat",
+        "latitude": -6.1864,
+        "longitude": 106.7364
+    },
+    {
+        "id": "jakbar_tarsisiusvireta",
+        "nama": "Sekolah Tarsisius Vireta",
+        "wilayah": "Jakarta Barat",
+        "kategori": "sekolah",
+        "alamat": "Jl. Dharma Karya Utama, Jakarta Barat",
+        "latitude": -6.1822,
+        "longitude": 106.7428
+    },
+    {
+        "id": "jakbar_pasarpuri",
+        "nama": "Pasar Puri Indah",
+        "wilayah": "Jakarta Barat",
+        "kategori": "pasar",
+        "alamat": "Puri Indah, Kembangan, Jakarta Barat",
+        "latitude": -6.1861,
+        "longitude": 106.7388
+    },
+    {
+        "id": "jakbar_hublife",
+        "nama": "Hublife Taman Anggrek",
+        "wilayah": "Jakarta Barat",
+        "kategori": "mall",
+        "alamat": "Jl. Letjen S. Parman, Jakarta Barat",
+        "latitude": -6.1787,
+        "longitude": 106.7914
     }
 ]

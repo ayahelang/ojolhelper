@@ -9,6 +9,15 @@
         "longitude": 106.8335
     },
     {
+        "id": "depok_detos",
+        "nama": "Depok Town Square",
+        "wilayah": "Depok",
+        "kategori": "mall",
+        "alamat": "Jl. Margonda Raya No.1, Beji, Depok",
+        "latitude": -6.3711,
+        "longitude": 106.8327
+    },
+    {
         "id": "depok_dmall",
         "nama": "D'Mall Depok",
         "wilayah": "Depok",
@@ -31,7 +40,7 @@
         "nama": "Pesona Square Mall",
         "wilayah": "Depok",
         "kategori": "mall",
-        "alamat": "Jl. Ir. H. Juanda No.99, Depok",
+        "alamat": "Jl. Ir. H. Juanda No.99, Beji, Depok",
         "latitude": -6.3859,
         "longitude": 106.8411
     },
@@ -54,20 +63,20 @@
         "longitude": 106.7744
     },
     {
-        "id": "depok_transstudio",
-        "nama": "Trans Studio Mall Cibubur",
+        "id": "depok_stasiundepok",
+        "nama": "Stasiun Depok",
         "wilayah": "Depok",
-        "kategori": "mall",
-        "alamat": "Jl. Alternatif Cibubur No.230",
-        "latitude": -6.3759,
-        "longitude": 106.9018
+        "kategori": "stasiun",
+        "alamat": "Jl. Stasiun Depok, Pancoran Mas, Depok",
+        "latitude": -6.4049,
+        "longitude": 106.8177
     },
     {
         "id": "depok_stasiundepokbaru",
         "nama": "Stasiun Depok Baru",
         "wilayah": "Depok",
-        "kategori": "transportasi",
-        "alamat": "Jl. Stasiun Depok Baru",
+        "kategori": "stasiun",
+        "alamat": "Jl. Stasiun Depok Baru, Pancoran Mas, Depok",
         "latitude": -6.3915,
         "longitude": 106.8218
     },
@@ -75,26 +84,35 @@
         "id": "depok_stasiunpondokcina",
         "nama": "Stasiun Pondok Cina",
         "wilayah": "Depok",
-        "kategori": "transportasi",
-        "alamat": "Jl. Margonda Raya, Beji",
+        "kategori": "stasiun",
+        "alamat": "Jl. Margonda Raya, Beji, Depok",
         "latitude": -6.3693,
         "longitude": 106.8324
     },
     {
-        "id": "depok_stasiununiversitasindonesia",
+        "id": "depok_stasiunui",
         "nama": "Stasiun Universitas Indonesia",
         "wilayah": "Depok",
-        "kategori": "transportasi",
-        "alamat": "Kampus UI Depok",
+        "kategori": "stasiun",
+        "alamat": "Kampus UI, Beji, Depok",
         "latitude": -6.3624,
         "longitude": 106.8315
+    },
+    {
+        "id": "depok_stasiuncitayam",
+        "nama": "Stasiun Citayam",
+        "wilayah": "Depok",
+        "kategori": "stasiun",
+        "alamat": "Jl. Raya Citayam, Cipayung, Depok",
+        "latitude": -6.4489,
+        "longitude": 106.8175
     },
     {
         "id": "depok_terminaljatijajar",
         "nama": "Terminal Jatijajar",
         "wilayah": "Depok",
-        "kategori": "transportasi",
-        "alamat": "Jl. Raya Bogor KM.38",
+        "kategori": "terminal",
+        "alamat": "Jl. Raya Bogor KM.38, Jatijajar, Depok",
         "latitude": -6.4444,
         "longitude": 106.8583
     },
@@ -103,7 +121,7 @@
         "nama": "Universitas Indonesia",
         "wilayah": "Depok",
         "kategori": "kampus",
-        "alamat": "Kampus UI Depok",
+        "alamat": "Kampus UI Depok, Beji, Depok",
         "latitude": -6.3655,
         "longitude": 106.8283
     },
@@ -112,7 +130,7 @@
         "nama": "Universitas Gunadarma",
         "wilayah": "Depok",
         "kategori": "kampus",
-        "alamat": "Jl. Margonda Raya No.100",
+        "alamat": "Jl. Margonda Raya No.100, Pondok Cina, Depok",
         "latitude": -6.3938,
         "longitude": 106.8245
     },
@@ -121,16 +139,25 @@
         "nama": "Politeknik Negeri Jakarta",
         "wilayah": "Depok",
         "kategori": "kampus",
-        "alamat": "Kampus UI Depok",
+        "alamat": "Kampus UI Depok, Beji, Depok",
         "latitude": -6.3702,
         "longitude": 106.8249
+    },
+    {
+        "id": "depok_rsui",
+        "nama": "Rumah Sakit Universitas Indonesia",
+        "wilayah": "Depok",
+        "kategori": "rumah_sakit",
+        "alamat": "Kampus UI Depok, Beji, Depok",
+        "latitude": -6.3710,
+        "longitude": 106.8267
     },
     {
         "id": "depok_rsherminadepok",
         "nama": "RS Hermina Depok",
         "wilayah": "Depok",
         "kategori": "rumah_sakit",
-        "alamat": "Jl. Siliwangi No.50",
+        "alamat": "Jl. Siliwangi No.50, Pancoran Mas, Depok",
         "latitude": -6.3932,
         "longitude": 106.8127
     },
@@ -139,7 +166,7 @@
         "nama": "RS Permata Depok",
         "wilayah": "Depok",
         "kategori": "rumah_sakit",
-        "alamat": "Jl. Raya Muchtar, Sawangan",
+        "alamat": "Jl. Raya Muchtar, Sawangan, Depok",
         "latitude": -6.4214,
         "longitude": 106.7802
     },
@@ -148,16 +175,88 @@
         "nama": "RS Mitra Keluarga Depok",
         "wilayah": "Depok",
         "kategori": "rumah_sakit",
-        "alamat": "Jl. Margonda Raya",
+        "alamat": "Jl. Margonda Raya, Beji, Depok",
         "latitude": -6.3761,
         "longitude": 106.8310
     },
     {
-        "id": "depok_alunalundepok",
-        "nama": "Alun-Alun Depok",
+        "id": "depok_sman1",
+        "nama": "SMA Negeri 1 Depok",
+        "wilayah": "Depok",
+        "kategori": "sekolah",
+        "alamat": "Jl. Nusantara Raya No.317, Beji, Depok",
+        "latitude": -6.3837,
+        "longitude": 106.8245
+    },
+    {
+        "id": "depok_sman2",
+        "nama": "SMA Negeri 2 Depok",
+        "wilayah": "Depok",
+        "kategori": "sekolah",
+        "alamat": "Jl. Gede Raya No.177, Sukmajaya, Depok",
+        "latitude": -6.3946,
+        "longitude": 106.8411
+    },
+    {
+        "id": "depok_sman3",
+        "nama": "SMA Negeri 3 Depok",
+        "wilayah": "Depok",
+        "kategori": "sekolah",
+        "alamat": "Jl. Raden Saleh No.45, Sukmajaya, Depok",
+        "latitude": -6.4027,
+        "longitude": 106.8298
+    },
+    {
+        "id": "depok_penabur",
+        "nama": "BPK PENABUR Depok",
+        "wilayah": "Depok",
+        "kategori": "sekolah",
+        "alamat": "Jl. Kartini Raya No.1, Pancoran Mas, Depok",
+        "latitude": -6.3971,
+        "longitude": 106.8211
+    },
+    {
+        "id": "depok_nurulfikri",
+        "nama": "SMAIT Nurul Fikri",
+        "wilayah": "Depok",
+        "kategori": "sekolah",
+        "alamat": "Jl. H. Sairi No.145, Kukusan, Beji, Depok",
+        "latitude": -6.3568,
+        "longitude": 106.8138
+    },
+    {
+        "id": "depok_cakrabuana",
+        "nama": "Sekolah Cakra Buana",
+        "wilayah": "Depok",
+        "kategori": "sekolah",
+        "alamat": "Jl. Raya Cisalak No.99, Sukmajaya, Depok",
+        "latitude": -6.3988,
+        "longitude": 106.8562
+    },
+    {
+        "id": "depok_gdc",
+        "nama": "Grand Depok City",
+        "wilayah": "Depok",
+        "kategori": "business_district",
+        "alamat": "Jl. Boulevard Grand Depok City, Depok",
+        "latitude": -6.4298,
+        "longitude": 106.8204
+    },
+    {
+        "id": "depok_margondaresidence",
+        "nama": "Margonda Residence",
+        "wilayah": "Depok",
+        "kategori": "apartemen",
+        "alamat": "Jl. Margonda Raya, Beji, Depok",
+        "latitude": -6.3776,
+        "longitude": 106.8302
+    },
+    {
+        "id": "depok_alunalun",
+        "nama": "Alun-Alun Kota Depok",
         "wilayah": "Depok",
         "kategori": "taman",
-        "alamat": "Grand Depok City",
+        "alamat": "Grand Depok City, Depok",
         "latitude": -6.4338,
         "longitude": 106.8222
     },
@@ -166,17 +265,8 @@
         "nama": "Masjid Kubah Emas",
         "wilayah": "Depok",
         "kategori": "wisata",
-        "alamat": "Jl. Meruyung Raya, Limo",
+        "alamat": "Jl. Meruyung Raya, Limo, Depok",
         "latitude": -6.3850,
         "longitude": 106.7787
-    },
-    {
-        "id": "depok_gdc",
-        "nama": "Grand Depok City",
-        "wilayah": "Depok",
-        "kategori": "business_district",
-        "alamat": "Jl. Boulevard GDC",
-        "latitude": -6.4298,
-        "longitude": 106.8204
     }
 ]
