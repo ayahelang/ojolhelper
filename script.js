@@ -1930,7 +1930,7 @@ async function openFullscreenNavigation(
 
             document
                 .getElementById("navSpeed")
-                .innerText =
+                .innerText = let navMarker = null;
                 speed + " km/h";
 
             navMarker.setLatLng([lat, lon]);
