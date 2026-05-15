@@ -112,54 +112,61 @@ function renderLocations(data) {
 
       html += `
 
-      <div class="region-title">
-        ${region}
-      </div>
+        <div class="region-title">
+          ${region}
+        </div>
 
-      <div class="card-grid">
+        <div class="card-grid">
 
-    `;
+      `;
 
       grouped[region]
         .forEach(item => {
 
           html += `
 
-    <div
-      class="location-card"
-      onclick="openGoogleMaps(
-        ${item.latitude},
-        ${item.longitude},
-        '${item.nama}'
-      )"
-    >
+           <div
+  class="location-card"
+  onclick='openGoogleMaps(
+    ${item.latitude},
+    ${item.longitude},
+    ${JSON.stringify(item.nama)}
+  )'
+>
 
-      <div class="location-name">
-        ${item.nama}
-      </div>
+              <div class="location-name">
+                ${item.nama}
+              </div>
 
-      <div class="meta">
-        📍 ${item.alamat}
-      </div>
+              <div class="meta">
+                📍 ${item.alamat}
+              </div>
 
-      <div class="meta">
-        🏷️ ${item.kategori}
-      </div>
+              <div class="meta">
+                🏷️ ${item.kategori}
+              </div>
 
-      <div class="meta">
-        🌐 ${item.latitude},
-        ${item.longitude}
-      </div>
+              <div class="meta">
+                🌐 ${item.latitude},
+                ${item.longitude}
+              </div>
 
-      <div class="badge">
-        ${item.wilayah}
-      </div>
+              <div class="badge">
+                ${item.wilayah}
+              </div>
 
-    </div>
+            </div>
 
-  `;
+          `;
 
         });
+
+      html += `
+        </div>
+      `;
+
+    });
+
   container.innerHTML = html;
 
 }
