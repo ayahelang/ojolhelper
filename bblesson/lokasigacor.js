@@ -125,25 +125,41 @@ function renderLocations(data) {
 
           html += `
 
-        <div
-  class="location-card"
-  onclick="openGoogleMaps(
-    ${item.latitude},
-    ${item.longitude},
-    '${item.nama}'
-  )"
->
+    <div
+      class="location-card"
+      onclick="openGoogleMaps(
+        ${item.latitude},
+        ${item.longitude},
+        '${item.nama}'
+      )"
+    >
 
-      `;
+      <div class="location-name">
+        ${item.nama}
+      </div>
+
+      <div class="meta">
+        📍 ${item.alamat}
+      </div>
+
+      <div class="meta">
+        🏷️ ${item.kategori}
+      </div>
+
+      <div class="meta">
+        🌐 ${item.latitude},
+        ${item.longitude}
+      </div>
+
+      <div class="badge">
+        ${item.wilayah}
+      </div>
+
+    </div>
+
+  `;
 
         });
-
-      html += `
-      </div>
-    `;
-
-    });
-
   container.innerHTML = html;
 
 }
