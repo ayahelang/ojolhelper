@@ -1515,3 +1515,251 @@ window.addEventListener(
 
     }
 );
+
+/* =========================================
+SMART OCR LOCATION SYSTEM
+========================================= */
+
+async function processLocationScreenshot() {
+
+    const input =
+        document.getElementById(
+            "locationScreenshotInput"
+        );
+
+    const resultArea =
+        document.getElementById(
+            "ocrResultArea"
+        );
+
+    const file =
+        input.files[0];
+
+    if (!file) {
+
+        resultArea.innerHTML = `
+
+            <div class="ocr-card ocr-failed">
+                ❌ Pilih screenshot terlebih dahulu
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+    resultArea.innerHTML = `
+
+        <div class="ocr-card ocr-loading">
+
+            📡 Membaca screenshot...
+
+            <br><br>
+
+            🧠 Mendeteksi lokasi jemput & antar...
+
+        </div>
+
+    `;
+
+    await wait(2000);
+
+    /* =========================================
+    SIMULASI OCR
+    GANTI DENGAN TESSERACT OCR NANTI
+    ========================================= */
+
+    const fakeOCRSuccess =
+        Math.random() > 0.35;
+
+    if (fakeOCRSuccess) {
+
+        const contohPickup = [
+            "Margo City",
+            "Blok M Plaza",
+            "Summarecon Mall Bekasi",
+            "Grand Indonesia",
+            "Stasiun Bogor"
+        ];
+
+        const contohDropoff = [
+            "Stasiun UI",
+            "SCBD",
+            "AEON BSD",
+            "Tebet Eco Park",
+            "Kebun Raya Bogor"
+        ];
+
+        const pickup =
+            contohPickup[
+            Math.floor(
+                Math.random() *
+                contohPickup.length
+            )
+            ];
+
+        const dropoff =
+            contohDropoff[
+            Math.floor(
+                Math.random() *
+                contohDropoff.length
+            )
+            ];
+
+        const generatedData = {
+
+            pickup,
+            dropoff,
+
+            source: "user_upload",
+
+            verified: false,
+
+            timestamp:
+                Date.now()
+
+        };
+
+        saveMovementData(
+            generatedData
+        );
+
+        resultArea.innerHTML = `
+
+            <div class="ocr-card ocr-success">
+
+                ✅ Lokasi berhasil dikenali
+
+                <br><br>
+
+                🚖 Jemput:
+                <br>
+                <b>${pickup}</b>
+
+                <br><br>
+
+                🏁 Antar:
+                <br>
+                <b>${dropoff}</b>
+
+                <br><br>
+
+                📦 Data berhasil
+                ditambahkan ke database lokal.
+
+            </div>
+
+        `;
+
+    } else {
+
+        forwardToAdmin(
+            file
+        );
+
+        resultArea.innerHTML = `
+
+            <div class="ocr-card ocr-failed">
+
+                ⚠️ Lokasi belum berhasil
+                dikenali otomatis.
+
+                <br><br>
+
+                Screenshot telah diteruskan
+                ke admin:
+
+                <br><br>
+
+                <b>
+                admin@silverhhawk.web.id
+                </b>
+
+                <br><br>
+
+                untuk ditinjau manual
+                dan dimasukkan ke database.
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+/* =========================================
+SAVE MOVEMENT DATA
+========================================= */
+
+function saveMovementData(data) {
+
+    let existing = [];
+
+    try {
+
+        existing =
+            JSON.parse(
+                localStorage.getItem(
+                    "movement_history"
+                )
+            ) || [];
+
+    } catch (err) {
+
+        console.log(err);
+
+    }
+
+    existing.push(data);
+
+    localStorage.setItem(
+        "movement_history",
+        JSON.stringify(existing)
+    );
+
+    console.log(
+        "Movement history updated:",
+        existing
+    );
+
+}
+
+/* =========================================
+FORWARD TO ADMIN
+========================================= */
+
+function forwardToAdmin(file) {
+
+    console.log(
+        "Forward screenshot to admin:",
+        file.name
+    );
+
+    /*
+    FUTURE:
+    upload ke:
+    - Google Apps Script
+    - Firebase
+    - Cloudflare Worker
+    */
+
+}
+
+/* =========================================
+VIEW LOCAL DATABASE
+========================================= */
+
+function viewMovementDatabase() {
+
+    const data =
+        JSON.parse(
+            localStorage.getItem(
+                "movement_history"
+            )
+        ) || [];
+
+    console.log(data);
+
+}

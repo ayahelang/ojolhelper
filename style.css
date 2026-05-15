@@ -358,3 +358,48 @@ footer a:hover {
     gap: 10px;
     margin-top: 14px;
 }
+
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.upload-box input {
+    background: #162544;
+    color: white;
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.upload-box button {
+    background: #3d8bfd;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    padding: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ocr-card {
+    background: #162544;
+    border-radius: 18px;
+    padding: 18px;
+    margin-top: 16px;
+    line-height: 1.7;
+}
+
+.ocr-success {
+    border-left: 4px solid #22c55e;
+}
+
+.ocr-failed {
+    border-left: 4px solid #ef4444;
+}
+
+.ocr-loading {
+    border-left: 4px solid #3d8bfd;
+    animation: pulseLoading 1.5s infinite;
+}
