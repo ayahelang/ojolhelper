@@ -299,7 +299,7 @@ footer a:hover {
     height: 52px;
     object-fit: contain;
     transition:
-        transform .35s linear;
+            transform .28s ease-out;
     filter:
         drop-shadow(0 6px 10px rgba(0, 0, 0, .45));
     will-change: transform;
@@ -782,13 +782,14 @@ SMART TACTICAL RADAR PREMIUM
 
     background: rgba(10, 20, 40, .9);
 
-    padding: 14px 22px;
+    padding: 10px 16px;
 
     border-radius: 18px;
 
     z-index: 9999;
 
     font-weight: bold;
+    font-size: 14px;
 
     backdrop-filter: blur(10px);
 }
@@ -801,7 +802,7 @@ SMART TACTICAL RADAR PREMIUM
     left: 0;
     right: 0;
 
-    padding: 20px;
+    padding: 12px;
 
     background:
         linear-gradient(to top,
@@ -831,7 +832,7 @@ SMART TACTICAL RADAR PREMIUM
 
     border-radius: 18px;
 
-    padding: 14px;
+    padding: 10px;
 
     text-align: center;
 }
@@ -849,7 +850,7 @@ SMART TACTICAL RADAR PREMIUM
 
 .nav-box strong {
 
-    font-size: 22px;
+    font-size: 16px;
 
     color: #4ea1ff;
 }
@@ -864,11 +865,21 @@ SMART TACTICAL RADAR PREMIUM
 
     color: white;
 
-    padding: 16px;
+    padding: 12px;
 
     border-radius: 18px;
 
     font-weight: bold;
 
     font-size: 16px;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-actions button {
+    flex: 1;
+    margin-top: 0;
 }
