@@ -403,3 +403,135 @@ footer a:hover {
     border-left: 4px solid #3d8bfd;
     animation: pulseLoading 1.5s infinite;
 }
+
+/* =========================================
+TACTICAL HOTSPOT CARD
+========================================= */
+
+.strategic-card {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    background:
+        linear-gradient(135deg,
+            #132544,
+            #0f1d35);
+
+    border-radius: 22px;
+
+    padding: 24px;
+
+    margin-bottom: 22px;
+
+    border:
+        1px solid rgba(255, 255, 255, .06);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, .28);
+
+}
+
+.strategic-left {
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+}
+
+.strategic-icon {
+
+    width: 64px;
+    height: 64px;
+
+    border-radius: 18px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 32px;
+
+    background:
+        linear-gradient(135deg,
+            #3d8bfd,
+            #2563eb);
+
+    box-shadow:
+        0 10px 25px rgba(61, 139, 253, .35);
+
+}
+
+.strategic-title {
+
+    font-size: 24px;
+    font-weight: 700;
+
+    margin-bottom: 6px;
+
+}
+
+.strategic-desc {
+
+    color: #9cb5d8;
+
+    line-height: 1.6;
+
+    max-width: 560px;
+
+}
+
+.strategic-btn {
+
+    text-decoration: none;
+
+    background:
+        linear-gradient(135deg,
+            #4ea1ff,
+            #2563eb);
+
+    color: white;
+
+    padding: 16px 26px;
+
+    border-radius: 16px;
+
+    font-weight: bold;
+
+    transition: .25s ease;
+
+    white-space: nowrap;
+
+}
+
+.strategic-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(61, 139, 253, .35);
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px) {
+
+    .strategic-card {
+
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .strategic-btn {
+
+        width: 100%;
+        text-align: center;
+
+    }
+
+}
