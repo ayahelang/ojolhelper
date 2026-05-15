@@ -83,6 +83,7 @@ function startPopupCountdown() {
     let countdown = 30;
     const timerEl =
         document.querySelector(".popup-timer");
+    if (!timerEl) return;
     timerEl.innerHTML =
         `Auto close ${countdown} detik`;
     popupTimer = setInterval(() => {
@@ -92,6 +93,11 @@ function startPopupCountdown() {
         if (countdown <= 0) {
             clearInterval(popupTimer);
             popup.style.display = "none";
+
+            if (smartMap) {
+                smartMap.remove();
+                smartMap = null;
+            }
         }
     }, 1000);
 }
@@ -240,6 +246,8 @@ document.addEventListener(
 
 function showPopupLoading() {
     popup.style.display = "flex";
+    clearInterval(popupTimer);
+    startPopupCountdown();
     popupContent.innerHTML = `
         <div style="padding:20px">
             🔍 Mengecek lokasi driver...
@@ -422,7 +430,7 @@ async function checkGPSAndAnalyze(btn) {
 
         {
             enableHighAccuracy: true,
-            maximumAge: Infinity,
+            maximumAge: 5000,
             timeout: 15000
         }
     );
@@ -457,6 +465,11 @@ document
 
         popup.style.display = "none";
 
+        if (smartMap) {
+            smartMap.remove();
+            smartMap = null;
+        }
+
         document
             .getElementById("map")
             .scrollIntoView({
@@ -469,6 +482,11 @@ document
     .getElementById("closePopup")
     .addEventListener("click", function () {
         popup.style.display = "none";
+
+        if (smartMap) {
+            smartMap.remove();
+            smartMap = null;
+        }
         clearInterval(popupTimer);
     });
 
@@ -703,6 +721,7 @@ document.addEventListener(
                     map.removeControl(
                         routingControl
                     );
+                    routingControl = null;
                 }
 
                 /* route */
@@ -1257,6 +1276,7 @@ async function showSmartRoute(
 
     if (smartMap) {
         smartMap.remove();
+        smartMap = null;
     }
 
     smartMap = L.map("miniMap", {
