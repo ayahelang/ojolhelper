@@ -246,21 +246,28 @@ function openGoogleMaps(
   name
 ) {
 
-  const confirmed =
-    confirm(
-      `Buka Google Maps menuju:\n\n${name} ?`
-    );
-
-  if (!confirmed) return;
-
   const url =
     `https://www.google.com/maps?q=${lat},${lng}`;
 
   /*
-  OPEN NORMAL TAB
+  OPEN NEW TAB
   TANPA POPUP BLOCKER
   */
 
-  window.location.href = url;
+  const link =
+    document.createElement("a");
+
+  link.href = url;
+
+  link.target = "_blank";
+
+  link.rel =
+    "noopener noreferrer";
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  document.body.removeChild(link);
 
 }
