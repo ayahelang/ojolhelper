@@ -236,6 +236,10 @@ loadAllData();
 OPEN GOOGLE MAPS
 ========================================= */
 
+/* =========================================
+OPEN GOOGLE MAPS
+========================================= */
+
 function openGoogleMaps(
   lat,
   lng,
@@ -244,20 +248,19 @@ function openGoogleMaps(
 
   const confirmed =
     confirm(
-
       `Buka Google Maps menuju:\n\n${name} ?`
-
     );
 
   if (!confirmed) return;
 
   const url =
-
     `https://www.google.com/maps?q=${lat},${lng}`;
 
-  window.open(
-    url,
-    "_blank"
-  );
+  /*
+  OPEN NORMAL TAB
+  TANPA POPUP BLOCKER
+  */
+
+  window.location.href = url;
 
 }
