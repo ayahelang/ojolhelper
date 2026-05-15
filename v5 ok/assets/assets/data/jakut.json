@@ -1,0 +1,20 @@
+[
+    {
+        "id": "jakut_kelapagading",
+        "nama": "Mall Kelapa Gading",
+        "wilayah": "Jakarta Utara",
+        "kategori": "mall",
+        "alamat": "Jl. Boulevard Raya, Kelapa Gading",
+        "latitude": -6.1599,
+        "longitude": 106.9096
+    },
+    {
+        "id": "jakut_ancol",
+        "nama": "Ancol",
+        "wilayah": "Jakarta Utara",
+        "kategori": "wisata",
+        "alamat": "Taman Impian Jaya Ancol",
+        "latitude": -6.1256,
+        "longitude": 106.8369
+    }
+]

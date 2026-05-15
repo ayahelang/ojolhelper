@@ -1,0 +1,317 @@
+[
+    {
+        "id": "bekasi_summareconmall",
+        "nama": "Summarecon Mall Bekasi",
+        "wilayah": "Bekasi",
+        "kategori": "mall",
+        "alamat": "Jl. Boulevard Ahmad Yani, Bekasi Utara",
+        "latitude": -6.2249,
+        "longitude": 106.9996
+    },
+    {
+        "id": "bekasi_pakuwonmall",
+        "nama": "Pakuwon Mall Bekasi",
+        "wilayah": "Bekasi",
+        "kategori": "mall",
+        "alamat": "Summarecon Bekasi, Bekasi Utara",
+        "latitude": -6.2245,
+        "longitude": 106.9989
+    },
+    {
+        "id": "bekasi_revotown",
+        "nama": "Revo Town",
+        "wilayah": "Bekasi",
+        "kategori": "mall",
+        "alamat": "Jl. Ahmad Yani Kav.1, Bekasi Selatan",
+        "latitude": -6.2484,
+        "longitude": 106.9908
+    },
+    {
+        "id": "bekasi_metropolitanmall",
+        "nama": "Metropolitan Mall Bekasi",
+        "wilayah": "Bekasi",
+        "kategori": "mall",
+        "alamat": "Jl. KH Noer Ali, Bekasi Selatan",
+        "latitude": -6.2433,
+        "longitude": 106.9902
+    },
+    {
+        "id": "bekasi_grandmetropolitan",
+        "nama": "Grand Metropolitan",
+        "wilayah": "Bekasi",
+        "kategori": "mall",
+        "alamat": "Jl. KH Noer Ali, Bekasi Selatan",
+        "latitude": -6.2418,
+        "longitude": 106.9815
+    },
+    {
+        "id": "bekasi_bekasicyberpark",
+        "nama": "Bekasi Cyber Park",
+        "wilayah": "Bekasi",
+        "kategori": "mall",
+        "alamat": "Jl. KH Noer Ali No.177, Bekasi Selatan",
+        "latitude": -6.2381,
+        "longitude": 106.9923
+    },
+    {
+        "id": "bekasi_bluplaza",
+        "nama": "Blu Plaza",
+        "wilayah": "Bekasi",
+        "kategori": "mall",
+        "alamat": "Jl. Chairil Anwar, Bekasi Timur",
+        "latitude": -6.2354,
+        "longitude": 107.0142
+    },
+    {
+        "id": "bekasi_transparkjuanda",
+        "nama": "Transpark Juanda",
+        "wilayah": "Bekasi",
+        "kategori": "mall",
+        "alamat": "Jl. Ir. H. Juanda No.180, Bekasi Timur",
+        "latitude": -6.2412,
+        "longitude": 107.0033
+    },
+    {
+        "id": "bekasi_aeonjababeka",
+        "nama": "AEON Mall Jababeka",
+        "wilayah": "Bekasi",
+        "kategori": "mall",
+        "alamat": "Jababeka, Cikarang, Bekasi",
+        "latitude": -6.3007,
+        "longitude": 107.1520
+    },
+    {
+        "id": "bekasi_lippocikarang",
+        "nama": "Lippo Cikarang Mall",
+        "wilayah": "Bekasi",
+        "kategori": "mall",
+        "alamat": "Jl. MH Thamrin, Cikarang Selatan",
+        "latitude": -6.3217,
+        "longitude": 107.1386
+    },
+    {
+        "id": "bekasi_livingworld",
+        "nama": "Living World Grand Wisata",
+        "wilayah": "Bekasi",
+        "kategori": "mall",
+        "alamat": "Grand Wisata Bekasi",
+        "latitude": -6.3149,
+        "longitude": 107.0652
+    },
+    {
+        "id": "bekasi_stasiunbekasi",
+        "nama": "Stasiun Bekasi",
+        "wilayah": "Bekasi",
+        "kategori": "stasiun",
+        "alamat": "Jl. Ir. H. Juanda, Bekasi Timur",
+        "latitude": -6.2365,
+        "longitude": 106.9991
+    },
+    {
+        "id": "bekasi_stasiunbekasitimur",
+        "nama": "Stasiun Bekasi Timur",
+        "wilayah": "Bekasi",
+        "kategori": "stasiun",
+        "alamat": "Margahayu, Bekasi Timur",
+        "latitude": -6.2487,
+        "longitude": 107.0198
+    },
+    {
+        "id": "bekasi_stasiunkranji",
+        "nama": "Stasiun Kranji",
+        "wilayah": "Bekasi",
+        "kategori": "stasiun",
+        "alamat": "Jl. I Gusti Ngurah Rai, Bekasi Barat",
+        "latitude": -6.2243,
+        "longitude": 106.9797
+    },
+    {
+        "id": "bekasi_stasiuntambun",
+        "nama": "Stasiun Tambun",
+        "wilayah": "Bekasi",
+        "kategori": "stasiun",
+        "alamat": "Jl. Sultan Hasanudin, Tambun Selatan",
+        "latitude": -6.2576,
+        "longitude": 107.0569
+    },
+    {
+        "id": "bekasi_stasiuncibitung",
+        "nama": "Stasiun Cibitung",
+        "wilayah": "Bekasi",
+        "kategori": "stasiun",
+        "alamat": "Jl. Bosih Raya, Cibitung",
+        "latitude": -6.2588,
+        "longitude": 107.0795
+    },
+    {
+        "id": "bekasi_stasiuncikarang",
+        "nama": "Stasiun Cikarang",
+        "wilayah": "Bekasi",
+        "kategori": "stasiun",
+        "alamat": "Cikarang Utara, Bekasi",
+        "latitude": -6.2616,
+        "longitude": 107.1070
+    },
+    {
+        "id": "bekasi_stasiuntelagamurni",
+        "nama": "Stasiun Metland Telagamurni",
+        "wilayah": "Bekasi",
+        "kategori": "stasiun",
+        "alamat": "Telagamurni, Cikarang Barat",
+        "latitude": -6.2414,
+        "longitude": 107.0903
+    },
+    {
+        "id": "bekasi_terminalbekasi",
+        "nama": "Terminal Bekasi",
+        "wilayah": "Bekasi",
+        "kategori": "terminal",
+        "alamat": "Jl. Ir. H. Juanda, Bekasi Timur",
+        "latitude": -6.2439,
+        "longitude": 107.0036
+    },
+    {
+        "id": "bekasi_terminalkayuringin",
+        "nama": "Terminal Kayuringin",
+        "wilayah": "Bekasi",
+        "kategori": "terminal",
+        "alamat": "Jl. Cut Meutia, Bekasi Selatan",
+        "latitude": -6.2421,
+        "longitude": 106.9904
+    },
+    {
+        "id": "bekasi_terminalcikarang",
+        "nama": "Terminal Cikarang",
+        "wilayah": "Bekasi",
+        "kategori": "terminal",
+        "alamat": "Jl. RE Martadinata, Cikarang Utara",
+        "latitude": -6.2649,
+        "longitude": 107.1063
+    },
+    {
+        "id": "bekasi_rsmitrakeluarga",
+        "nama": "RS Mitra Keluarga Bekasi",
+        "wilayah": "Bekasi",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. Ahmad Yani No.3, Bekasi Selatan",
+        "latitude": -6.2396,
+        "longitude": 106.9920
+    },
+    {
+        "id": "bekasi_rsherminabekasi",
+        "nama": "RS Hermina Bekasi",
+        "wilayah": "Bekasi",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. Kemakmuran No.39, Bekasi Selatan",
+        "latitude": -6.2327,
+        "longitude": 106.9944
+    },
+    {
+        "id": "bekasi_rsananda",
+        "nama": "RS Ananda Bekasi",
+        "wilayah": "Bekasi",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. Sultan Agung No.173, Bekasi Barat",
+        "latitude": -6.2222,
+        "longitude": 107.0018
+    },
+    {
+        "id": "bekasi_presidentuniversity",
+        "nama": "President University",
+        "wilayah": "Bekasi",
+        "kategori": "kampus",
+        "alamat": "Jababeka Education Park, Cikarang",
+        "latitude": -6.2832,
+        "longitude": 107.1571
+    },
+    {
+        "id": "bekasi_unismabekasi",
+        "nama": "Universitas Islam 45 Bekasi",
+        "wilayah": "Bekasi",
+        "kategori": "kampus",
+        "alamat": "Jl. Cut Meutia No.83, Bekasi Timur",
+        "latitude": -6.2357,
+        "longitude": 107.0025
+    },
+    {
+        "id": "bekasi_sman1bekasi",
+        "nama": "SMA Negeri 1 Bekasi",
+        "wilayah": "Bekasi",
+        "kategori": "sekolah",
+        "alamat": "Jl. Budi Utomo No.7, Bekasi Timur",
+        "latitude": -6.2348,
+        "longitude": 107.0064
+    },
+    {
+        "id": "bekasi_sman5bekasi",
+        "nama": "SMA Negeri 5 Bekasi",
+        "wilayah": "Bekasi",
+        "kategori": "sekolah",
+        "alamat": "Jl. Gamprit, Jatiasih, Bekasi",
+        "latitude": -6.2895,
+        "longitude": 106.9508
+    },
+    {
+        "id": "bekasi_penaburharapanindah",
+        "nama": "BPK PENABUR Harapan Indah",
+        "wilayah": "Bekasi",
+        "kategori": "sekolah",
+        "alamat": "Kota Harapan Indah, Medan Satria, Bekasi",
+        "latitude": -6.1817,
+        "longitude": 106.9782
+    },
+    {
+        "id": "bekasi_alazharsummarecon",
+        "nama": "Al Azhar Summarecon Bekasi",
+        "wilayah": "Bekasi",
+        "kategori": "sekolah",
+        "alamat": "Summarecon Bekasi, Bekasi Utara",
+        "latitude": -6.2258,
+        "longitude": 107.0007
+    },
+    {
+        "id": "bekasi_harapanindah",
+        "nama": "Kota Harapan Indah",
+        "wilayah": "Bekasi",
+        "kategori": "business_district",
+        "alamat": "Medan Satria, Bekasi",
+        "latitude": -6.1789,
+        "longitude": 106.9772
+    },
+    {
+        "id": "bekasi_grandwisata",
+        "nama": "Grand Wisata Bekasi",
+        "wilayah": "Bekasi",
+        "kategori": "business_district",
+        "alamat": "Tambun Selatan, Bekasi",
+        "latitude": -6.3127,
+        "longitude": 107.0637
+    },
+    {
+        "id": "bekasi_meikarta",
+        "nama": "Meikarta Central Park",
+        "wilayah": "Bekasi",
+        "kategori": "business_district",
+        "alamat": "Cikarang Selatan, Bekasi",
+        "latitude": -6.3044,
+        "longitude": 107.1464
+    },
+    {
+        "id": "bekasi_exitbekasibarat",
+        "nama": "Exit Tol Bekasi Barat",
+        "wilayah": "Bekasi",
+        "kategori": "transportasi",
+        "alamat": "Jl. Ahmad Yani, Bekasi Barat",
+        "latitude": -6.2384,
+        "longitude": 106.9875
+    },
+    {
+        "id": "bekasi_go_wet",
+        "nama": "Go! Wet Waterpark",
+        "wilayah": "Bekasi",
+        "kategori": "wisata",
+        "alamat": "Grand Wisata Bekasi",
+        "latitude": -6.3136,
+        "longitude": 107.0660
+    }
+]
