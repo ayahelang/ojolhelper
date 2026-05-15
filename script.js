@@ -872,6 +872,8 @@ const wilayahFiles = {
 };
 
 let smartMap = null;
+let currentUserLat = null;
+let currentUserLon = null;
 
 /* =========================================
 WAIT
@@ -1427,6 +1429,9 @@ async function initSmartRadar() {
 
             const userLon =
                 pos.coords.longitude;
+            
+            currentUserLat = userLat;
+            currentUserLon = userLon;
 
             const wilayah =
                 detectWilayah(
