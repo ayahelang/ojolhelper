@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  font-family: Arial, sans-serif;
+
+  background:
+    linear-gradient(180deg,
+      #081120,
+      #0f1f35);
+
+  color: white;
+
+  padding: 20px;
+
+}
+
+.container {
+
+  max-width: 1100px;
+
+  margin: auto;
+
+}
+
+h1 {
+
+  font-size: 32px;
+
+  margin-bottom: 20px;
+
+}
+
+#searchInput {
+
+  width: 100%;
+
+  padding: 16px;
+
+  border-radius: 16px;
+
+  border: none;
+
+  outline: none;
+
+  margin-bottom: 24px;
+
+  background: #162544;
+
+  color: white;
+
+  font-size: 16px;
+
+}
+
+.region-title {
+
+  font-size: 24px;
+
+  margin-top: 30px;
+
+  margin-bottom: 14px;
+
+  color: #4ea1ff;
+
+}
+
+.card-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit,
+      minmax(260px, 1fr));
+
+  gap: 16px;
+
+}
+
+.location-card {
+
+  background: #162544;
+
+  border-radius: 20px;
+
+  padding: 18px;
+
+  transition: .3s;
+
+  border:
+    1px solid rgba(255, 255, 255, .05);
+
+}
+
+.location-card:hover {
+
+  transform:
+    translateY(-4px);
+
+}
+
+.location-name {
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  margin-bottom: 12px;
+
+}
+
+.meta {
+
+  color: #a9c0df;
+
+  margin-bottom: 8px;
+
+  line-height: 1.6;
+
+}
+
+.badge {
+
+  display: inline-block;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  background: #26456e;
+
+  color: #7ec1ff;
+
+  font-size: 13px;
+
+  margin-top: 10px;
+
+}
+
+.loading {
+
+  background: #162544;
+
+  padding: 20px;
+
+  border-radius: 18px;
+
+  animation:
+    pulse 1.5s infinite;
+
+}
+
+@keyframes pulse {
+
+  0% {
+    opacity: .5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: .5;
+  }
+
+}
