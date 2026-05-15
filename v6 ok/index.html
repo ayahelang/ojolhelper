@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="site.webmanifest">
+    <title>Ojol Helper</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://silverhawk.web.id/lock/lock.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="brand">
+            <h1>Ojol Helper</h1>
+            <p>Smart Target Area Planner</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="card">
+            <h2>Input Operasional</h2>
+
+            <div class="grid">
+                <div>
+                    <label>Pilih Pool</label>
+                    <select id="pool">
+                        <option value="headquarters">Blue Bird Group Headquarters</option>
+                        <option value="margasatwa">Blue Bird Pool Pondok Labu</option>
+                        <option value="cikeas">Blue Bird Pool Cikeas</option>
+                        <option value="kranggan">Blue Bird Pool Kranggan</option>
+                        <option value="cimanggis">Blue Bird Pool Cimanggis</option>
+                        <option value="siliwangi">Blue Bird Pool Siliwangi</option>
+                        <option value="ciputat">Blue Bird Pool Ciputat</option>
+                        <option value="kalibata">Blue Bird Pool Kalibata</option>
+                        <option value="cinangka">Blue Bird Pool Cinangka</option>
+                        <option value="custom">Custom Lokasi</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Custom Nama / Alamat</label>
+                    <input type="text" id="customPool" placeholder="Contoh: Pool Tajurhalang">
+                </div>
+
+                <div>
+                    <label>Konsumsi Kendaraan (km/l)</label>
+                    <input type="number" id="kmpl" value="12">
+                </div>
+
+                <div>
+                    <label>Harga BBM / Liter</label>
+                    <input type="number" id="fuel" value="10000">
+                </div>
+
+                <div>
+                    <label>Mode Operasi</label>
+                    <select id="mode">
+                        <option value="normal">Normal</option>
+                        <option value="hemat">Hemat Bensin</option>
+                        <option value="agresif">Agresif Cuan</option>
+                    </select>
+                </div>
+            </div>
+
+            <button onclick="generatePlan()">Generate Strategi</button>
+        </section>
+
+
+        <section class="stats">
+
+            <div class="box">
+                <span>Total Rotasi</span>
+                <h3 id="kmTotal">0 km</h3>
+            </div>
+
+            <div class="box">
+                <span>Kebutuhan BBM</span>
+                <h3 id="fuelNeed">0 L</h3>
+            </div>
+
+            <div class="box">
+                <span>Estimasi Biaya</span>
+                <h3 id="fuelCost">Rp0</h3>
+            </div>
+
+        </section>
+
+
+        <section class="card">
+            <h2>Target Area Per Jam</h2>
+            <div id="timeline"></div>
+        </section>
+
+        <section class="strategic-card">
+
+            <div class="strategic-left">
+
+                <div class="strategic-icon">
+                    📡
+                </div>
+
+                <div>
+
+                    <div class="strategic-title">
+                        Area Potensial
+                    </div>
+
+                    <div class="strategic-desc">
+                        Jelajahi lokasi potensial,
+                        titik ramai, mall, stasiun,
+                        RS, dan area strategis driver.
+                    </div>
+
+                </div>
+
+            </div>
+
+            <a href="bblesson/lokasigacor.html" target="_blank" class="strategic-btn">
+                Buka
+            </a>
+
+        </section>
+
+        <section class="card">
+
+            <h2>Live Driver Map</h2>
+
+            <div id="map"></div>
+
+        </section>
+
+        <section class="card">
+
+            <h2>
+                Smart Tactical Radar
+            </h2>
+            <h4>
+                Mendetaksi tiga lokasi terdekat driver berdasarkan data GPS
+            </h4>
+
+            <div id="smartRecommendation">
+
+                <div class="empty-state">
+                    Menunggu GPS driver...
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="card">
+
+            <h2>
+                ➕ Tambahkan Lokasi Potensial
+            </h2>
+
+            <div class="upload-box">
+
+                <input type="file" id="locationScreenshotInput" accept="image/*">
+
+                <button onclick="processLocationScreenshot()">
+                    Upload Screenshot
+                </button>
+
+            </div>
+
+            <div id="ocrResultArea">
+
+                <div class="empty-state">
+                    Upload screenshot histori tamu
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Ojol Helper</p>
+        <p class="powered">
+            Powered by
+            <a href="https://silverhawk.web.id" target="_blank">
+                Silverhawk Network
+            </a>
+        </p>
+    </footer>
+
+    <button id="topBtn">↑</button>
+
+    <div id="smartPopup" class="smart-popup">
+        <div class="popup-box">
+            <img src="android-chrome-192x192.png" class="popup-logo">
+
+            <h2>Analisa Lokasi Driver</h2>
+
+            <div id="popupContent">
+                Sedang mengecek lokasi...
+            </div>
+
+            <div class="popup-buttons">
+                <button id="continueMaps">Buka Peta Rute</button>
+                <button id="closePopup">Close</button>
+            </div>
+
+            <div class="popup-timer">
+                Auto close 30 detik
+            </div>
+        </div>
+    </div>
+    <div id="navFullscreen" class="nav-fullscreen">
+
+        <div id="navMap"></div>
+
+        <div class="nav-topbar">
+            🚖 Live Navigation
+        </div>
+
+        <div class="nav-bottom">
+
+            <div class="nav-stats">
+
+                <div class="nav-box">
+                    <span>ETA</span>
+                    <strong id="navEta">-</strong>
+                </div>
+
+                <div class="nav-box">
+                    <span>Jarak</span>
+                    <strong id="navDistance">-</strong>
+                </div>
+
+                <div class="nav-box">
+                    <span>Kecepatan</span>
+                    <strong id="navSpeed">-</strong>
+                </div>
+
+            </div>
+
+            <button id="closeNav">
+                Tutup Navigasi
+            </button>
+
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+    <script src="https://silverhawk.web.id/lock/lock.js"></script>
+</body>
+
+</html>

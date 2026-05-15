@@ -1,0 +1,209 @@
+[
+    {
+        "id": "jakpus_grandindonesia",
+        "nama": "Grand Indonesia",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "mall",
+        "alamat": "Jl. MH Thamrin No.1, Menteng, Jakarta Pusat",
+        "latitude": -6.1951,
+        "longitude": 106.8216
+    },
+    {
+        "id": "jakpus_plazaindonesia",
+        "nama": "Plaza Indonesia",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "mall",
+        "alamat": "Jl. MH Thamrin Kav.28-30, Menteng, Jakarta Pusat",
+        "latitude": -6.1938,
+        "longitude": 106.8212
+    },
+    {
+        "id": "jakpus_sarinah",
+        "nama": "Sarinah",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "mall",
+        "alamat": "Jl. MH Thamrin No.11, Gondangdia, Jakarta Pusat",
+        "latitude": -6.1877,
+        "longitude": 106.8230
+    },
+    {
+        "id": "jakpus_thamrincity",
+        "nama": "Thamrin City",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "mall",
+        "alamat": "Jl. Thamrin Boulevard, Tanah Abang, Jakarta Pusat",
+        "latitude": -6.1940,
+        "longitude": 106.8175
+    },
+    {
+        "id": "jakpus_atriumsenen",
+        "nama": "Atrium Senen",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "mall",
+        "alamat": "Jl. Senen Raya No.135, Senen, Jakarta Pusat",
+        "latitude": -6.1768,
+        "longitude": 106.8420
+    },
+    {
+        "id": "jakpus_gambir",
+        "nama": "Stasiun Gambir",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "stasiun",
+        "alamat": "Jl. Medan Merdeka Timur No.1, Gambir, Jakarta Pusat",
+        "latitude": -6.1767,
+        "longitude": 106.8305
+    },
+    {
+        "id": "jakpus_pasarsenen",
+        "nama": "Stasiun Pasar Senen",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "stasiun",
+        "alamat": "Jl. Stasiun Senen, Senen, Jakarta Pusat",
+        "latitude": -6.1749,
+        "longitude": 106.8426
+    },
+    {
+        "id": "jakpus_stasiuncikini",
+        "nama": "Stasiun Cikini",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "stasiun",
+        "alamat": "Jl. Cikini Raya, Menteng, Jakarta Pusat",
+        "latitude": -6.1986,
+        "longitude": 106.8413
+    },
+    {
+        "id": "jakpus_mrtbundaranhi",
+        "nama": "MRT Bundaran HI",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "transportasi",
+        "alamat": "Bundaran HI, Menteng, Jakarta Pusat",
+        "latitude": -6.1916,
+        "longitude": 106.8229
+    },
+    {
+        "id": "jakpus_tanahabang",
+        "nama": "Pasar Tanah Abang",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "pasar",
+        "alamat": "Jl. KH Mas Mansyur, Tanah Abang, Jakarta Pusat",
+        "latitude": -6.1870,
+        "longitude": 106.8117
+    },
+    {
+        "id": "jakpus_rscipto",
+        "nama": "RSCM",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. Diponegoro No.71, Senen, Jakarta Pusat",
+        "latitude": -6.1970,
+        "longitude": 106.8463
+    },
+    {
+        "id": "jakpus_herminakemayoran",
+        "nama": "RS Hermina Kemayoran",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "rumah_sakit",
+        "alamat": "Jl. Selangit B-10 No.4, Kemayoran, Jakarta Pusat",
+        "latitude": -6.1542,
+        "longitude": 106.8486
+    },
+    {
+        "id": "jakpus_uiisalemba",
+        "nama": "FKUI Salemba",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "kampus",
+        "alamat": "Jl. Salemba Raya No.6, Senen, Jakarta Pusat",
+        "latitude": -6.1968,
+        "longitude": 106.8482
+    },
+    {
+        "id": "jakpus_hotelindonesia",
+        "nama": "Hotel Indonesia Kempinski",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "hotel",
+        "alamat": "Jl. MH Thamrin No.1, Menteng, Jakarta Pusat",
+        "latitude": -6.1949,
+        "longitude": 106.8225
+    },
+    {
+        "id": "jakpus_pullmanthamrin",
+        "nama": "Pullman Jakarta Indonesia",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "hotel",
+        "alamat": "Jl. MH Thamrin No.59, Menteng, Jakarta Pusat",
+        "latitude": -6.1931,
+        "longitude": 106.8215
+    },
+    {
+        "id": "jakpus_monas",
+        "nama": "Monumen Nasional (Monas)",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "wisata",
+        "alamat": "Jl. Medan Merdeka Barat, Gambir, Jakarta Pusat",
+        "latitude": -6.1754,
+        "longitude": 106.8272
+    },
+    {
+        "id": "jakpus_istiqlal",
+        "nama": "Masjid Istiqlal",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "wisata",
+        "alamat": "Jl. Taman Wijaya Kusuma, Sawah Besar, Jakarta Pusat",
+        "latitude": -6.1702,
+        "longitude": 106.8314
+    },
+    {
+        "id": "jakpus_katedral",
+        "nama": "Gereja Katedral Jakarta",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "wisata",
+        "alamat": "Jl. Katedral No.7B, Sawah Besar, Jakarta Pusat",
+        "latitude": -6.1691,
+        "longitude": 106.8330
+    },
+    {
+        "id": "jakpus_ancolbusway",
+        "nama": "Halte TransJakarta Monas",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "transportasi",
+        "alamat": "Monas, Gambir, Jakarta Pusat",
+        "latitude": -6.1761,
+        "longitude": 106.8278
+    },
+    {
+        "id": "jakpus_sman1",
+        "nama": "SMA Negeri 1 Jakarta",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "sekolah",
+        "alamat": "Jl. Budi Utomo No.7, Sawah Besar, Jakarta Pusat",
+        "latitude": -6.1709,
+        "longitude": 106.8382
+    },
+    {
+        "id": "jakpus_kanisius",
+        "nama": "SMA Kolese Kanisius",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "sekolah",
+        "alamat": "Jl. Menteng Raya No.64, Menteng, Jakarta Pusat",
+        "latitude": -6.1835,
+        "longitude": 106.8364
+    },
+    {
+        "id": "jakpus_santaursula",
+        "nama": "SMA Santa Ursula",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "sekolah",
+        "alamat": "Jl. Pos No.2, Sawah Besar, Jakarta Pusat",
+        "latitude": -6.1680,
+        "longitude": 106.8345
+    },
+    {
+        "id": "jakpus_kemayoran",
+        "nama": "JIEXPO Kemayoran",
+        "wilayah": "Jakarta Pusat",
+        "kategori": "event_center",
+        "alamat": "Jl. H. Benyamin Sueb, Kemayoran, Jakarta Pusat",
+        "latitude": -6.1497,
+        "longitude": 106.8436
+    }
+]
