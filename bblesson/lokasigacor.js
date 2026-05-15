@@ -128,10 +128,10 @@ function renderLocations(data) {
            <div
   class="location-card"
   onclick='openGoogleMaps(
-    ${item.latitude},
-    ${item.longitude},
-    ${JSON.stringify(item.nama)}
-  )'
+  ${JSON.stringify(item.nama)},
+  ${JSON.stringify(item.alamat)},
+  ${JSON.stringify(item.wilayah)}
+)'
 >
 
               <div class="location-name">
@@ -234,24 +234,40 @@ loadAllData();
 
 /* =========================================
 OPEN GOOGLE MAPS
-========================================= */
-
-/* =========================================
-OPEN GOOGLE MAPS
+USING VERIFIED PLACE NAME
 ========================================= */
 
 function openGoogleMaps(
-  lat,
-  lng,
-  name
+  nama,
+  alamat,
+  wilayah
 ) {
 
-  const url =
-    `https://www.google.com/maps?q=${lat},${lng}`;
+  /*
+  COMBINE SEARCH QUERY
+  */
+
+  const query =
+
+    `${nama} ${alamat} ${wilayah}`;
 
   /*
-  OPEN NEW TAB
-  TANPA POPUP BLOCKER
+  ENCODE URL
+  */
+
+  const encodedQuery =
+    encodeURIComponent(query);
+
+  /*
+  GOOGLE MAPS SEARCH
+  */
+
+  const url =
+    `https://www.google.com/maps/search/?api=1&query=${encodedQuery}`;
+
+  /*
+  OPEN USING REAL <A>
+  NO POPUP BLOCKER
   */
 
   const link =
