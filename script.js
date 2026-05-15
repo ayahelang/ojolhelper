@@ -159,13 +159,13 @@ function generatePlan() {
                     ${Math.round(km)} km estimasi rotasi
                 </div>
 
-                <a class="maps-btn" href="https://maps.google.com/?q=${encodeURIComponent(row[1])}">Buka Google Maps</a>
-<button
-    class="smart-route-trigger"
-    data-target="${row[1]}"
->
-    🚖 Tampilkan Route Nyata
-</button>
+                <a
+    class="maps-btn"
+    target="_blank"
+    rel="noopener noreferrer" href="https://maps.google.com/?q=${encodeURIComponent(row[1])}">Buka Google Maps</a>
+                <button class="route-btn" data-target="${row[1]}">
+                    Tampilkan Route Nyata
+                </button>
             </div>
         `;
     });
@@ -230,234 +230,6 @@ const popup =
 
 const popupContent =
     document.getElementById("popupContent");
-
-document.addEventListener(
-
-    "click",
-
-    function (e) {
-        const btn =
-            e.target.closest(".maps-btn");
-        if (!btn) return;
-        e.preventDefault();
-        targetMaps = btn.href;
-        showPopupLoading();
-        checkGPSAndAnalyze(btn);
-    },
-    true
-);
-
-function showPopupLoading() {
-    popup.style.display = "flex";
-    clearInterval(popupTimer);
-    startPopupCountdown();
-    popupContent.innerHTML = `
-        <div style="padding:20px">
-            🔍 Mengecek lokasi driver...
-        </div>
-    `;
-}
-
-async function checkGPSAndAnalyze(btn) {
-    if (!navigator.geolocation) {
-        popupContent.innerHTML = `
-            Browser tidak mendukung GPS.
-        `;
-        return;
-    }
-
-    try {
-        const permission =
-            await navigator.permissions.query({
-                name: "geolocation"
-            });
-        if (permission.state === "denied") {
-            popupContent.innerHTML = `
-                <div style="
-                    background:#3b1f1f;
-                    padding:16px;
-                    border-radius:18px
-                ">
-                    ❌ GPS diblokir browser
-                    <br><br>
-                    Aktifkan izin lokasi di browser.
-                </div>
-            `;
-            return;
-        }
-
-    } catch (err) {
-        console.log(err);
-    }
-
-    navigator.geolocation.getCurrentPosition(
-
-        function (pos) {
-            const lat = pos.coords.latitude;
-            const lon = pos.coords.longitude;
-            const targetName =
-                decodeURIComponent(
-                    btn.href.split("?q=")[1]
-                );
-            const randomKM =
-                Math.floor(Math.random() * 12) + 2;
-            const randomMenit =
-                Math.floor(randomKM * 3) + 5;
-            const saran =
-                lokasiStrategis[
-                Math.floor(
-                    Math.random() *
-                    lokasiStrategis.length
-                )
-                ];
-
-            const saranLink =
-                "https://maps.google.com/?q=" +
-                encodeURIComponent(saran);
-            popupContent.innerHTML = `
-
-                <div style="
-                    font-size:20px;
-                    margin-bottom:18px
-                ">
-                    ✅ GPS Aktif
-                </div>
-
-                <div style="
-                    background:#162544;
-                    padding:16px;
-                    border-radius:18px;
-                    margin-bottom:16px
-                ">
-
-                    <div style="
-                        font-size:22px;
-                        font-weight:bold;
-                        margin-bottom:10px
-                    ">
-                        ${targetName}
-                    </div>
-
-                    <div>
-                        📍 ${randomKM} KM
-                    </div>
-
-                    <div style="margin-top:6px">
-                        ⏱️ ${randomMenit} menit
-                    </div>
-
-                </div>
-
-                <div style="
-                    background:#102847;
-                    padding:16px;
-                    border-radius:18px;
-                    margin-bottom:16px
-                ">
-
-                    📡 Lokasi Anda Saat Ini
-
-                    <div style="
-                        margin-top:12px;
-                        color:#4ea1ff;
-                        font-size:18px;
-                        font-weight:bold
-                    ">
-                        ${lat.toFixed(6)},
-                        ${lon.toFixed(6)}
-                    </div>
-
-                    <a
-                        href="https://maps.google.com/?q=${lat},${lon}"
-                        target="_blank"
-                        style="
-                            display:inline-block;
-                            margin-top:14px;
-                            background:#24406f;
-                            color:white;
-                            padding:10px 14px;
-                            border-radius:12px;
-                            text-decoration:none
-                        "
-                    >
-                        Lihat Lokasi Saya
-                    </a>
-                </div>
-
-                <div style="
-                    background:#203659;
-                    padding:16px;
-                    border-radius:18px
-                ">
-                    💡 Lokasi strategis lebih dekat
-                    <div style="
-                        margin-top:12px;
-                        color:#4ea1ff;
-                        font-size:22px;
-                        font-weight:bold
-                    ">
-                        ${saran}
-                    </div>
-                    <a
-                        href="${saranLink}"
-                        target="_blank"
-                        style="
-                            display:inline-block;
-                            margin-top:14px;
-                            background:#3d8bfd;
-                            color:white;
-                            padding:10px 14px;
-                            border-radius:12px;
-                            text-decoration:none
-                        "
-                    >
-                        Buka Lokasi Alternatif
-                    </a>
-                </div>
-            `;
-        },
-
-        function () {
-            popupContent.innerHTML = `
-                <div style="
-                    background:#3b1f1f;
-                    padding:16px;
-                    border-radius:18px
-                ">
-                    ❌ GPS belum aktif
-                    <br><br>
-                    Aktifkan location lalu refresh halaman.
-                </div>
-            `;
-        },
-
-        {
-            enableHighAccuracy: true,
-            maximumAge: 5000,
-            timeout: 15000
-        }
-    );
-
-    // clearInterval(popupTimer);
-
-    // let countdown = 30;
-
-    // const timerEl =
-    //     document.querySelector(".popup-timer");
-
-    // timerEl.innerHTML =
-    //     `Auto close ${countdown} detik`;
-
-    // popupTimer = setInterval(() => {
-    //     countdown--;
-    //     timerEl.innerHTML =
-    //         `Auto close ${countdown} detik`;
-    //     if (countdown <= 0) {
-    //         clearInterval(popupTimer);
-    //         popup.style.display = "none";
-    //     }
-    // }, 1000);
-}
 
 /* =========================================
    POPUP BUTTONS
@@ -619,6 +391,244 @@ function initLiveGPS() {
 }
 
 initLiveGPS();
+
+/* =========================================
+   REAL ROUTE BUTTON PRO
+========================================= */
+let routingControl = null;
+document.addEventListener(
+    "click",
+    async function (e) {
+        const btn =
+            e.target.closest(".route-btn");
+        if (!btn) return;
+        e.preventDefault();
+        const targetName =
+            btn.dataset.target;
+        targetMaps =
+            "https://maps.google.com/?q=" +
+            encodeURIComponent(targetName);
+        /* tampil popup loading */
+        popup.style.display = "flex";
+        popupContent.innerHTML = `
+            <div style="
+                font-size:22px;
+                margin-bottom:20px
+            ">
+                🚖 Menyiapkan Route
+            </div>
+            <div style="
+                background:#162544;
+                padding:18px;
+                border-radius:18px
+            ">
+                <div id="routeLoadingText">
+                    📡 Membaca GPS driver...
+                </div>
+                <div style="
+                    margin-top:16px;
+                    width:100%;
+                    height:10px;
+                    background:#0d1728;
+                    border-radius:999px;
+                    overflow:hidden
+                ">
+                    <div id="routeLoadingBar"
+                        style="
+                        width:15%;
+                        height:100%;
+                        background:#3d8bfd;
+                        transition:.4s;
+                    ">
+                    </div>
+                </div>
+            </div>
+        `;
+
+        const loadingText =
+            document.getElementById(
+                "routeLoadingText"
+            );
+
+        const loadingBar =
+            document.getElementById(
+                "routeLoadingBar"
+            );
+
+        navigator.geolocation.getCurrentPosition(
+            async function (pos) {
+                loadingText.innerHTML =
+                    "🗺️ Mencari lokasi tujuan...";
+                loadingBar.style.width = "45%";
+                const userLat =
+                    pos.coords.latitude;
+                const userLon =
+                    pos.coords.longitude;
+
+                /* geocoding */
+                const geoUrl =
+                    "https://nominatim.openstreetmap.org/search?format=json&q=" +
+                    encodeURIComponent(targetName);
+                const geoRes =
+                    await fetch(geoUrl);
+                const geoData =
+                    await geoRes.json();
+                if (!geoData.length) {
+                    popupContent.innerHTML = `
+                        ❌ Lokasi tidak ditemukan
+                    `;
+                    return;
+                }
+
+                loadingText.innerHTML =
+                    "🚦 Menghitung route jalan nyata...";
+
+                loadingBar.style.width = "75%";
+
+                const targetLat =
+                    parseFloat(geoData[0].lat);
+
+                const targetLon =
+                    parseFloat(geoData[0].lon);
+
+                /* hapus route lama */
+                if (routingControl) {
+                    map.removeControl(
+                        routingControl
+                    );
+                    routingControl = null;
+                }
+
+                /* route */
+                routingControl =
+                    L.Routing.control({
+                        waypoints: [
+                            L.latLng(
+                                userLat,
+                                userLon
+                            ),
+                            L.latLng(
+                                targetLat,
+                                targetLon
+                            )
+                        ],
+                        routeWhileDragging: false,
+                        draggableWaypoints: false,
+                        addWaypoints: false,
+                        show: false,
+                        fitSelectedRoutes: true,
+                        lineOptions: {
+                            styles: [
+                                {
+                                    color: "#3d8bfd",
+                                    weight: 7,
+                                    opacity: .9
+                                }
+                            ]
+                        }
+
+                    }).addTo(map);
+
+                /* route selesai */
+                routingControl.on(
+                    "routesfound",
+                    function (e) {
+                        loadingBar.style.width =
+                            "100%";
+                        const route =
+                            e.routes[0];
+                        const km =
+                            (
+                                route.summary.totalDistance / 1000
+                            ).toFixed(1);
+
+                        localStorage.setItem(
+                            "route_" + targetName,
+                            km
+                        );
+                        const avgSpeed = 40;
+                        const menit =
+                            Math.ceil(
+                                (
+                                    parseFloat(km) /
+                                    avgSpeed
+                                ) * 60
+                            );
+                        popupContent.innerHTML = `
+                            <div style="
+                                font-size:24px;
+                                margin-bottom:18px
+                            ">
+                                ✅ Route Siap
+                            </div>
+
+                            <div style="
+                                background:#162544;
+                                padding:18px;
+                                border-radius:18px;
+                                margin-bottom:16px
+                            ">
+                                <div style="
+                                    font-size:22px;
+                                    font-weight:bold;
+                                    margin-bottom:12px
+                                ">
+                                    ${targetName}
+                                </div>
+                                <div>
+                                    📍 ${km} KM
+                                </div>
+                                <div style="
+                                    margin-top:8px
+                                ">
+                                    ⏱️ ${menit} menit
+                                </div>
+                            </div>
+                            <div style="
+                                background:#102847;
+                                padding:16px;
+                                border-radius:18px
+                            ">
+                                🚖 Route mengikuti
+                                jalan mobil nyata
+
+                            </div>
+                        `;
+                        startPopupCountdown();
+                    }
+                );
+            },
+
+            function (err) {
+                console.log(err);
+                popupContent.innerHTML = `
+        <div style="
+            background:#3b1f1f;
+            padding:18px;
+            border-radius:18px
+        ">
+            ❌ GPS gagal dibaca
+            <br><br>
+            Kemungkinan karena:
+            <br>
+            - masih memakai file://
+            <br>
+            - izin browser belum stabil
+            <br>
+            - GPS laptop kurang akurat
+        </div>
+    `;
+                // clearInterval(popupTimer);
+                startPopupCountdown();
+            },
+            {
+                enableHighAccuracy: true,
+                maximumAge: 0,
+                timeout: 15000
+            }
+        );
+    }
+);
 
 /* =========================================
 SMART TACTICAL RADAR V7
@@ -834,6 +844,10 @@ function renderRecommendation(
     <div class="smart-meta">
         🛣️ ${item.alamat}
     </div>
+
+<div class="smart-distance">
+    🚖 Menghitung route nyata...
+</div>
 
     <div class="smart-buttons">
 
@@ -1190,7 +1204,7 @@ async function initSmartRadar() {
 
             const userLon =
                 pos.coords.longitude;
-
+            
             currentUserLat = userLat;
             currentUserLon = userLon;
 
@@ -1294,83 +1308,6 @@ setInterval(() => {
 /* =========================================
 START
 ========================================= */
-
-document.addEventListener("click", async function (e) {
-
-    const btn =
-        e.target.closest(".smart-route-trigger");
-
-    if (!btn) return;
-
-    if (
-        currentUserLat === null ||
-        currentUserLon === null
-    ) {
-        alert("GPS driver belum siap");
-        return;
-    }
-
-    const targetName =
-        btn.dataset.target;
-
-    popup.style.display = "flex";
-
-    popupContent.innerHTML = `
-        <div style="
-            padding:30px;
-            text-align:center;
-        ">
-            📡 Mencari lokasi tujuan...
-        </div>
-    `;
-
-    try {
-
-        const geoUrl =
-            "https://nominatim.openstreetmap.org/search?format=json&q=" +
-            encodeURIComponent(targetName);
-
-        const geoRes =
-            await fetch(geoUrl);
-
-        const geoData =
-            await geoRes.json();
-
-        if (!geoData.length) {
-
-            popupContent.innerHTML = `
-                ❌ Lokasi tidak ditemukan
-            `;
-
-            return;
-        }
-
-        const targetLat =
-            parseFloat(geoData[0].lat);
-
-        const targetLon =
-            parseFloat(geoData[0].lon);
-
-        showSmartRoute(
-            currentUserLat,
-            currentUserLon,
-            targetLat,
-            targetLon,
-            targetName,
-            targetName
-        );
-
-    } catch (err) {
-
-        console.log(err);
-
-        popupContent.innerHTML = `
-            ❌ Gagal memuat route
-        `;
-
-    }
-
-});
 
 window.addEventListener(
     "load",
