@@ -1052,49 +1052,54 @@ function renderRecommendation(
 
             <div class="smart-card">
 
-                <div class="smart-title">
-                    ${item.nama}
-                </div>
+    <div class="smart-title">
+        ${item.nama}
+    </div>
 
-                <div class="smart-meta">
-                    📍 ${item.wilayah}
-                </div>
+    <div class="smart-meta">
+        📍 ${item.wilayah}
+    </div>
 
-                <div class="smart-meta">
-                    🏢 ${item.kategori}
-                </div>
+    <div class="smart-meta">
+        🏢 ${item.kategori}
+    </div>
 
-                <div class="smart-distance">
-                    📏 ${item.garisLurus.toFixed(1)} KM
-                </div>
+    <div class="smart-meta">
+        🛣️ ${item.alamat}
+    </div>
 
-                <div class="smart-buttons">
+    <div class="smart-distance">
+        📏 ${item.garisLurus.toFixed(1)} KM
+    </div>
 
-                    <button
-                        onclick="
-                            showSmartRoute(
-                                ${userLat},
-                                ${userLon},
-                                ${item.latitude},
-                                ${item.longitude},
-                                '${item.nama}',
-                                '${item.alamat}'
-                            )
-                        "
-                    >
-                        Lihat Route
-                    </button>
+    <div class="smart-buttons">
 
-                    <a
-                        target="_blank"
-                        href="https://maps.google.com/?q=${encodeURIComponent(item.nama)}"
-                    >
-                        Maps
-                    </a>
+        <button
+            onclick="
+                showSmartRoute(
+                    ${userLat},
+                    ${userLon},
+                    ${item.latitude},
+                    ${item.longitude},
+                    '${item.nama}',
+                    '${item.alamat}'
+                )
+            "
+        >
+            🚗 Lihat Route
+        </button>
 
-                </div>
+        <a
+            href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.nama + ' ' + item.alamat)}"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            🗺️ Google Maps
+        </a>
 
-            </div>
+    </div>
+
+</div>
 
         `;
 
@@ -1227,7 +1232,7 @@ async function showSmartRoute(
 
                         <a
                             target='_blank'
-                            href='https://www.google.com/maps/dir/?api=1&destination=${targetLat},${targetLon}'
+                            href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(nama + ' ' + alamat)}"
                         >
                             Google Maps
                         </a>
@@ -1355,7 +1360,7 @@ async function showSmartRoute(
                     Math.ceil(
                         route.summary.totalTime / 60
                     );
-                
+
                 startPopupCountdown();
 
                 document.getElementById(
@@ -1389,7 +1394,7 @@ async function showSmartRoute(
 
                         <a
                             target="_blank"
-                            href="https://www.google.com/maps/dir/?api=1&destination=${targetLat},${targetLon}"
+                            href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(nama + ' ' + alamat)}"
                         >
                             Buka Google Maps
                         </a>

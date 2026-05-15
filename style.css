@@ -227,20 +227,6 @@ footer a:hover {
 
 }
 
-.smart-popup {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, .75);
-    backdrop-filter: blur(6px);
-    z-index: 999999;
-    padding: 20px;
-}
-
 .popup-box {
     width: 100%;
     max-width: 420px;
@@ -319,44 +305,6 @@ footer a:hover {
     will-change: transform;
     user-select: none;
     pointer-events: none;
-}
-
-.smart-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.smart-card {
-    background: #162544;
-    border-radius: 18px;
-    padding: 16px;
-    border: 1px solid rgba(255, 255, 255, .05);
-}
-
-.smart-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.smart-meta {
-    color: #9cb5d8;
-    font-size: 14px;
-    margin-bottom: 8px;
-}
-
-.smart-distance {
-    font-size: 18px;
-    color: #4ea1ff;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.smart-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 14px;
 }
 
 .upload-box {
@@ -534,4 +482,241 @@ TACTICAL HOTSPOT CARD
 
     }
 
+}
+
+/* =========================================
+SMART TACTICAL RADAR PREMIUM
+========================================= */
+
+.smart-list {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.smart-card {
+
+    position: relative;
+
+    background:
+        linear-gradient(145deg,
+            #162544,
+            #10203b);
+
+    border-radius: 24px;
+
+    padding: 22px;
+
+    overflow: hidden;
+
+    border:
+        1px solid rgba(255, 255, 255, .06);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, .28);
+
+    transition: .25s ease;
+}
+
+.smart-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, .38);
+}
+
+.smart-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -80px;
+    right: -80px;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(rgba(78, 161, 255, .16),
+            transparent 70%);
+}
+
+.smart-title {
+
+    font-size: 26px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    margin-bottom: 18px;
+
+    color: #fff;
+}
+
+.smart-meta {
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 15px;
+
+    color: #b8c8e6;
+
+    margin-bottom: 10px;
+}
+
+.smart-distance {
+
+    margin-top: 18px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    background:
+        rgba(61, 139, 253, .12);
+
+    border:
+        1px solid rgba(78, 161, 255, .18);
+
+    color: #61adff;
+
+    padding: 12px 16px;
+
+    border-radius: 16px;
+
+    font-size: 24px;
+
+    font-weight: 800;
+}
+
+.smart-card .smart-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+.smart-card .smart-buttons button,
+.smart-card .smart-buttons a{
+
+    flex: 1;
+
+    height: 52px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+
+    border-radius: 16px;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    font-size: 15px;
+
+    transition: .2s ease;
+}
+
+.smart-card .smart-buttons button {
+
+    background:
+        linear-gradient(135deg,
+            #4ea1ff,
+            #2563eb);
+
+    color: white;
+
+    cursor: pointer;
+}
+
+.smart-card .smart-buttons button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(61, 139, 253, .35);
+}
+
+.smart-card .smart-buttons a {
+
+    background:
+        rgba(255, 255, 255, .06);
+
+    color: #d7e5ff;
+
+    border:
+        1px solid rgba(255, 255, 255, .08);
+}
+
+.smart-card .smart-buttons a:hover{
+
+    background:
+        rgba(255, 255, 255, .1);
+}
+
+/* STATUS */
+
+.loading-status {
+
+    background: #162544;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    color: #d7e5ff;
+
+    line-height: 1.8;
+
+    border:
+        1px solid rgba(255, 255, 255, .05);
+}
+
+/* MOBILE */
+
+@media(max-width:768px) {
+
+    .smart-list {
+        grid-template-columns: 1fr;
+    }
+
+    .smart-title {
+        font-size: 22px;
+    }
+
+    .smart-distance {
+        font-size: 20px;
+    }
+
+    .smart-buttons {
+        flex-direction: column;
+    }
+
+    .smart-buttons button,
+    .smart-buttons a {
+        width: 100%;
+    }
+}
+
+.smart-card .smart-buttons button,
+.smart-card .smart-buttons a {
+    width: auto !important;
+    margin-top: 0;
 }
