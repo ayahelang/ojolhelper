@@ -609,7 +609,7 @@ SMART TACTICAL RADAR PREMIUM
 }
 
 .smart-card .smart-buttons button,
-.smart-card .smart-buttons a{
+.smart-card .smart-buttons a {
 
     flex: 1;
 
@@ -663,7 +663,7 @@ SMART TACTICAL RADAR PREMIUM
         1px solid rgba(255, 255, 255, .08);
 }
 
-.smart-card .smart-buttons a:hover{
+.smart-card .smart-buttons a:hover {
 
     background:
         rgba(255, 255, 255, .1);
@@ -750,4 +750,125 @@ SMART TACTICAL RADAR PREMIUM
     overflow: hidden;
 
     margin-top: 14px;
+}
+
+.nav-fullscreen {
+
+    position: fixed;
+    inset: 0;
+
+    background: #08111f;
+
+    z-index: 99999999;
+
+    display: none;
+
+    flex-direction: column;
+}
+
+#navMap {
+    flex: 1;
+    width: 100%;
+}
+
+.nav-topbar {
+
+    position: absolute;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: rgba(10, 20, 40, .9);
+
+    padding: 14px 22px;
+
+    border-radius: 18px;
+
+    z-index: 9999;
+
+    font-weight: bold;
+
+    backdrop-filter: blur(10px);
+}
+
+.nav-bottom {
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(to top,
+            rgba(8, 17, 31, .98),
+            rgba(8, 17, 31, .82));
+
+    backdrop-filter: blur(12px);
+
+    z-index: 9999;
+}
+
+.nav-stats {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+}
+
+.nav-box {
+
+    background: #132544;
+
+    border-radius: 18px;
+
+    padding: 14px;
+
+    text-align: center;
+}
+
+.nav-box span {
+
+    display: block;
+
+    color: #8fa9d4;
+
+    font-size: 13px;
+
+    margin-bottom: 6px;
+}
+
+.nav-box strong {
+
+    font-size: 22px;
+
+    color: #4ea1ff;
+}
+
+#closeNav {
+
+    width: 100%;
+
+    border: none;
+
+    background: #ef4444;
+
+    color: white;
+
+    padding: 16px;
+
+    border-radius: 18px;
+
+    font-weight: bold;
+
+    font-size: 16px;
 }

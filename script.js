@@ -461,34 +461,19 @@ async function checkGPSAndAnalyze(btn) {
 ========================================= */
 document
     .getElementById("continueMaps")
-    .addEventListener("click", function () {
+    .addEventListener(
+        "click",
+        function () {
 
-        popup.style.display = "none";
+            popup.style.display = "none";
 
-        if (smartMap) {
-            smartMap.remove();
-            smartMap = null;
+            openFullscreenNavigation(
+                window.lastTargetLat,
+                window.lastTargetLon
+            );
+
         }
-
-        document
-            .getElementById("map")
-            .scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
-    });
-
-document
-    .getElementById("closePopup")
-    .addEventListener("click", function () {
-        popup.style.display = "none";
-
-        if (smartMap) {
-            smartMap.remove();
-            smartMap = null;
-        }
-        clearInterval(popupTimer);
-    });
+    );
 
 
 /* =========================================
@@ -715,6 +700,9 @@ document.addEventListener(
 
                 const targetLon =
                     parseFloat(geoData[0].lon);
+                
+                window.lastTargetLat = targetLat;
+                window.lastTargetLon = targetLon;
 
                 /* hapus route lama */
                 if (routingControl) {
@@ -1429,7 +1417,7 @@ async function initSmartRadar() {
 
             const userLon =
                 pos.coords.longitude;
-            
+
             currentUserLat = userLat;
             currentUserLon = userLon;
 
@@ -1808,3 +1796,190 @@ document.addEventListener("click", function (e) {
     );
 
 });
+
+let navMap = null;
+let navRouting = null;
+let navMarker = null;
+
+async function openFullscreenNavigation(
+    targetLat,
+    targetLon
+) {
+
+    document
+        .getElementById("navFullscreen")
+        .style.display = "flex";
+
+    if (navMap) {
+        navMap.remove();
+        navMap = null;
+    }
+
+    navMap = L.map("navMap", {
+        zoomControl: false
+    }).setView(
+        [currentUserLat, currentUserLon],
+        15
+    );
+
+    L.tileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    ).addTo(navMap);
+
+    const carIcon = L.divIcon({
+        className: "car-marker",
+        html: `
+            <img
+                src="assets/car-top.png"
+                id="navCarRotate"
+                style="
+                    width:70px;
+                    height:70px;
+                "
+            >
+        `,
+        iconSize: [70, 70],
+        iconAnchor: [35, 35]
+    });
+
+    navMarker = L.marker(
+        [currentUserLat, currentUserLon],
+        {
+            icon: carIcon
+        }
+    ).addTo(navMap);
+
+    navRouting =
+        L.Routing.control({
+
+            waypoints: [
+                L.latLng(
+                    currentUserLat,
+                    currentUserLon
+                ),
+                L.latLng(
+                    targetLat,
+                    targetLon
+                )
+            ],
+
+            draggableWaypoints: false,
+            addWaypoints: false,
+            routeWhileDragging: false,
+            show: false,
+
+            lineOptions: {
+                styles: [
+                    {
+                        color: "#3d8bfd",
+                        weight: 8,
+                        opacity: .9
+                    }
+                ]
+            }
+
+        })
+
+            .on("routesfound", function (e) {
+
+                const route =
+                    e.routes[0];
+
+                const km =
+                    (
+                        route.summary.totalDistance / 1000
+                    ).toFixed(1);
+
+                const menit =
+                    Math.ceil(
+                        route.summary.totalTime / 60
+                    );
+
+                document
+                    .getElementById("navEta")
+                    .innerText =
+                    menit + " menit";
+
+                document
+                    .getElementById("navDistance")
+                    .innerText =
+                    km + " KM";
+            })
+
+            .addTo(navMap);
+
+    navigator.geolocation.watchPosition(
+
+        function (pos) {
+
+            const lat =
+                pos.coords.latitude;
+
+            const lon =
+                pos.coords.longitude;
+
+            const speed =
+                pos.coords.speed
+                    ? Math.round(
+                        pos.coords.speed * 3.6
+                    )
+                    : 0;
+
+            const heading =
+                pos.coords.heading || 0;
+
+            document
+                .getElementById("navSpeed")
+                .innerText =
+                speed + " km/h";
+
+            navMarker.setLatLng([lat, lon]);
+
+            navMap.setView(
+                [lat, lon],
+                17
+            );
+
+            const car =
+                document.getElementById(
+                    "navCarRotate"
+                );
+
+            if (car) {
+
+                car.style.transform =
+                    `rotate(${heading}deg)`;
+
+            }
+
+        },
+
+        null,
+
+        {
+            enableHighAccuracy: true,
+            maximumAge: 0,
+            timeout: 15000
+        }
+
+    );
+
+}
+
+document
+    .getElementById("closeNav")
+    .addEventListener(
+        "click",
+        function () {
+
+            document
+                .getElementById("navFullscreen")
+                .style.display = "none";
+
+            if (navMap) {
+                navMap.remove();
+                navMap = null;
+            }
+
+        }
+    );
