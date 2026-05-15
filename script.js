@@ -1101,7 +1101,7 @@ async function showSmartRoute(
 ) {
 
     popup.style.display = "flex";
-
+    startPopupCountdown();
     popupContent.innerHTML = `
 
         <div style="
@@ -1335,6 +1335,8 @@ async function showSmartRoute(
                     Math.ceil(
                         route.summary.totalTime / 60
                     );
+                
+                startPopupCountdown();
 
                 document.getElementById(
                     "routeInfo"
