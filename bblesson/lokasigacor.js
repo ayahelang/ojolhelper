@@ -125,30 +125,14 @@ function renderLocations(data) {
 
           html += `
 
-        <div class="location-card">
-
-          <div class="location-name">
-            ${item.nama}
-          </div>
-
-          <div class="meta">
-            📍 ${item.alamat}
-          </div>
-
-          <div class="meta">
-            🏷️ ${item.kategori}
-          </div>
-
-          <div class="meta">
-            🌐 ${item.latitude},
-            ${item.longitude}
-          </div>
-
-          <div class="badge">
-            ${item.wilayah}
-          </div>
-
-        </div>
+        <div
+  class="location-card"
+  onclick="openGoogleMaps(
+    ${item.latitude},
+    ${item.longitude},
+    '${item.nama}'
+  )"
+>
 
       `;
 
@@ -224,3 +208,33 @@ START
 ========================================= */
 
 loadAllData();
+
+/* =========================================
+OPEN GOOGLE MAPS
+========================================= */
+
+function openGoogleMaps(
+  lat,
+  lng,
+  name
+) {
+
+  const confirmed =
+    confirm(
+
+      `Buka Google Maps menuju:\n\n${name} ?`
+
+    );
+
+  if (!confirmed) return;
+
+  const url =
+
+    `https://www.google.com/maps?q=${lat},${lng}`;
+
+  window.open(
+    url,
+    "_blank"
+  );
+
+}
