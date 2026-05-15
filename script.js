@@ -1935,10 +1935,23 @@ async function openFullscreenNavigation(
 
             navMarker.setLatLng([lat, lon]);
 
-            navMap.setView(
+            navMap.flyTo(
                 [lat, lon],
-                17
+                18,
+                {
+                    animate: true,
+                    duration: 1
+                }
             );
+
+            if (navRouting) {
+
+                navRouting.setWaypoints([
+                    L.latLng(lat, lon),
+                    L.latLng(targetLat, targetLon)
+                ]);
+
+            }
 
             const car =
                 document.getElementById(
