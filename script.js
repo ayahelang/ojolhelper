@@ -1068,25 +1068,20 @@ function renderRecommendation(
         🛣️ ${item.alamat}
     </div>
 
-    <div class="smart-distance">
-        📏 ${item.garisLurus.toFixed(1)} KM
-    </div>
+<div class="smart-distance">
+    🚖 Menghitung route nyata...
+</div>
 
     <div class="smart-buttons">
 
         <button
-            onclick="
-                showSmartRoute(
-                    ${userLat},
-                    ${userLon},
-                    ${item.latitude},
-                    ${item.longitude},
-                    '${item.nama}',
-                    '${item.alamat}'
-                )
-            "
-        >
-            🚗 Lihat Route
+    class="smart-route-btn"
+    data-lat="${item.latitude}"
+    data-lon="${item.longitude}"
+    data-nama="${item.nama}"
+    data-alamat="${item.alamat}"
+>
+            🚗 Real Route
         </button>
 
         <a
@@ -1790,3 +1785,21 @@ function viewMovementDatabase() {
     console.log(data);
 
 }
+
+document.addEventListener("click", function (e) {
+
+    const btn =
+        e.target.closest(".smart-route-btn");
+
+    if (!btn) return;
+
+    showSmartRoute(
+        currentUserLat,
+        currentUserLon,
+        parseFloat(btn.dataset.lat),
+        parseFloat(btn.dataset.lon),
+        btn.dataset.nama,
+        btn.dataset.alamat
+    );
+
+});

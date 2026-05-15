@@ -720,3 +720,34 @@ SMART TACTICAL RADAR PREMIUM
     width: auto !important;
     margin-top: 0;
 }
+
+.smart-popup {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0, 0, 0, .65);
+
+    backdrop-filter: blur(8px);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999999;
+}
+
+.popup-mini-map {
+
+    width: 100%;
+    height: 260px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    margin-top: 14px;
+}
