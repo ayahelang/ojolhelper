@@ -537,23 +537,22 @@ function initLiveGPS() {
                 map.setView([lat, lon], 15);
                 window.mapInitialized = true;
             }
-            if (!userMarker) {
-
-                userMarker = L.marker(
-                    [lat, lon],
-                    {
-                        icon: carIcon
-                    }
-                )
-                    .addTo(map);
-
-            } else {
-
-                userMarker.setLatLng(
-                    [lat, lon]
-                );
-
+            /* hapus marker lama */
+            if (userMarker) {
+                map.removeLayer(userMarker);
             }
+            if (accuracyCircle) {
+                map.removeLayer(accuracyCircle);
+            }
+            /* marker user */
+
+            userMarker = L.marker(
+                [lat, lon],
+                {
+                    icon: carIcon
+                }
+            )
+                .addTo(map)
                 .bindPopup(`
                 <b>Lokasi Driver</b>
                 <br>
@@ -1267,7 +1266,7 @@ async function showSmartRoute(
     }
 
     smartMap = L.map("miniMap", {
-        zoomControl: true,
+        zoomControl: false,
         attributionControl: false
     }).setView(
         [userLat, userLon],
@@ -1799,7 +1798,6 @@ let navRouting = null;
 let navMarker = null;
 let lastRouteUpdate = 0;
 let navWatcher = null;
-let isFullRouteView = false;
 
 async function openFullscreenNavigation(
     targetLat,
@@ -1824,12 +1822,12 @@ async function openFullscreenNavigation(
         navMap.remove();
         navMap = null;
     }
-
+    
     navMap = L.map("navMap", {
-        zoomControl: true
+        zoomControl: false
     }).setView(
         [currentUserLat, currentUserLon],
-        16
+        15
     );
 
     L.tileLayer(
@@ -1843,13 +1841,13 @@ async function openFullscreenNavigation(
                 src="assets/car-top.png"
                 id="navCarRotate"
                 style="
-                    width:42px;
-                    height:42px;
+                    width:70px;
+                    height:70px;
                 "
             >
         `,
-        iconSize: [42, 42],
-        iconAnchor: [21, 30]
+        iconSize: [70, 70],
+        iconAnchor: [35, 35]
     });
 
     navMarker = L.marker(
@@ -1921,138 +1919,81 @@ async function openFullscreenNavigation(
     navWatcher =
         navigator.geolocation.watchPosition(
 
-            function (pos) {
+        function (pos) {
 
-                const lat =
-                    pos.coords.latitude;
+            const lat =
+                pos.coords.latitude;
 
-                const lon =
-                    pos.coords.longitude;
+            const lon =
+                pos.coords.longitude;
 
-                const speed =
-                    pos.coords.speed
-                        ? Math.round(
-                            pos.coords.speed * 3.6
-                        )
-                        : 0;
+            const speed =
+                pos.coords.speed
+                    ? Math.round(
+                        pos.coords.speed * 3.6
+                    )
+                    : 0;
 
-                const heading =
-                    pos.coords.heading || 0;
+            const heading =
+                pos.coords.heading || 0;
 
-                document
-                    .getElementById("navSpeed")
-                    .innerText =
-                    speed + " km/h";
+            document
+                .getElementById("navSpeed")
+                .innerText =
+                speed + " km/h";
 
-                navMarker.setLatLng([lat, lon]);
+            navMarker.setLatLng([lat, lon]);
 
-                const now = Date.now();
-
-                if (!window.lastPanUpdate) {
-                    window.lastPanUpdate = 0;
+            navMap.flyTo(
+                [lat, lon],
+                18,
+                {
+                    animate: true,
+                    duration: 1
                 }
+            );
 
-                if (now - window.lastPanUpdate > 1200) {
+            const now = Date.now();
 
-                    window.lastPanUpdate = now;
+            if (
+                navRouting &&
+                now - lastRouteUpdate > 5000
+            ) {
 
-                    if (!isFullRouteView) {
+                lastRouteUpdate = now;
 
-                        navMap.panTo(
-                            [lat, lon],
-                            {
-                                animate: true,
-                                duration: 0.25
-                            }
-                        );
+                navRouting.setWaypoints([
+                    L.latLng(lat, lon),
+                    L.latLng(targetLat, targetLon)
+                ]);
 
-                    }
-
-                }
-
-                if (
-                    navRouting &&
-                    Date.now() - lastRouteUpdate > 5000
-                ) {
-
-                    lastRouteUpdate = Date.now();
-
-                    navRouting.setWaypoints([
-                        L.latLng(lat, lon),
-                        L.latLng(targetLat, targetLon)
-                    ]);
-
-                }
-
-                const car =
-                    document.getElementById(
-                        "navCarRotate"
-                    );
-
-                if (car) {
-
-                    car.style.transform =
-                        `rotate(${heading}deg)`;
-
-                }
-
-            },
-
-            null,
-
-            {
-                enableHighAccuracy: true,
-                maximumAge: 0,
-                timeout: 15000
             }
 
-        );
+            const car =
+                document.getElementById(
+                    "navCarRotate"
+                );
+
+            if (car) {
+
+                car.style.transform =
+                    `rotate(${heading}deg)`;
+
+            }
+
+        },
+
+        null,
+
+        {
+            enableHighAccuracy: true,
+            maximumAge: 0,
+            timeout: 15000
+        }
+
+    );
 
 }
-
-document
-    .getElementById("showFullRoute")
-    .addEventListener(
-        "click",
-        function () {
-
-            if (!navRouting) return;
-
-            if (!isFullRouteView) {
-
-                isFullRouteView = true;
-
-                navMap.fitBounds(
-                    navRouting
-                        .getWaypoints()
-                        .map(w => w.latLng),
-                    {
-                        padding: [40, 40]
-                    }
-                );
-
-                this.innerText = "Follow Mobil";
-
-            } else {
-
-                isFullRouteView = false;
-
-                this.innerText = "Full Route";
-                navMap.panTo(
-                    [
-                        navMarker.getLatLng().lat,
-                        navMarker.getLatLng().lng
-                    ],
-                    {
-                        animate: true,
-                        duration: 0.25
-                    }
-                );
-
-            }
-
-        }
-    );
 
 document
     .getElementById("closeNav")
@@ -2068,7 +2009,6 @@ document
                 navMap.remove();
                 navMap = null;
             }
-
             if (navWatcher) {
 
                 navigator.geolocation.clearWatch(
@@ -2078,6 +2018,5 @@ document
                 navWatcher = null;
 
             }
-
         }
     );
