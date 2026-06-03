@@ -296,7 +296,7 @@ footer a:hover {
 
 #carIconRotate {
     width: 52px;
-    height: 52px;
+    height: auto;
     object-fit: contain;
     transition:
         transform .35s linear;

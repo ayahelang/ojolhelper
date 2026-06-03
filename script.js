@@ -505,9 +505,9 @@ const carIcon = L.divIcon({
         >
     `,
 
-    iconSize: [52, 52],
+    iconSize: [26, 52],
 
-    iconAnchor: [26, 26]
+    iconAnchor: [13, 26]
 
 });
 
