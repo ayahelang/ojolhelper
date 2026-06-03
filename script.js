@@ -1277,10 +1277,10 @@ async function showSmartRoute(
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     ).addTo(smartMap);
 
-    L.marker([
-        userLat,
-        userLon
-    ]).addTo(smartMap);
+    //L.marker([
+    //    userLat,
+    //    userLon
+    //]).addTo(smartMap);
 
     L.marker([
         targetLat,
