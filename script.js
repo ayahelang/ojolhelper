@@ -1841,13 +1841,13 @@ async function openFullscreenNavigation(
                 src="assets/car-top.png"
                 id="navCarRotate"
                 style="
-                    width:70px;
-                    height:70px;
+                    width:26px;
+                    height:auto;
                 "
             >
         `,
-        iconSize: [70, 70],
-        iconAnchor: [35, 35]
+        iconSize: [25, 52],
+        iconAnchor: [13, 26]
     });
 
     navMarker = L.marker(
