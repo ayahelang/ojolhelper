@@ -714,6 +714,8 @@ document.addEventListener(
 
                 /* route */
                 routingControl =
+                    createMarker: () => null,
+                    
                     L.Routing.control({
                         waypoints: [
                             L.latLng(
@@ -1859,6 +1861,11 @@ async function openFullscreenNavigation(
 
     navRouting =
         L.Routing.control({
+            createMarker: () => null,
+
+            createMarker: function () {
+                return null;
+            },
 
             waypoints: [
                 L.latLng(
