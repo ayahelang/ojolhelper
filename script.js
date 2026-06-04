@@ -505,9 +505,9 @@ const carIcon = L.divIcon({
         >
     `,
 
-    iconSize: [26, 52],
+    iconSize: [52, 52],
 
-    iconAnchor: [13, 26]
+    iconAnchor: [26, 26]
 
 });
 
@@ -714,8 +714,6 @@ document.addEventListener(
 
                 /* route */
                 routingControl =
-                    createMarker: () => null,
-                    
                     L.Routing.control({
                         waypoints: [
                             L.latLng(
@@ -1279,10 +1277,10 @@ async function showSmartRoute(
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     ).addTo(smartMap);
 
-    //L.marker([
-    //    userLat,
-    //    userLon
-    //]).addTo(smartMap);
+    L.marker([
+        userLat,
+        userLon
+    ]).addTo(smartMap);
 
     L.marker([
         targetLat,
@@ -1848,7 +1846,7 @@ async function openFullscreenNavigation(
                 "
             >
         `,
-        iconSize: [25, 52],
+        iconSize: [26, 52],
         iconAnchor: [13, 26]
     });
 
@@ -1861,11 +1859,6 @@ async function openFullscreenNavigation(
 
     navRouting =
         L.Routing.control({
-            createMarker: () => null,
-
-            createMarker: function () {
-                return null;
-            },
 
             waypoints: [
                 L.latLng(
