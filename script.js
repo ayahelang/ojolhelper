@@ -495,20 +495,15 @@ let userMarker = null;
 let lastHeading = 0;
 
 const carIcon = L.divIcon({
-
     className: "car-marker",
-
     html: `
         <img
             src="assets/car-top.png"
             class="carIconRotate"
         >
     `,
-
     iconSize: [32, 64],
-
     iconAnchor: [16, 1]
-
 });
 
 let accuracyCircle = null;
@@ -1842,15 +1837,11 @@ async function openFullscreenNavigation(
     const carIcon = L.divIcon({
         className: "car-marker",
         html: `
-            <img
-                src="assets/car-top.png"
-                id="navCarRotate"
-                style="
-                    width:26px;
-                    height:auto;
-                "
-            >
-        `,
+        <img
+            src="assets/car-top.png"
+            class="carIconRotate"
+        >
+    `,
         iconSize: [32, 64],
         iconAnchor: [16, 1]
     });
