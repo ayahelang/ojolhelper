@@ -505,9 +505,9 @@ const carIcon = L.divIcon({
         >
     `,
 
-    iconSize: [52, 52],
+    iconSize: [26, 52],
 
-    iconAnchor: [26, 26]
+    iconAnchor: [13, 1]
 
 });
 
@@ -1847,7 +1847,7 @@ async function openFullscreenNavigation(
             >
         `,
         iconSize: [26, 52],
-        iconAnchor: [13, 26]
+        iconAnchor: [13, 1]
     });
 
     navMarker = L.marker(
