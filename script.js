@@ -2029,3 +2029,59 @@ document
             }
         }
     );
+
+function getTimePeriod() {
+
+    const hour =
+        new Date().getHours();
+
+    if (hour >= 5 && hour < 11)
+        return "pagi";
+
+    if (hour >= 11 && hour < 15)
+        return "siang";
+
+    if (hour >= 15 && hour < 19)
+        return "sore";
+
+    return "malam";
+
+}
+
+function getLocationScore(location) {
+
+    const kategori =
+        location.kategori;
+
+    const periode =
+        getTimePeriod();
+
+    const baseScore =
+        hotspotWeight[kategori] || 1;
+
+    const timeScore =
+        hotspotTime[kategori]?.[periode] || 1;
+
+    return baseScore + timeScore;
+
+}
+
+const weatherBonus = {
+    hujan: {
+        mall: 3,
+        hotel: 2,
+        stasiun: 4
+    }
+};
+
+const dayBonus = {
+    sabtu: {
+        mall: 3,
+        wisata: 4
+    },
+
+    minggu: {
+        mall: 4,
+        wisata: 5
+    }
+};

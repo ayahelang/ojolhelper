@@ -232,5 +232,68 @@
         "alamat": "Setiabudi, Jakarta Selatan",
         "latitude": -6.2197,
         "longitude": 106.8326
+    },
+    {
+        "id": "jaksel_pacificcenturyplace",
+        "nama": "Pacific Century Place",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "business_district",
+        "alamat": "SCBD Lot 10",
+        "latitude": -6.2240,
+        "longitude": 106.8091
+    },
+    {
+        "id": "jaksel_treasurytower",
+        "nama": "Treasury Tower",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "business_district",
+        "alamat": "SCBD Lot 28",
+        "latitude": -6.2270,
+        "longitude": 106.8097
+    },
+    {
+        "id": "jaksel_sequistower",
+        "nama": "Sequis Tower",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "business_district",
+        "alamat": "SCBD Lot 11B",
+        "latitude": -6.2233,
+        "longitude": 106.8089
+    },
+    {
+        "id": "jaksel_theenergy",
+        "nama": "The Energy Building",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "business_district",
+        "alamat": "SCBD Lot 11A",
+        "latitude": -6.2238,
+        "longitude": 106.8094
+    },
+    {
+        "id": "jaksel_sampoernastrategic",
+        "nama": "Sampoerna Strategic Square",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "business_district",
+        "alamat": "Jl. Sudirman Kav 45",
+        "latitude": -6.2198,
+        "longitude": 106.8145
+    },
+    {
+        "id": "jaksel_jcc",
+        "nama": "Jakarta Convention Center",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "event_center",
+        "alamat": "Senayan",
+        "latitude": -6.2146,
+        "longitude": 106.8071
+    },
+    {
+        "id": "jaksel_istora",
+        "nama": "Istora Senayan",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "event_center",
+        "alamat": "Senayan",
+        "latitude": -6.2222,
+        "longitude": 106.8035
     }
 ]
