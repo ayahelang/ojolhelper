@@ -501,13 +501,13 @@ const carIcon = L.divIcon({
     html: `
         <img
             src="assets/car-top.png"
-            clas="carIconRotate"
+            class="carIconRotate"
         >
     `,
 
-    iconSize: [26, 52],
+    iconSize: [32, 64],
 
-    iconAnchor: [13, 1]
+    iconAnchor: [16, 1]
 
 });
 
@@ -1851,8 +1851,8 @@ async function openFullscreenNavigation(
                 "
             >
         `,
-        iconSize: [26, 52],
-        iconAnchor: [13, 1]
+        iconSize: [32, 64],
+        iconAnchor: [16, 1]
     });
 
     navMarker = L.marker(

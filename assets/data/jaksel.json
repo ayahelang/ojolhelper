@@ -295,5 +295,15 @@
         "alamat": "Senayan",
         "latitude": -6.2222,
         "longitude": 106.8035
+    },
+    {
+        "id": "jaksel_pacificcenturyplace",
+        "nama": "Pacific Century Place",
+        "wilayah": "Jakarta Selatan",
+        "kategori": "business_district",
+        "alamat": "SCBD Lot 10",
+        "latitude": -6.2246,
+        "longitude": 106.8099
     }
+
 ]
