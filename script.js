@@ -507,7 +507,7 @@ const carIcon = L.divIcon({
 
     iconSize: [26, 52],
 
-    iconAnchor: [13, 1]
+    iconAnchor: [13, 26]
 
 });
 
@@ -715,6 +715,11 @@ document.addEventListener(
                 /* route */
                 routingControl =
                     L.Routing.control({
+
+                        createMarker: function () {
+                            return null;
+                        },
+
                         waypoints: [
                             L.latLng(
                                 userLat,
@@ -1847,7 +1852,7 @@ async function openFullscreenNavigation(
             >
         `,
         iconSize: [26, 52],
-        iconAnchor: [13, 1]
+        iconAnchor: [13, 26]
     });
 
     navMarker = L.marker(
@@ -1859,6 +1864,10 @@ async function openFullscreenNavigation(
 
     navRouting =
         L.Routing.control({
+
+            createMarker: function () {
+                return null;
+            },
 
             waypoints: [
                 L.latLng(
