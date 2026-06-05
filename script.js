@@ -159,7 +159,7 @@ function generatePlan() {
                     ${Math.round(km)} km estimasi rotasi
                 </div>
 
-                <a class="maps-btn" href="https://maps.google.com/?q=${encodeURIComponent(row[1])}">Buka Google Maps</a>
+                <a class="maps-btn" target="_blank" rel="noopener" href="https://maps.google.com/?q=${encodeURIComponent(row[1])}">Buka Google Maps</a>
                 <button class="route-btn" data-target="${row[1]}">
                     Tampilkan Route Nyata
                 </button>
@@ -501,13 +501,13 @@ const carIcon = L.divIcon({
     html: `
         <img
             src="assets/car-top.png"
-            id="carIconRotate"
+            clas="carIconRotate"
         >
     `,
 
     iconSize: [26, 52],
 
-    iconAnchor: [13, 26]
+    iconAnchor: [13, 1]
 
 });
 
@@ -568,8 +568,8 @@ function initLiveGPS() {
             setTimeout(() => {
 
                 const car =
-                    document.getElementById(
-                        "carIconRotate"
+                    document.querySelector(
+                        ".carIconRotate"
                     );
 
                 if (car) {
@@ -1852,7 +1852,7 @@ async function openFullscreenNavigation(
             >
         `,
         iconSize: [26, 52],
-        iconAnchor: [13, 26]
+        iconAnchor: [13, 1]
     });
 
     navMarker = L.marker(
