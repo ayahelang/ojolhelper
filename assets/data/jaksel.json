@@ -295,6 +295,50 @@
         "alamat": "SCBD Lot 10",
         "latitude": -6.2246,
         "longitude": 106.8099
-    }
-
+    },
+    {
+  "id": "jaksel_langham",
+  "nama": "The Langham Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "SCBD",
+  "latitude": -6.2275,
+  "longitude": 106.8084
+},
+{
+  "id": "jaksel_fairmont",
+  "nama": "Fairmont Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Senayan",
+  "latitude": -6.2221,
+  "longitude": 106.7996
+},
+{
+  "id": "jaksel_jwmarriott",
+  "nama": "JW Marriott Hotel Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Mega Kuningan",
+  "latitude": -6.2271,
+  "longitude": 106.8275
+},
+{
+  "id": "jaksel_westin",
+  "nama": "The Westin Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Gama Tower",
+  "latitude": -6.2295,
+  "longitude": 106.8265
+},
+{
+  "id": "jaksel_granmelia",
+  "nama": "Gran Melia Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Kuningan",
+  "latitude": -6.2299,
+  "longitude": 106.8288
+}
 ]
