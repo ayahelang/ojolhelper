@@ -250,5 +250,50 @@
         "alamat": "BSD City, Tangerang Selatan",
         "latitude": -6.3030,
         "longitude": 106.6538
-    }
+    },
+    {
+  "id": "tangerang_atria",
+  "nama": "Atria Hotel Gading Serpong",
+  "wilayah": "Tangerang",
+  "kategori": "hotel",
+  "alamat": "Gading Serpong",
+  "latitude": -6.2418,
+  "longitude": 106.6265
+},
+{
+  "id": "tangerang_jhl",
+  "nama": "JHL Solitaire",
+  "wilayah": "Tangerang",
+  "kategori": "hotel",
+  "alamat": "Gading Serpong",
+  "latitude": -6.2437,
+  "longitude": 106.6308
+},
+{
+  "id": "tangerang_novotel",
+  "nama": "Novotel Tangerang",
+  "wilayah": "Tangerang",
+  "kategori": "hotel",
+  "alamat": "TangCity Superblock",
+  "latitude": -6.1783,
+  "longitude": 106.6311
+},
+{
+  "id": "tangerang_mercure",
+  "nama": "Mercure Serpong Alam Sutera",
+  "wilayah": "Tangerang",
+  "kategori": "hotel",
+  "alamat": "Alam Sutera",
+  "latitude": -6.2237,
+  "longitude": 106.6515
+},
+{
+  "id": "tangerang_swissbel",
+  "nama": "Swiss-Belhotel Serpong",
+  "wilayah": "Tangerang",
+  "kategori": "hotel",
+  "alamat": "BSD City",
+  "latitude": -6.3020,
+  "longitude": 106.6627
+}
 ]
