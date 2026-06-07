@@ -313,5 +313,50 @@
         "alamat": "Grand Wisata Bekasi",
         "latitude": -6.3136,
         "longitude": 107.0660
-    }
+    },
+    {
+  "id": "bogor_the101",
+  "nama": "THE 101 Bogor Suryakancana",
+  "wilayah": "Bogor",
+  "kategori": "hotel",
+  "alamat": "Jl. Suryakancana No.179",
+  "latitude": -6.6052,
+  "longitude": 106.7986
+},
+{
+  "id": "bogor_swissbelhotel",
+  "nama": "Swiss-Belhotel Bogor",
+  "wilayah": "Bogor",
+  "kategori": "hotel",
+  "alamat": "Jl. Salak No.38",
+  "latitude": -6.5908,
+  "longitude": 106.7932
+},
+{
+  "id": "bogor_aston",
+  "nama": "Aston Bogor Hotel & Resort",
+  "wilayah": "Bogor",
+  "kategori": "hotel",
+  "alamat": "Bogor Nirwana Residence",
+  "latitude": -6.6493,
+  "longitude": 106.7902
+},
+{
+  "id": "bogor_harrissentul",
+  "nama": "HARRIS Hotel Sentul City",
+  "wilayah": "Bogor",
+  "kategori": "hotel",
+  "alamat": "Sentul City",
+  "latitude": -6.5406,
+  "longitude": 106.8607
+},
+{
+  "id": "bogor_bigland",
+  "nama": "Bigland Hotel Bogor",
+  "wilayah": "Bogor",
+  "kategori": "hotel",
+  "alamat": "Jl. Malabar No.1B",
+  "latitude": -6.6027,
+  "longitude": 106.8115
+}
 ]
