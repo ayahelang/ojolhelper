@@ -234,15 +234,6 @@
         "longitude": 106.8326
     },
     {
-        "id": "jaksel_pacificcenturyplace",
-        "nama": "Pacific Century Place",
-        "wilayah": "Jakarta Selatan",
-        "kategori": "business_district",
-        "alamat": "SCBD Lot 10",
-        "latitude": -6.2240,
-        "longitude": 106.8091
-    },
-    {
         "id": "jaksel_treasurytower",
         "nama": "Treasury Tower",
         "wilayah": "Jakarta Selatan",
