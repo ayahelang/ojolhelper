@@ -205,5 +205,50 @@
         "alamat": "Jl. H. Benyamin Sueb, Kemayoran, Jakarta Pusat",
         "latitude": -6.1497,
         "longitude": 106.8436
-    }
+    },
+    {
+  "id": "jakpus_grandhyatt",
+  "nama": "Grand Hyatt Jakarta",
+  "wilayah": "Jakarta Pusat",
+  "kategori": "hotel",
+  "alamat": "Jl. MH Thamrin",
+  "latitude": -6.1943,
+  "longitude": 106.8223
+},
+{
+  "id": "jakpus_mandarin",
+  "nama": "Mandarin Oriental Jakarta",
+  "wilayah": "Jakarta Pusat",
+  "kategori": "hotel",
+  "alamat": "Jl. MH Thamrin",
+  "latitude": -6.1949,
+  "longitude": 106.8210
+},
+{
+  "id": "jakpus_millennium",
+  "nama": "Millennium Hotel Sirih Jakarta",
+  "wilayah": "Jakarta Pusat",
+  "kategori": "hotel",
+  "alamat": "Jl. Fachrudin",
+  "latitude": -6.1809,
+  "longitude": 106.8168
+},
+{
+  "id": "jakpus_aryaduta",
+  "nama": "Aryaduta Menteng",
+  "wilayah": "Jakarta Pusat",
+  "kategori": "hotel",
+  "alamat": "Jl. Prajurit KKO Usman",
+  "latitude": -6.1779,
+  "longitude": 106.8366
+},
+{
+  "id": "jakpus_akmani",
+  "nama": "Akmani Hotel Jakarta",
+  "wilayah": "Jakarta Pusat",
+  "kategori": "hotel",
+  "alamat": "Jl. KH Wahid Hasyim",
+  "latitude": -6.1861,
+  "longitude": 106.8237
+}
 ]
