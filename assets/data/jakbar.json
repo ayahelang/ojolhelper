@@ -313,5 +313,50 @@
         "alamat": "Jl. Letjen S. Parman, Jakarta Barat",
         "latitude": -6.1787,
         "longitude": 106.7914
-    }
+    },
+    {
+  "id": "jakbar_pullmancp",
+  "nama": "Pullman Jakarta Central Park",
+  "wilayah": "Jakarta Barat",
+  "kategori": "hotel",
+  "alamat": "Central Park",
+  "latitude": -6.1778,
+  "longitude": 106.7902
+},
+{
+  "id": "jakbar_hotelciputra",
+  "nama": "Hotel Ciputra Jakarta",
+  "wilayah": "Jakarta Barat",
+  "kategori": "hotel",
+  "alamat": "Jl. Letjen S. Parman",
+  "latitude": -6.1674,
+  "longitude": 106.7888
+},
+{
+  "id": "jakbar_astongrogol",
+  "nama": "Aston Kartika Grogol",
+  "wilayah": "Jakarta Barat",
+  "kategori": "hotel",
+  "alamat": "Grogol",
+  "latitude": -6.1657,
+  "longitude": 106.7864
+},
+{
+  "id": "jakbar_holidayinn",
+  "nama": "Holiday Inn Gajah Mada",
+  "wilayah": "Jakarta Barat",
+  "kategori": "hotel",
+  "alamat": "Jl. Gajah Mada",
+  "latitude": -6.1492,
+  "longitude": 106.8173
+},
+{
+  "id": "jakbar_fm7",
+  "nama": "FM7 Resort Hotel",
+  "wilayah": "Jakarta Barat",
+  "kategori": "hotel",
+  "alamat": "Cengkareng",
+  "latitude": -6.1189,
+  "longitude": 106.7005
+}
 ]
