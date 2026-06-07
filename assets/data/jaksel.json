@@ -349,5 +349,140 @@
   "alamat": "Jl. Kalibata Raya No.22, Pancoran, Jakarta Selatan",
   "latitude": -6.2555,
   "longitude": 106.8470
+},
+    {
+  "id": "jaksel_ritzmegakuningan",
+  "nama": "The Ritz-Carlton Jakarta Mega Kuningan",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. DR Ide Anak Agung Gde Agung, Mega Kuningan",
+  "latitude": -6.2278,
+  "longitude": 106.8289
+},
+{
+  "id": "jaksel_ritzpacificplace",
+  "nama": "The Ritz-Carlton Jakarta Pacific Place",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "SCBD Lot 3-5, Senayan",
+  "latitude": -6.2240,
+  "longitude": 106.8096
+},
+{
+  "id": "jaksel_oakwoodcozmo",
+  "nama": "Oakwood Premier Cozmo Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Mega Kuningan",
+  "latitude": -6.2287,
+  "longitude": 106.8281
+},
+{
+  "id": "jaksel_harrisfx",
+  "nama": "HARRIS Suites fX Sudirman",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "fX Sudirman, Senayan",
+  "latitude": -6.2247,
+  "longitude": 106.8039
+},
+{
+  "id": "jaksel_artotelmangkuluhur",
+  "nama": "Artotel Suites Mangkuluhur Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Gatot Subroto Kav.2-3",
+  "latitude": -6.2291,
+  "longitude": 106.8187
+},
+{
+  "id": "jaksel_astonsimatupang",
+  "nama": "Aston Priority Simatupang Hotel",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. TB Simatupang Kav.9",
+  "latitude": -6.2916,
+  "longitude": 106.8036
+},
+{
+  "id": "jaksel_grandhika",
+  "nama": "Hotel GranDhika Iskandarsyah",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Iskandarsyah Raya No.65",
+  "latitude": -6.2434,
+  "longitude": 106.7997
+},
+{
+  "id": "jaksel_neotendean",
+  "nama": "Hotel Neo Tendean",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Wolter Monginsidi No.131",
+  "latitude": -6.2420,
+  "longitude": 106.8235
+},
+{
+  "id": "jaksel_mercuregatotsubroto",
+  "nama": "Mercure Jakarta Gatot Subroto",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Gatot Subroto Kav.1",
+  "latitude": -6.2416,
+  "longitude": 106.8254
+},
+{
+  "id": "jaksel_parkregis",
+  "nama": "Park Regis Arion Kemang",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Kemang Raya No.7",
+  "latitude": -6.2605,
+  "longitude": 106.8148
+},
+{
+  "id": "jaksel_kemangicon",
+  "nama": "Kemang Icon Hotel",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Kemang Raya No.1",
+  "latitude": -6.2592,
+  "longitude": 106.8137
+},
+{
+  "id": "jaksel_amaroossacosmo",
+  "nama": "Amaroossa Cosmo Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Pangeran Antasari No.9",
+  "latitude": -6.2764,
+  "longitude": 106.8075
+},
+{
+  "id": "jaksel_kristalhotel",
+  "nama": "Kristal Hotel Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Terogong Raya No.17",
+  "latitude": -6.2928,
+  "longitude": 106.7865
+},
+{
+  "id": "jaksel_rafflesjakarta",
+  "nama": "Raffles Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Ciputra World 1, Kuningan",
+  "latitude": -6.2243,
+  "longitude": 106.8272
+},
+{
+  "id": "jaksel_ayanajakarta",
+  "nama": "AYANA Midplaza Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Jend. Sudirman Kav.10-11",
+  "latitude": -6.2144,
+  "longitude": 106.8178
 }
 ]
