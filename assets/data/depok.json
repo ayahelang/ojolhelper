@@ -268,5 +268,50 @@
         "alamat": "Jl. Meruyung Raya, Limo, Depok",
         "latitude": -6.3850,
         "longitude": 106.7787
-    }
+    },
+    {
+  "id": "depok_themargo",
+  "nama": "The Margo Hotel",
+  "wilayah": "Depok",
+  "kategori": "hotel",
+  "alamat": "Jl. Margonda Raya No.358",
+  "latitude": -6.3723,
+  "longitude": 106.8336
+},
+{
+  "id": "depok_savero",
+  "nama": "Savero Hotel Depok",
+  "wilayah": "Depok",
+  "kategori": "hotel",
+  "alamat": "Jl. Margonda Raya",
+  "latitude": -6.3941,
+  "longitude": 106.8216
+},
+{
+  "id": "depok_bumiwiyata",
+  "nama": "Bumi Wiyata Hotel",
+  "wilayah": "Depok",
+  "kategori": "hotel",
+  "alamat": "Jl. Margonda Raya",
+  "latitude": -6.3868,
+  "longitude": 106.8282
+},
+{
+  "id": "depok_santika",
+  "nama": "Hotel Santika Depok",
+  "wilayah": "Depok",
+  "kategori": "hotel",
+  "alamat": "Jl. Margonda Raya",
+  "latitude": -6.3775,
+  "longitude": 106.8314
+},
+{
+  "id": "depok_favehotel",
+  "nama": "favehotel Margonda Depok",
+  "wilayah": "Depok",
+  "kategori": "hotel",
+  "alamat": "Jl. Margonda Raya",
+  "latitude": -6.3905,
+  "longitude": 106.8234
+}
 ]
