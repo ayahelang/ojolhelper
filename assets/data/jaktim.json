@@ -205,5 +205,50 @@
         "alamat": "Cawang, Kramat Jati, Jakarta Timur",
         "latitude": -6.2429,
         "longitude": 106.8667
-    }
+    },
+    {
+  "id": "jaktim_thehive",
+  "nama": "Best Western Premier The Hive",
+  "wilayah": "Jakarta Timur",
+  "kategori": "hotel",
+  "alamat": "Jl. DI Panjaitan",
+  "latitude": -6.2482,
+  "longitude": 106.8735
+},
+{
+  "id": "jaktim_harper",
+  "nama": "Harper MT Haryono",
+  "wilayah": "Jakarta Timur",
+  "kategori": "hotel",
+  "alamat": "Jl. MT Haryono",
+  "latitude": -6.2476,
+  "longitude": 106.8698
+},
+{
+  "id": "jaktim_parkhotel",
+  "nama": "Park Hotel Cawang",
+  "wilayah": "Jakarta Timur",
+  "kategori": "hotel",
+  "alamat": "Cawang",
+  "latitude": -6.2438,
+  "longitude": 106.8702
+},
+{
+  "id": "jaktim_vasaka",
+  "nama": "Vasaka Hotel Jakarta",
+  "wilayah": "Jakarta Timur",
+  "kategori": "hotel",
+  "alamat": "Duren Sawit",
+  "latitude": -6.2195,
+  "longitude": 106.9158
+},
+{
+  "id": "jaktim_teraskita",
+  "nama": "Teraskita Hotel Jakarta",
+  "wilayah": "Jakarta Timur",
+  "kategori": "hotel",
+  "alamat": "Cawang",
+  "latitude": -6.2459,
+  "longitude": 106.8724
+}
 ]
