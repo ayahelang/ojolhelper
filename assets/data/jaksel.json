@@ -484,5 +484,140 @@
   "alamat": "Jl. Jend. Sudirman Kav.10-11",
   "latitude": -6.2144,
   "longitude": 106.8178
+},
+    {
+  "id": "jaksel_alilahotel",
+  "nama": "Alila SCBD Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "SCBD Lot 11, Jl. Jend. Sudirman Kav.52-53",
+  "latitude": -6.2254,
+  "longitude": 106.8088
+},
+{
+  "id": "jaksel_25hours",
+  "nama": "25hours Hotel The Oddbird",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "District 8 SCBD",
+  "latitude": -6.2271,
+  "longitude": 106.8099
+},
+{
+  "id": "jaksel_ascottkuningan",
+  "nama": "Ascott Kuningan Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Ciputra World 1, Kuningan",
+  "latitude": -6.2239,
+  "longitude": 106.8268
+},
+{
+  "id": "jaksel_somersetkuningan",
+  "nama": "Somerset Grand Citra Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Prof. DR. Satrio Kav.1",
+  "latitude": -6.2245,
+  "longitude": 106.8279
+},
+{
+  "id": "jaksel_oakwoodsuites",
+  "nama": "Oakwood Suites Kuningan Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Setiabudi Utara Raya",
+  "latitude": -6.2147,
+  "longitude": 106.8267
+},
+{
+  "id": "jaksel_fourseasons",
+  "nama": "Four Seasons Hotel Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Gatot Subroto Kav.18",
+  "latitude": -6.2282,
+  "longitude": 106.8228
+},
+{
+  "id": "jaksel_bidakarahotel",
+  "nama": "Hotel Bidakara Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Gatot Subroto Kav.71-73",
+  "latitude": -6.2438,
+  "longitude": 106.8441
+},
+{
+  "id": "jaksel_wyndhamcasablanca",
+  "nama": "Wyndham Casablanca Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Casablanca Kav.18",
+  "latitude": -6.2284,
+  "longitude": 106.8435
+},
+{
+  "id": "jaksel_harristebet",
+  "nama": "HARRIS Hotel Tebet",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Dr. Saharjo No.191",
+  "latitude": -6.2359,
+  "longitude": 106.8464
+},
+{
+  "id": "jaksel_libertykemang",
+  "nama": "Liberta Hotel Kemang",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Kemang 1 No.6",
+  "latitude": -6.2616,
+  "longitude": 106.8132
+},
+{
+  "id": "jaksel_grandkemang",
+  "nama": "Grand Kemang Hotel",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Kemang Raya No.2H",
+  "latitude": -6.2586,
+  "longitude": 106.8140
+},
+{
+  "id": "jaksel_park5kemang",
+  "nama": "Park 5 Simatupang",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Intan RSPP No.C5",
+  "latitude": -6.2862,
+  "longitude": 106.7915
+},
+{
+  "id": "jaksel_santikapondokindah",
+  "nama": "Hotel Santika Premiere Pondok Indah",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Metro Pondok Indah",
+  "latitude": -6.2655,
+  "longitude": 106.7838
+},
+{
+  "id": "jaksel_intercontinentalpondokindah",
+  "nama": "InterContinental Jakarta Pondok Indah",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Metro Pondok Indah Kav.IV",
+  "latitude": -6.2651,
+  "longitude": 106.7827
+},
+{
+  "id": "jaksel_arthamahotel",
+  "nama": "Arthama Hotel Jakarta",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. KH Abdullah Syafei",
+  "latitude": -6.2478,
+  "longitude": 106.8515
 }
 ]
