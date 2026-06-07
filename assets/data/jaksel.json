@@ -340,5 +340,14 @@
   "alamat": "Kuningan",
   "latitude": -6.2299,
   "longitude": 106.8288
+},
+    {
+  "id": "jaksel_swissbelkalibata",
+  "nama": "Swiss-Belresidences Kalibata",
+  "wilayah": "Jakarta Selatan",
+  "kategori": "hotel",
+  "alamat": "Jl. Kalibata Raya No.22, Pancoran, Jakarta Selatan",
+  "latitude": -6.2555,
+  "longitude": 106.8470
 }
 ]
