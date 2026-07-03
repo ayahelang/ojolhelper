@@ -1,0 +1,22 @@
+{
+    "version":"1.0.0",
+    "activePlugin":"whatsapp",
+    "theme":"bluebird",
+    "title":"SilverQR",
+    "loadingText":"Preparing...",
+    "plugins":{
+        "whatsapp":{
+            "phone":"6285158822803",
+            "message":"Halo Pak Teddy,\nNama saya: ... \nBisakah jemput saya di: ....\nJam: ... "
+        },
+        "website":{
+            "url":"https://silverhawk.web.id"
+        },
+        "maps":{
+            "url":""
+        },
+        "linktree":{
+            "items":[]
+        }
+    }
+}
