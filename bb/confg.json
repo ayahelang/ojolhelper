@@ -1,22 +1,7 @@
 {
-    "version":"1.0.0",
-    "activePlugin":"whatsapp",
-    "theme":"bluebird",
-    "title":"SilverQR",
-    "loadingText":"Preparing...",
-    "plugins":{
-        "whatsapp":{
-            "phone":"6285158822803",
-            "message":"Halo Pak Teddy,\nNama saya: ... \nBisakah jemput saya di: ....\nJam: ... "
-        },
-        "website":{
-            "url":"https://silverhawk.web.id"
-        },
-        "maps":{
-            "url":""
-        },
-        "linktree":{
-            "items":[]
-        }
-    }
+    "title":"Bluebird Driver",
+    "loadingText":"Menghubungkan ke WhatsApp...",
+    "delay":1000,
+    "phone":"6285158822803",
+    "message":"Halo pak.Teddy\nNama saya : .....\ntolong kirim lokasi terkini Bapak ya.\nsaya perlu tahu seberapa jauh dari saya.\n\n(this feature is powered by https://silverhawk.web.id)"
 }
