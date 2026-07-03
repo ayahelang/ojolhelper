@@ -1,0 +1,32 @@
+async function load(){
+const cfg=await fetch("config.json");
+const json=await cfg.json();
+document.getElementById("title").innerHTML=json.title;
+document.getElementById("status").innerHTML=json.loadingText;
+
+setTimeout(()=>{
+switch(json.activePlugin){
+case "whatsapp":
+location.href=
+"https://wa.me/"
++json.plugins.whatsapp.phone+
+"?text="+
+encodeURIComponent(
+json.plugins.whatsapp.message
+);
+break;
+
+case "website":
+location.href=
+json.plugins.website.url;
+break;
+case "maps":
+location.href=
+json.plugins.maps.url;
+break;
+}
+},800);
+
+}
+
+load();
