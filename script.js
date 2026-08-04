@@ -712,12 +712,36 @@ document.addEventListener(
                     routingControl = null;
                 }
 
+                const startIcon = L.icon({
+    iconUrl: "assets/pin-green.png",
+    iconSize: [32, 32],
+    iconAnchor: [16, 32]
+});
+
+const finishIcon = L.icon({
+    iconUrl: "assets/pin-red.png",
+    iconSize: [32, 32],
+    iconAnchor: [16, 32]
+});
+                
                 /* route */
                 routingControl =
                     L.Routing.control({
 
-                        createMarker: function () {
-                            return null;
+                        // createMarker: function () {
+                        //     return null;
+                        // },
+                        createMarker: function(i, wp){
+                            // Marker awal tidak dibuat
+                            if(i===0) return null;
+                            // Marker tujuan merah
+                            return L.marker(wp.latLng,{
+                                icon:L.icon({
+                                    iconUrl:"assets/pin-red.png",
+                                    iconSize:[34,34],
+                                    iconAnchor:[17,34]
+                                })
+                            });
                         },
 
                         waypoints: [
@@ -1866,8 +1890,20 @@ const carIcon = L.divIcon({
     navRouting =
         L.Routing.control({
 
-            createMarker: function () {
-                return null;
+            // createMarker: function () {
+            //     return null;
+            // },
+            createMarker: function(i, wp){
+                // Marker awal tidak dibuat
+                if(i===0) return null;
+                // Marker tujuan merah
+                return L.marker(wp.latLng,{
+                    icon:L.icon({
+                        iconUrl:"assets/pin-red.png",
+                        iconSize:[34,34],
+                        iconAnchor:[17,34]
+                    })
+                });
             },
 
             waypoints: [
