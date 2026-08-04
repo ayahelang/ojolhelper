@@ -502,8 +502,8 @@ const carIcon = L.divIcon({
             class="carIconRotate"
         >
     `,
-    iconSize: [32, 64],
-    iconAnchor: [16, 1]
+    iconSize: [22, 44],
+    iconAnchor: [11, 22]
 });
 
 let accuracyCircle = null;
@@ -1842,8 +1842,8 @@ async function openFullscreenNavigation(
             class="carIconRotate"
         >
     `,
-        iconSize: [32, 64],
-        iconAnchor: [16, 1]
+        iconSize: [22, 44],
+        iconAnchor: [11, 22]
     });
 
     navMarker = L.marker(
