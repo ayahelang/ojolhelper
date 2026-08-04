@@ -289,15 +289,20 @@ footer a:hover {
     pointer-events: auto;
 }
 
-.car-marker {
-    background: none;
-    border: none;
+.car-marker{
+    background:transparent;
+    border:none;
+    width:24px !important;
+    height:48px !important;
 }
 
 .carIconRotate {
-    width: 20px;
-    height: auto;
-    object-fit: contain;
+    width:24px !important;
+    max-width:24px !important;
+    height:auto !important;
+    display:block;
+    object-fit:contain;
+    transform-origin:center center;
     transition:
         transform .35s linear;
     filter:
