@@ -500,10 +500,15 @@ const carIcon = L.divIcon({
         <img
             src="assets/car-top.png"
             class="carIconRotate"
+            style="
+                width:24px;
+                height:auto;
+                display:block;
+            "
         >
     `,
-        iconSize: [20, 38],
-        iconAnchor: [10, 19]
+    iconSize: [24,48],
+    iconAnchor: [12,24]
 });
 
 let accuracyCircle = null;
@@ -1834,17 +1839,22 @@ async function openFullscreenNavigation(
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     ).addTo(navMap);
 
-    const carIcon = L.divIcon({
-        className: "car-marker",
-        html: `
+const carIcon = L.divIcon({
+    className: "car-marker",
+    html: `
         <img
             src="assets/car-top.png"
             class="carIconRotate"
+            style="
+                width:24px;
+                height:auto;
+                display:block;
+            "
         >
     `,
-        iconSize: [20, 38],
-        iconAnchor: [10, 19]
-    });
+    iconSize: [24,48],
+    iconAnchor: [12,24]
+});
 
     navMarker = L.marker(
         [currentUserLat, currentUserLon],
