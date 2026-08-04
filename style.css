@@ -799,81 +799,55 @@ SMART TACTICAL RADAR PREMIUM
 }
 
 .nav-bottom {
-
-    position: absolute;
-
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    padding: 20px;
-
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:10px 14px;
     background:
         linear-gradient(to top,
-            rgba(8, 17, 31, .98),
-            rgba(8, 17, 31, .82));
-
-    backdrop-filter: blur(12px);
-
+        rgba(8,17,31,.96),
+        rgba(8,17,31,.82));
+    backdrop-filter:blur(10px);
     z-index: 9999;
 }
 
 .nav-stats {
-
     display: grid;
-
     grid-template-columns:
         repeat(3, 1fr);
-
-    gap: 12px;
-
-    margin-bottom: 14px;
+    gap:8px;
+    margin-bottom:8px;
 }
 
 .nav-box {
-
     background: #132544;
-
     border-radius: 18px;
-
-    padding: 14px;
-
+    padding: 8px;
+    border-radius: 14px;
     text-align: center;
 }
 
 .nav-box span {
-
     display: block;
-
     color: #8fa9d4;
-
-    font-size: 13px;
-
+    font-size: 11px;
     margin-bottom: 6px;
 }
 
 .nav-box strong {
-
-    font-size: 22px;
-
+    font-size: 18px;
     color: #4ea1ff;
 }
 
 #closeNav {
-
+    padding:12px;
+    border-radius:14px;
+    font-size:15px;
+    margin-top:10px;    
     width: 100%;
-
     border: none;
-
     background: #ef4444;
-
     color: white;
-
-    padding: 16px;
-
-    border-radius: 18px;
-
     font-weight: bold;
-
-    font-size: 16px;
 }
