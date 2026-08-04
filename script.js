@@ -508,7 +508,7 @@ const carIcon = L.divIcon({
         >
     `,
     iconSize: [24,48],
-    iconAnchor: [12,24]
+    iconAnchor: [12,1]
 });
 
 let accuracyCircle = null;
@@ -1853,7 +1853,7 @@ const carIcon = L.divIcon({
         >
     `,
     iconSize: [24,48],
-    iconAnchor: [12,24]
+    iconAnchor: [12,1]
 });
 
     navMarker = L.marker(
