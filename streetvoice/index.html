@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1220">
+  <title>Ojol Street Voice</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIINfQ3k8j2nK3KQ0Qv0r8v3sJQ8M7w8hXk=" crossorigin=""/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>🗣️ Ojol Street Voice</h1>
+      <p>Belajar nama jalan sambil berkendara</p>
+    </div>
+    <button id="voiceToggle" class="toggle active">🔊 SUARA ON</button>
+  </header>
+
+  <main class="app">
+    <section class="map-card">
+      <div id="map"></div>
+      <div class="gps-status" id="gpsStatus">GPS belum aktif</div>
+    </section>
+
+    <section class="panel">
+      <div class="road-name" id="roadName">Menunggu GPS...</div>
+      <div class="road-meta" id="roadMeta">Aktifkan lokasi untuk mulai mendeteksi jalan.</div>
+
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span>Progress ruas jalan</span>
+          <strong id="progressText">0%</strong>
+        </div>
+        <div class="progress"><div id="progressBar"></div></div>
+      </div>
+
+      <div class="voice-events">
+        <div class="event" id="event1"><span>🔊</span><b>Awal</b><small>Belum terdengar</small></div>
+        <div class="event" id="event2"><span>🔊</span><b>Tengah</b><small>Belum terdengar</small></div>
+        <div class="event" id="event3"><span>🔊</span><b>Akhir</b><small>Belum terdengar</small></div>
+      </div>
+
+      <div class="next-road" id="nextRoad">
+        <h2>🧭 Informasi persimpangan</h2>
+        <p>Informasi akan muncul saat ruas jalan berikutnya berhasil dianalisis.</p>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn" class="primary">📍 Mulai GPS</button>
+        <button id="repeatBtn">🔊 Ulangi Nama Jalan</button>
+        <button id="stopBtn">⏹ Berhenti</button>
+      </div>
+
+      <details>
+        <summary>⚙️ Pengaturan suara</summary>
+        <div class="settings">
+          <label>Jarak pemberitahuan akhir jalan
+            <select id="announceDistance">
+              <option value="500">500 meter</option>
+              <option value="300" selected>300 meter</option>
+              <option value="200">200 meter</option>
+              <option value="100">100 meter</option>
+            </select>
+          </label>
+          <label>Kecepatan suara
+            <input id="speechRate" type="range" min="0.7" max="1.3" step="0.05" value="0.95">
+          </label>
+        </div>
+      </details>
+
+      <div class="log" id="log"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Prototype • Peta OpenStreetMap • GPS perangkat • Text-to-Speech browser</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>
