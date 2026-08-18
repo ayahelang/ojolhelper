@@ -255,11 +255,21 @@ async function onPosition(pos){
   const p={lat,lon};
   $('gpsStatus').textContent=`GPS aktif • ±${Math.round(pos.coords.accuracy||0)} m`;
 
+  const vehicleIcon = L.divIcon({
+    className: 'vehicle-icon-wrapper',
+    html: '<div class="vehicle-marker"><div class="arrow"></div>🛵</div>',
+    iconSize: [50,50],
+    iconAnchor: [25,25],
+    popupAnchor: [0,-25]
+  });
+
   if(!state.marker){
-    state.marker=L.marker([lat,lon]).addTo(state.map).bindPopup('Posisi kendaraan');
+    state.marker=L.marker([lat,lon],{icon:vehicleIcon,zIndexOffset:10000})
+      .addTo(state.map).bindPopup('📍 Posisi kendaraan Anda');
     state.map.setView([lat,lon],17);
   }else{
     state.marker.setLatLng([lat,lon]);
+    state.marker.setIcon(vehicleIcon);
   }
   if(state.accuracyCircle) state.accuracyCircle.setLatLng([lat,lon]).setRadius(pos.coords.accuracy||20);
   else state.accuracyCircle=L.circle([lat,lon],{radius:pos.coords.accuracy||20,color:'#2563eb',fillOpacity:.08}).addTo(state.map);
@@ -302,6 +312,18 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
   maxZoom:19,
   attribution:'&copy; OpenStreetMap contributors'
 }).addTo(state.map);
+
+/* V2: fix Leaflet dimensions after Android layout */
+function fixMapSize(){
+  if(!state.map) return;
+  setTimeout(()=>state.map.invalidateSize({pan:false,animate:false}),50);
+  setTimeout(()=>state.map.invalidateSize({pan:false,animate:false}),300);
+  setTimeout(()=>state.map.invalidateSize({pan:false,animate:false}),800);
+}
+window.addEventListener('load',fixMapSize);
+window.addEventListener('resize',fixMapSize);
+window.addEventListener('orientationchange',fixMapSize);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden) fixMapSize();});
 
 $('startBtn').onclick=startGPS;
 $('stopBtn').onclick=stopGPS;
